@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import LandingPage from "./LandingPage";
+import UserPage from "./UserDashboard/UserPage";
 
 function App() {
   return (
     <div>
-      <LandingPage />
+      <UserPage />
     </div>
   );
 }
