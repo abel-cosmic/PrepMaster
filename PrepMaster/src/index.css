@@ -8,3 +8,9 @@
 @import "@fontsource/roboto/900.css";
 
 /*Write your custom CSS here*/
+.card {
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  padding: 2rem;
+}
