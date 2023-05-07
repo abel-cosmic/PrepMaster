@@ -18,15 +18,17 @@ export default function Student() {
         </div>
         <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
           <NavLink className="w-72 flex justify-center">
-            <div className=" side-bar text-md w-max " id="Dashboard">
+            <div className="side-bar text-md w-max " id="Dashboard">
               <img src={DashBoardIcon} alt="Dashboard Icon" />
               <p>Dashboard</p>
             </div>
           </NavLink>
-          <div className="side-bar  text-md " id="Exam">
-            <img src={ExamIcon} alt="Exam Icon" />
-            <p>Exam</p>
-          </div>
+          <NavLink to="StudentExam" className="w-72 flex justify-center">
+            <div className="side-bar  text-md " id="Exam">
+              <img src={ExamIcon} alt="Exam Icon" />
+              <p>Exam</p>
+            </div>
+          </NavLink>
           <div className="side-bar text-md " id="Analytics">
             <img src={AnalyticsIcon} alt="Analytics Icon" />
             <p>Analytics</p>
@@ -51,7 +53,7 @@ export default function Student() {
           <p className="opacity-50 text-xs">© PrepMaster all rights reserved</p>
         </div>
       </div>
-      <div className="flex flex-col w-fit px-4">
+      <div className="flex flex-col w-full px-4">
         <HeaderDashboard />
         <Outlet />
       </div>

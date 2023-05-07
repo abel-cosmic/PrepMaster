@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import Student from "./UserDashboard/Student/Student";
+import StudentExam from "./UserDashboard/Student/StudentExam";
 
 function App() {
   const router = createBrowserRouter(
@@ -17,6 +18,7 @@ function App() {
         <Route index element={<LandingPage />} />
         <Route path="StudentDashboard" element={<Student />}>
           <Route index element={<StudentDashboard />} />
+          <Route path="StudentExam" element={<StudentExam />} />
         </Route>
       </Route>
     )
