@@ -11,10 +11,33 @@
 /*Write your custom CSS here*/
 * {
   font-family: "Plus Jakarta Sans";
+  color: #2e2e2e;
 }
 .side-bar {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 2rem;
-  margin-left: 3rem;
+  cursor: pointer;
+  width: fit-content;
+  padding: 1rem 2rem;
+}
+.container {
+  border: 1px solid rgba(46, 46, 46, 0.15);
+  border-radius: 0.5rem;
+}
+#search:focus {
+  outline: none;
+}
+.test {
+  border: solid 1px red;
+}
+.active {
+  background-color: #088395;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  display: flex;
+}
+.active p {
+  color: #fff !important;
 }
