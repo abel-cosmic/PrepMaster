@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Button from "@mui/material/Button";
 import StopWatch from "../../assets/StopWatch.svg";
 import PencilPaper from "../../assets/PencilPaper.svg";
+import CustomButton from "../../Components/CustomButton";
 
 export default function DailyQuestions() {
   const url = "questions data here";
@@ -41,7 +42,11 @@ export default function DailyQuestions() {
             <img src={PencilPaper} alt="Question amount" className="" />
             <p className="text-xs w-32 self-center">{item.amount}</p>
           </div>
-          <CustomButton text={"Start"} padding={"0.5rem 1.5rem"} />
+          <CustomButton
+            text={"Start"}
+            padding={"0.5rem 1.5rem"}
+            variant={"contained"}
+          />
         </div>
       </div>
     );

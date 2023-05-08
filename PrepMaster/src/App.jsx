@@ -11,6 +11,9 @@ import LandingPage from "./LandingPage";
 import Student from "./UserDashboard/Student/Student";
 import StudentExam from "./UserDashboard/Student/StudentExam";
 import StudentSetting from "./UserDashboard/Student/StudentSetting";
+import StudentProfile from "./UserDashboard/Student/StudentProfile";
+import StudentSecurity from "./UserDashboard/Student/StudentSecurity";
+import Logout from "./UserDashboard/Logout";
 
 function App() {
   const router = createBrowserRouter(
@@ -20,14 +23,14 @@ function App() {
         <Route path="StudentDashboard" element={<Student />}>
           <Route index element={<StudentDashboard />} />
           <Route path="StudentExam" element={<StudentExam />} />
-          {/* <Route path="StudentSettings" element={<StudentSetting />}>
+          <Route path="StudentSetting" element={<StudentSetting />}>
             <Route index element={<StudentProfile />} />
             <Route path="StudentSecurity" element={<StudentSecurity />} />
-            <Route
+            {/* <Route
               path="StudentSubscription"
               element={<StudentSubscription />}
-            />
-          </Route> */}
+            /> */}
+          </Route>
         </Route>
       </Route>
     )

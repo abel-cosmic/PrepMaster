@@ -26,13 +26,10 @@
   border: 1px solid rgba(46, 46, 46, 0.15);
   border-radius: 0.5rem;
 }
-#search:focus {
-  outline: none;
-}
 .test {
   border: solid 1px red;
 }
-.active {
+.Navigations .active {
   background-color: #088395;
   font-weight: 500;
   border-radius: 0.375rem;
@@ -40,4 +37,15 @@
 }
 .active p {
   color: #fff !important;
+}
+.settings-nav .active li {
+  color: #088395;
+  border-bottom: #088395 3px solid;
+  padding: 0 0.5rem;
+}
+input::-webkit-input-placeholder {
+  font-size: 0.8rem;
+}
+input:focus {
+  outline: none;
 }
