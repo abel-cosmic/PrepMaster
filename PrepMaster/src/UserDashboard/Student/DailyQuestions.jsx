@@ -41,14 +41,7 @@ export default function DailyQuestions() {
             <img src={PencilPaper} alt="Question amount" className="" />
             <p className="text-xs w-32 self-center">{item.amount}</p>
           </div>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: "#088395", borderRadius: "0.3rem" }}
-            sx={{ textTransform: "none", width: "6rem", height: "2rem" }}
-            disableElevation
-          >
-            <p className="text-xs text-white">Start</p>
-          </Button>
+          <CustomButton text={"Start"} padding={"0.5rem 1.5rem"} />
         </div>
       </div>
     );
