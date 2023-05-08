@@ -50,17 +50,19 @@
   border-radius: 0.3rem;
   font-size: 14px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .sign-in:hover {
-  transition: ease-in 150ms;
+  transition: all 0.2s ease-in-out;
   color: #088395;
 }
 .sign-in:active {
-  transition: ease-in 150ms;
+  transition: all 0.1s ease-in-out;
   background-color: #d8d7d78a;
   color: #088395;
 }
+
 .gradient-text {
   background: linear-gradient(
     45deg,
@@ -72,10 +74,15 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 62px;
+  font-size: 50px;
   font-weight: 700;
 }
 .description{
-  width: 44rem;
+  width: 38rem;
   font-weight: 400;
+  font-size: 14px;
+}
+.span{
+  color: #088395;
+  font-weight: 500;
 }

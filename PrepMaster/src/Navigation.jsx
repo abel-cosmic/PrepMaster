@@ -3,7 +3,7 @@ import Logo from "./assets/logo.svg";
 import CustomButton from "./Components/CustomButton";
 export default function Navigation() {
   return (
-    <div className=" mx-12 mt-8 flex flex-row justify-between self-center  ">
+    <div className=" mx-6 mt-6 flex flex-row justify-between self-center  ">
       <img src={Logo} alt="logo" className="left w-72" />
       <ul
         className="flex felx-row justify-between gap-6 self-center text-xs"
