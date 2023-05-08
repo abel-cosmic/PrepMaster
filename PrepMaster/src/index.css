@@ -49,3 +49,48 @@ input::-webkit-input-placeholder {
 input:focus {
   outline: none;
 }
+.links:hover {
+  transition: ease-in 150ms;
+  color: #088395;
+}
+.sign-in {
+  padding: 0.4rem 1.7rem;
+  border-radius: 0.3rem;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.sign-in:hover {
+  transition: all 0.2s ease-in-out;
+  color: #088395;
+}
+.sign-in:active {
+  transition: all 0.1s ease-in-out;
+  background-color: #d8d7d78a;
+  color: #088395;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    45deg,
+    #088395 0%,
+    #088395 25%,
+    #00b9a9 50%,
+    #00d2b8 75%,
+    #00ffca 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  font-weight: 700;
+}
+.description {
+  width: 38rem;
+  font-weight: 400;
+  font-size: 14px;
+}
+.span {
+  color: #088395;
+  font-weight: 500;
+}
