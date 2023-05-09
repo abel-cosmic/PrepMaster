@@ -28,6 +28,7 @@ export default function StudentSecurity() {
             id={item.title}
             placeholder={item.placeholder}
             size="34"
+            required
           />
         </div>
       );
@@ -35,11 +36,15 @@ export default function StudentSecurity() {
   };
 
   return (
-    <div className="flex flex-col gap-6 w-fit">
+    <form action="" className="flex flex-col gap-6 w-fit">
       <RenderPasswordInputs />
       <div className="flex justify-end">
-        <CustomButton text={"Save Changes"} padding={"0.8rem 2rem"} />
+        <input
+          type="submit"
+          value="Save Changes"
+          className="submit-btn flex justify-center self-center"
+        />
       </div>
-    </div>
+    </form>
   );
 }

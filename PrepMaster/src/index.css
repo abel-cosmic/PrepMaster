@@ -11,7 +11,7 @@
 /*Write your custom CSS here*/
 * {
   font-family: "Plus Jakarta Sans";
-  color: #2e2e2e;
+  color: #2a2a2a;
 }
 .side-bar {
   display: flex;
@@ -24,7 +24,7 @@
 }
 .container {
   border: 1px solid rgba(46, 46, 46, 0.15);
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
 }
 .test {
   border: solid 1px red;
@@ -93,4 +93,37 @@ input:focus {
 .span {
   color: #088395;
   font-weight: 500;
+}
+.signup {
+  background-image: url("assets/SignupPhoto.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signup p {
+  color: #fff;
+}
+.colored-mini-text {
+  color: #088395;
+  font: 600;
+  opacity: 1 !important;
+}
+
+.signup-nav .active {
+  background-color: #088395;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  display: flex;
+  padding: 0.7rem 3rem;
+  color: #fff;
+}
+.submit-btn {
+  background-color: #088395;
+  color: #fff;
+  border-radius: 0.3rem;
+  padding: 0.4rem 1.7rem;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: fit-content;
 }

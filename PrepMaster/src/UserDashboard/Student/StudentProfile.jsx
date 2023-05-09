@@ -6,26 +6,31 @@ export default function StudentProfile() {
       title: "First & Last Name",
       placeHolder: ["First Name", "Last Name"],
       inputType: ["text", "text"],
+      required: true,
     },
     {
       title: "Email",
       placeHolder: "abc123@gmail.com",
       inputType: "email",
+      required: true,
     },
     {
       title: "Phone Number",
-      placeHolder: "+251912345678",
-      inputType: "te",
+      placeHolder: "+251912345678 (Optional)",
+      inputType: "text",
+      required: true,
     },
     {
       title: "School",
       placeHolder: "Hope Enterprise University College (Optonal)",
       inputType: "text",
+      required: true,
     },
     {
       title: "Department",
       placeHolder: "Computer Science",
       inputType: "text",
+      required: true,
     },
   ];
 
@@ -53,6 +58,7 @@ export default function StudentProfile() {
                   name={`${item.title}-first`}
                   placeholder={`${item.placeHolder[0]}`}
                   id={`${item.title}-first`}
+                  {...(item.required ? { required: true } : null)}
                 />
                 <input
                   className="container flex justify-center pl-4 pr-10 py-2 w-fit"
@@ -60,6 +66,7 @@ export default function StudentProfile() {
                   name={`${item.title}-last`}
                   placeholder={`${item.placeHolder[1]}`}
                   id={`${item.title}-last`}
+                  {...(item.required ? { required: true } : null)}
                 />
               </div>
             </div>
@@ -73,6 +80,7 @@ export default function StudentProfile() {
                 placeholder={`${item.placeHolder}`}
                 id={`${item.title}`}
                 size="34"
+                {...(item.required ? { required: true } : null)}
               />
             </div>
           )}
@@ -82,11 +90,15 @@ export default function StudentProfile() {
   }
 
   return (
-    <div className="fields flex flex-col gap-10 w-fit">
+    <form action="" className="fields flex flex-col gap-10 w-fit">
       <RenderInputField />
       <div className="flex justify-end">
-        <CustomButton text={"Save Changes"} padding={"0.8rem 2rem"} />
+        <input
+          type="submit"
+          value="Save Changes"
+          className="submit-btn flex justify-center self-center"
+        />
       </div>
-    </div>
+    </form>
   );
 }

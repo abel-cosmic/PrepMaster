@@ -13,13 +13,19 @@ import StudentExam from "./UserDashboard/Student/StudentExam";
 import StudentSetting from "./UserDashboard/Student/StudentSetting";
 import StudentProfile from "./UserDashboard/Student/StudentProfile";
 import StudentSecurity from "./UserDashboard/Student/StudentSecurity";
-import Logout from "./UserDashboard/Logout";
+import SignupStudent from "./Signup/SignupStudent";
+import SignupOrganization from "./Signup/SignupOrganization";
+import Signup from "./Signup/Signup";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
         <Route index element={<LandingPage />} />
+        <Route path="Signup" element={<Signup />}>
+          <Route index element={<SignupStudent />} />
+          <Route path="SignupOrganization" element={<SignupOrganization />} />
+        </Route>
         <Route path="StudentDashboard" element={<Student />}>
           <Route index element={<StudentDashboard />} />
           <Route path="StudentExam" element={<StudentExam />} />
