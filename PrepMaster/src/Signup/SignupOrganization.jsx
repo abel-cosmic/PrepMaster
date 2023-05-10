@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function SignupOrganization() {
+  const navigate = useNavigate();
   const inputs = [
     {
       title: "Organization Name",
@@ -29,8 +32,37 @@ export default function SignupOrganization() {
   };
 
   return (
-    <div className="flex flex-col gap-4 w-full">
-      <RenderInputs />
-    </div>
+    <form
+      action=""
+      className="w-fit flex flex-col gap-6 justify-center self-center"
+    >
+      <div className="flex flex-col gap-4 w-full">
+        <RenderInputs />
+      </div>
+      <div className="flex flex-row gap-2 justify-start">
+        <input type="checkbox" name="terms" id="terms" required />
+        <p className="text-sm self-center">
+          I agree with{" "}
+          <span className="colored-mini-text font-semibold">
+            Terms & Conditions
+          </span>
+        </p>
+      </div>
+
+      <p className="text-sm self-center">
+        Already have an account?{" "}
+        <span
+          className="colored-mini-text font-semibold login"
+          onClick={() => navigate("/Signin")}
+        >
+          Login
+        </span>
+      </p>
+      <input
+        type="submit"
+        value="Sign up"
+        className="submit-btn flex justify-center self-center"
+      />
+    </form>
   );
 }

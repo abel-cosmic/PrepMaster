@@ -1,6 +1,9 @@
 import CustomButton from "../../Components/CustomButton";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function StudentProfile() {
+  const navigate = useNavigate();
   const inputs = [
     {
       title: "First & Last Name",
@@ -34,15 +37,26 @@ export default function StudentProfile() {
     },
   ];
 
-  function RenderInputLabel() {
-    return inputs.map((item) => {
-      return (
-        <div key={item.title} className="flex flex-row gap-6">
-          <p className="self-center text-sm">{item.title}</p>
-        </div>
-      );
-    });
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //do smthing here
+    console.log(FormData);
+  };
+
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    phonenumber: "",
+    school: "",
+    department: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   function RenderInputField() {
     return inputs.map((item) => {
@@ -59,6 +73,10 @@ export default function StudentProfile() {
                   placeholder={`${item.placeHolder[0]}`}
                   id={`${item.title}-first`}
                   {...(item.required ? { required: true } : null)}
+                  onBlur={handleChange}
+                  defaultValue={
+                    formData[item.title.toLowerCase().replace(/\s+/g, "-")]
+                  }
                 />
                 <input
                   className="container flex justify-center pl-4 pr-10 py-2 w-fit"
@@ -67,6 +85,14 @@ export default function StudentProfile() {
                   placeholder={`${item.placeHolder[1]}`}
                   id={`${item.title}-last`}
                   {...(item.required ? { required: true } : null)}
+                  onBlur={handleChange}
+                  defaultValue={
+                    formData[
+                      item.title === "Phone Number"
+                        ? item.title.toLowerCase().replace(/\s+/g, "-")
+                        : item.title.toLowerCase()
+                    ]
+                  }
                 />
               </div>
             </div>
@@ -79,8 +105,16 @@ export default function StudentProfile() {
                 name={`${item.title}`}
                 placeholder={`${item.placeHolder}`}
                 id={`${item.title}`}
-                size="34"
+                size="38"
                 {...(item.required ? { required: true } : null)}
+                onBlur={handleChange}
+                defaultValue={
+                  formData[
+                    item.title === "Phone Number"
+                      ? item.title.split(" ").concat().toLowerCase()
+                      : item.title.toLowerCase()
+                  ]
+                }
               />
             </div>
           )}
@@ -90,7 +124,7 @@ export default function StudentProfile() {
   }
 
   return (
-    <form action="" className="fields flex flex-col gap-10 w-fit">
+    <form onSubmit={handleSubmit} className="fields flex flex-col gap-10 w-fit">
       <RenderInputField />
       <div className="flex justify-end">
         <input

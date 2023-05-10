@@ -1,12 +1,15 @@
 import Button from "@mui/material/Button";
 import Logo from "./assets/logo.svg";
 import CustomButton from "./Components/CustomButton";
+import { NavLink } from "react-router-dom";
+import Signup from "./Signup/Signup";
+import Signin from "./Signin/Signin";
 export default function Navigation() {
   return (
-    <div className=" mx-6 mt-6 flex flex-row justify-between self-center  ">
+    <div className=" mx-6 mt-10 flex flex-row justify-between self-center  ">
       <img src={Logo} alt="logo" className="left w-72" />
       <ul
-        className="flex felx-row justify-between gap-6 self-center text-xs"
+        className="flex felx-row gap-10 self-center text-sm"
         style={{ fontWeight: "500" }}
       >
         <li>
@@ -31,8 +34,12 @@ export default function Navigation() {
         </li>
       </ul>
       <div className="flex felx-row gap-6 justify-between items-center">
-        <div className="sign-in">Sign in</div>
-        <CustomButton text={"Try for free"} padding={"0.5rem 1.7rem"} />
+        <NavLink to="Signin" element={<Signin />}>
+          <div className="sign-in text-sm px-4 py-2">Sign in</div>
+        </NavLink>
+        <NavLink to="Signup" element={<Signup />}>
+          <CustomButton text={"Try for free"} padding={"0.7rem 1.7rem"} />
+        </NavLink>
       </div>
     </div>
   );

@@ -9,14 +9,18 @@ import SpreadLine from "../../assets/SpreadLine.png";
 import { NavLink, Outlet } from "react-router-dom";
 import HeaderDashboard from "../HeaderDashboard";
 import Logout from "../Logout";
+import LandingPage from "../../LandingPage";
 
 export default function Student() {
   return (
     <div className="flex flex-row gap-6 m-6 ">
       <div className="flex  flex-col gap-6 w-fit " id="SideBar">
-        <div className=" Logo flex justify-center self-center ">
-          <img src={Logo} alt="Logo" />
-        </div>
+        <NavLink to="/" element={<LandingPage />}>
+          <div className=" Logo flex justify-center self-center w-5/6 ">
+            <img src={Logo} alt="Logo" />
+          </div>
+        </NavLink>
+
         <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
           <NavLink to="" end className="w-72 flex justify-center">
             <div className="side-bar text-md w-max" id="Dashboard">

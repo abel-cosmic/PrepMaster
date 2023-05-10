@@ -1,11 +1,11 @@
 import { NavLink, Outlet } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import tick from "../assets/tick.svg";
-import CustomButton from "../Components/CustomButton";
-import SignupOrganization from "./SignupOrganization";
 import LandingPage from "../LandingPage";
+import tick from "../assets/tick.svg";
+import SigninTeacher from "./SigninTeacher";
+import SigninOrganization from "./SigninOrganization";
 
-export default function Signup() {
+export default function Signin() {
   const features = [
     "Question curated by professionals",
     "Reasonable Pricing",
@@ -29,41 +29,52 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex flex-row h-screen">
-      <div className="flex flex-col justify-between w-full ">
+    <div className="flex flex-row">
+      <div className="flex flex-row h-screen w-full">
         <div className="flex flex-col p-10 gap-6 w-full">
           <NavLink to="/" element={<LandingPage />}>
             <img class="w-1/4" src={logo} alt="logo" />
           </NavLink>
 
-          <div className="signup-header flex flex-col self-center gap-2 mb-2">
+          <div className="signup-header flex flex-col self-center gap-2 mb-2 mt-14">
             <p className="text-3xl flex justify-center font-semibold">
-              Create an account
+              Glad to see you back
             </p>
             <p className="text-sm opacity-50">
-              By creating an account you get access to our courses
+              Login to your account to start on today's tasks
             </p>
           </div>
-          <div className="signup-nav flex flex-row justify-center gap-16">
+          <div className="signup-nav flex flex-row justify-center gap-16 ">
             <NavLink to="" end className="self-center">
               <p className="text-sm">Student</p>
             </NavLink>
             <NavLink
-              to="SignupOrganization"
+              to="SigninTeacher"
               className="self-center"
-              element={<SignupOrganization />}
+              element={<SigninTeacher />}
+            >
+              <p className="text-sm">Teacher</p>
+            </NavLink>
+            <NavLink
+              to="SigninOrganization"
+              className="self-center"
+              element={<SigninOrganization />}
             >
               <p className="text-sm">Organization</p>
             </NavLink>
           </div>
-          <Outlet />
-        </div>
+          <div className="flex flex-col justify-between w-full h-full">
+            <div className="flex justify-center">
+              <Outlet />
+            </div>
 
-        <p className="text-xs opacity-50 px-6 my-16">
-          © PrepMaster all rights reserved
-        </p>
+            <p className="text-xs opacity-50 px-6">
+              © PrepMaster all rights reserved
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="signup p-10 flex flex-col gap-6 justify-end pb-10">
+      <div className="signin p-10 flex flex-col gap-6 justify-end pb-10">
         <p className="text-4xl font-bold w-3/4">
           Join 25,000+ students determined to ace their exit exams
         </p>

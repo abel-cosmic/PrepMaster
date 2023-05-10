@@ -16,6 +16,10 @@ import StudentSecurity from "./UserDashboard/Student/StudentSecurity";
 import SignupStudent from "./Signup/SignupStudent";
 import SignupOrganization from "./Signup/SignupOrganization";
 import Signup from "./Signup/Signup";
+import Signin from "./Signin/Signin";
+import SigninStudent from "./Signin/SigninStudent";
+import SigninTeacher from "./Signin/SigninTeacher";
+import SigninOrganization from "./Signin/SigninOrganization";
 
 function App() {
   const router = createBrowserRouter(
@@ -25,6 +29,11 @@ function App() {
         <Route path="Signup" element={<Signup />}>
           <Route index element={<SignupStudent />} />
           <Route path="SignupOrganization" element={<SignupOrganization />} />
+        </Route>
+        <Route path="Signin" element={<Signin />}>
+          <Route index element={<SigninStudent />} />
+          <Route path="SigninTeacher" element={<SigninTeacher />} />
+          <Route path="SigninOrganization" element={<SigninOrganization />} />
         </Route>
         <Route path="StudentDashboard" element={<Student />}>
           <Route index element={<StudentDashboard />} />

@@ -10,7 +10,7 @@
 
 /*Write your custom CSS here*/
 * {
-  font-family: "Plus Jakarta Sans";
+  font-family: "Plus Jakarta Sans", "system-ui";
   color: #2a2a2a;
 }
 .side-bar {
@@ -54,9 +54,7 @@ input:focus {
   color: #088395;
 }
 .sign-in {
-  padding: 0.4rem 1.7rem;
   border-radius: 0.3rem;
-  font-size: 14px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -82,13 +80,8 @@ input:focus {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 50px;
+  font-size: 4rem;
   font-weight: 700;
-}
-.description {
-  width: 38rem;
-  font-weight: 400;
-  font-size: 14px;
 }
 .span {
   color: #088395;
@@ -124,6 +117,17 @@ input:focus {
   padding: 0.4rem 1.7rem;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
   width: fit-content;
+}
+
+.signin {
+  background-image: url("assets/LoginPhoto.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.signin p {
+  color: #fff;
+}
+.login:hover {
+  cursor: pointer;
 }
