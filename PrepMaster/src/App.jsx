@@ -20,6 +20,7 @@ import Signin from "./Signin/Signin";
 import SigninStudent from "./Signin/SigninStudent";
 import SigninTeacher from "./Signin/SigninTeacher";
 import SigninOrganization from "./Signin/SigninOrganization";
+import ExamSheet from "./UserDashboard/Student/ExamSheet";
 
 function App() {
   const router = createBrowserRouter(
@@ -41,12 +42,9 @@ function App() {
           <Route path="StudentSetting" element={<StudentSetting />}>
             <Route index element={<StudentProfile />} />
             <Route path="StudentSecurity" element={<StudentSecurity />} />
-            {/* <Route
-              path="StudentSubscription"
-              element={<StudentSubscription />}
-            /> */}
           </Route>
         </Route>
+        <Route path="ExamSheet" element={<ExamSheet/>}/>
       </Route>
     )
   );

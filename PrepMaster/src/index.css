@@ -9,125 +9,140 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 /*Write your custom CSS here*/
+
 * {
-  font-family: "Plus Jakarta Sans", "system-ui";
-  color: #2a2a2a;
+    font-family: "Plus Jakarta Sans", "system-ui";
+    color: #2a2a2a;
 }
+
 .side-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  cursor: pointer;
-  width: fit-content;
-  padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    cursor: pointer;
+    width: fit-content;
+    padding: 1rem 2rem;
 }
+
 .container {
-  border: 1px solid rgba(46, 46, 46, 0.15);
-  border-radius: 0.4rem;
+    border: 1px solid rgba(46, 46, 46, 0.15);
+    border-radius: 0.4rem;
 }
+
 .test {
-  border: solid 1px red;
+    border: solid 1px red;
 }
+
 .Navigations .active {
-  background-color: #088395;
-  font-weight: 500;
-  border-radius: 0.375rem;
-  display: flex;
+    background-color: #088395;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    display: flex;
 }
+
 .active p {
-  color: #fff !important;
+    color: #fff !important;
 }
+
 .settings-nav .active li {
-  color: #088395;
-  border-bottom: #088395 3px solid;
-  padding: 0 0.5rem;
+    color: #088395;
+    border-bottom: #088395 3px solid;
+    padding: 0 0.5rem;
 }
+
 input::-webkit-input-placeholder {
-  font-size: 0.8rem;
+    font-size: 0.8rem;
 }
+
 input:focus {
-  outline: none;
+    outline: none;
 }
+
 .links:hover {
-  transition: ease-in 150ms;
-  color: #088395;
+    transition: ease-in 150ms;
+    color: #088395;
 }
+
 .sign-in {
-  border-radius: 0.3rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 .sign-in:hover {
-  transition: all 0.2s ease-in-out;
-  color: #088395;
+    transition: all 0.2s ease-in-out;
+    color: #088395;
 }
+
 .sign-in:active {
-  transition: all 0.1s ease-in-out;
-  background-color: #d8d7d78a;
-  color: #088395;
+    transition: all 0.1s ease-in-out;
+    background-color: #d8d7d78a;
+    color: #088395;
 }
 
 .gradient-text {
-  background: linear-gradient(
-    45deg,
-    #088395 0%,
-    #088395 25%,
-    #00b9a9 50%,
-    #00d2b8 75%,
-    #00ffca 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 4rem;
-  font-weight: 700;
+    background: linear-gradient( 45deg, #088395 0%, #088395 25%, #00b9a9 50%, #00d2b8 75%, #00ffca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: 700;
 }
+
 .span {
-  color: #088395;
-  font-weight: 500;
+    color: #088395;
+    font-weight: 500;
 }
+
 .signup {
-  background-image: url("assets/SignupPhoto.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("assets/SignupPhoto.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .signup p {
-  color: #fff;
+    color: #fff;
 }
+
 .colored-mini-text {
-  color: #088395;
-  font: 600;
-  opacity: 1 !important;
+    color: #088395;
+    font: 600;
+    opacity: 1 !important;
 }
 
 .signup-nav .active {
-  background-color: #088395;
-  font-weight: 500;
-  border-radius: 0.375rem;
-  display: flex;
-  padding: 0.7rem 3rem;
-  color: #fff;
+    background-color: #088395;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    display: flex;
+    padding: 0.7rem 3rem;
+    color: #fff;
 }
+
 .submit-btn {
-  background-color: #088395;
-  color: #fff;
-  border-radius: 0.3rem;
-  padding: 0.4rem 1.7rem;
-  font-size: 14px;
-  cursor: pointer;
-  width: fit-content;
+    background-color: #088395;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.4rem 1.7rem;
+    font-size: 14px;
+    cursor: pointer;
+    width: fit-content;
 }
 
 .signin {
-  background-image: url("assets/LoginPhoto.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("assets/LoginPhoto.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 .signin p {
-  color: #fff;
+    color: #fff;
 }
+
 .login:hover {
-  cursor: pointer;
+    cursor: pointer;
+}
+
+.exam-sheet {
+    background-color: rgba(8, 131, 149, 0.1);
 }
