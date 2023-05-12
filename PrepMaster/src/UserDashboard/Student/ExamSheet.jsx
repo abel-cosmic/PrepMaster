@@ -28,14 +28,14 @@ export default function ExamSheet() {
   }, []);
   
   return (
-    <div className="exam-sheet h-screen">
-      <div className="bg-white flex flex-col w-fit py-6 px-8">
+    <div className="exam-sheet h-screen flex justify-center place-items-center">
+      <div className="bg-white flex flex-col w-1/2 rounded-xl question gap-8 h-fit p-12">
         <div className="flex flex-row justify-between">
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row self-center gap-2">
             <img src={LeaveExam} alt="Leave Exam" />
             <p>Leave Exam</p>
           </div>
-          <div>
+          <div className="self-center">
             <p>
               Time left <span className="colored-mini-text">{MinutesLeft}:{SecondsLeft}</span>
             </p>

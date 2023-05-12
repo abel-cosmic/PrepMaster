@@ -146,3 +146,7 @@ input:focus {
 .exam-sheet {
     background-color: rgba(8, 131, 149, 0.1);
 }
+
+.question {
+    filter: drop-shadow(10px 0px 40px rgba(46, 46, 46, 0.1));
+}
