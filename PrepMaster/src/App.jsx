@@ -21,6 +21,7 @@ import SigninStudent from "./Signin/SigninStudent";
 import SigninTeacher from "./Signin/SigninTeacher";
 import SigninOrganization from "./Signin/SigninOrganization";
 import ExamSheet from "./UserDashboard/Student/ExamSheet";
+import DisplayScore from "./UserDashboard/Student/DisplayScore";
 
 function App() {
   const router = createBrowserRouter(
@@ -44,7 +45,8 @@ function App() {
             <Route path="StudentSecurity" element={<StudentSecurity />} />
           </Route>
         </Route>
-        <Route path="ExamSheet" element={<ExamSheet/>}/>
+        <Route path="ExamSheet" element={<ExamSheet />} />
+        <Route path="/displayScore" element={<DisplayScore />} />
       </Route>
     )
   );

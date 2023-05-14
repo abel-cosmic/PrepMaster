@@ -1,23 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useFormik } from "formik";
 
 export default function SigninOrganization() {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
 
-  const handleChange = (e) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [e.target.name]: e.target.value,
-    }));
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/StudentDashboard");
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    onSubmit : values =>{
+      alert(JSON.stringify(values,null,2));
+      navigate("/StudentDashboard");
+    }
+  })
   const inputs = [
     {
       title: "Email",
@@ -42,8 +39,8 @@ export default function SigninOrganization() {
             id={item.title}
             placeholder={item.placeHolder}
             className="container pl-4 pr-16 py-2"
-            onBlur={handleChange}
-            defaultValue={formData[item.title.toLowerCase()]}
+            onBlur={formik.handleChange}
+            defaultValue={formik.values[item.title.toLowerCase()]}
             required
             size="33"
           />
@@ -53,7 +50,7 @@ export default function SigninOrganization() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={formik.handleSubmit}>
       <div className="flex flex-col gap-4 w-fit">
         <RenderInputs />
         <p className="text-sm self-center">

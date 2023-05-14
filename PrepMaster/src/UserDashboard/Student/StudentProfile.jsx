@@ -1,14 +1,25 @@
 import CustomButton from "../../Components/CustomButton";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useFormik } from "formik";
 
 export default function StudentProfile() {
-  const navigate = useNavigate();
+  const formik = useFormik({
+    initialValues: {
+      firstname: "",
+      lastname: "",
+      telephone: "",
+      school: "",
+      department: "",
+    },
+    onSubmit : values =>{
+      alert(JSON.stringify(values, null, 2));
+    }
+  });
+
   const inputs = [
     {
       title: "First & Last Name",
       placeHolder: ["First Name", "Last Name"],
-      inputType: ["text", "text"],
+      inputType: "text",
       required: true,
     },
     {
@@ -18,7 +29,7 @@ export default function StudentProfile() {
       required: true,
     },
     {
-      title: "Phone Number",
+      title: "Telephone",
       placeHolder: "+251912345678 (Optional)",
       inputType: "text",
       required: true,
@@ -37,84 +48,55 @@ export default function StudentProfile() {
     },
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    //do smthing here
-    console.log(FormData);
-  };
-
-  const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
-    phonenumber: "",
-    school: "",
-    department: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [e.target.name]: e.target.value,
-    }));
+  const patcher = (title) => {
+    console.log(title);
+    let words = title.toString().split(" ");
+    return words[0].toLowerCase();
   };
 
   function RenderInputField() {
     return inputs.map((item) => {
       return (
-        <div key={item.title} className="flex flex-col gap-2 ">
-          {Array.isArray(item.placeHolder) ? (
-            <div className="flex flex-row gap-6  place-content-between">
-              <p className=" w-fit self-center">{item.title}</p>
+        <div key={item.title} className="flex flex-col gap-2">
+          {item.placeHolder.length === 2 ? (
+            <div className="flex flex-row gap-6 place-content-between">
+              <p className="w-fit self-center">{item.title}</p>
               <div className="flex flex-row gap-2">
                 <input
                   className="container flex justify-center pl-4 pr-10 py-2 w-fit"
-                  type={`${item.inputType[0]}`}
-                  name={`${item.title}-first`}
-                  placeholder={`${item.placeHolder[0]}`}
-                  id={`${item.title}-first`}
+                  type={item.inputType}
+                  name="firstname" // Update the name attribute
+                  placeholder={item.placeHolder[0]}
+                  id={item.placeHolder[0]}
                   {...(item.required ? { required: true } : null)}
-                  onBlur={handleChange}
-                  defaultValue={
-                    formData[item.title.toLowerCase().replace(/\s+/g, "-")]
-                  }
+                  onBlur={formik.handleChange}
+                  defaultValue={formik.values.firstname}
                 />
                 <input
                   className="container flex justify-center pl-4 pr-10 py-2 w-fit"
-                  type={`${item.inputType[1]}`}
-                  name={`${item.title}-last`}
-                  placeholder={`${item.placeHolder[1]}`}
-                  id={`${item.title}-last`}
+                  type={item.inputType}
+                  name="lastname" // Update the name attribute
+                  placeholder={item.placeHolder[1]}
+                  id={item.placeHolder[1]}
                   {...(item.required ? { required: true } : null)}
-                  onBlur={handleChange}
-                  defaultValue={
-                    formData[
-                      item.title === "Phone Number"
-                        ? item.title.toLowerCase().replace(/\s+/g, "-")
-                        : item.title.toLowerCase()
-                    ]
-                  }
+                  onBlur={formik.handleChange}
+                  defaultValue={formik.values.lastname}
                 />
               </div>
             </div>
           ) : (
             <div className="flex flex-row gap-6 justify-between w-max">
-              <p className=" w-96 self-center">{item.title}</p>
+              <p className="w-96 self-center">{item.title}</p>
               <input
                 className="container flex justify-center pl-4 pr-10 py-2"
-                type={`${item.inputType}`}
-                name={`${item.title}`}
-                placeholder={`${item.placeHolder}`}
-                id={`${item.title}`}
-                size="38"
+                type={item.inputType}
+                name={item.title.toLowerCase()} // Update the name attribute
+                placeholder={item.placeHolder}
+                id={item.title}
+                size="33"
                 {...(item.required ? { required: true } : null)}
-                onBlur={handleChange}
-                defaultValue={
-                  formData[
-                    item.title === "Phone Number"
-                      ? item.title.split(" ").concat().toLowerCase()
-                      : item.title.toLowerCase()
-                  ]
-                }
+                onBlur={formik.handleChange}
+                defaultValue={formik.values[item.title.toLowerCase()]}
               />
             </div>
           )}
@@ -122,16 +104,18 @@ export default function StudentProfile() {
       );
     });
   }
+  
+  
 
   return (
-    <form onSubmit={handleSubmit} className="fields flex flex-col gap-10 w-fit">
+    <form onSubmit={formik.handleSubmit} className="fields flex flex-col gap-10 w-fit">
       <RenderInputField />
       <div className="flex justify-end">
-        <input
+        <button
           type="submit"
-          value="Save Changes"
           className="submit-btn flex justify-center self-center"
-        />
+        > Save Changes
+          </button>
       </div>
     </form>
   );

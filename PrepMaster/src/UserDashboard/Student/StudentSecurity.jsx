@@ -1,16 +1,32 @@
 import CustomButton from "../../Components/CustomButton";
+import { useFormik } from "formik";
 
 export default function StudentSecurity() {
+
+  const formik = useFormik({
+    initialValues: {
+      old : "",
+      new : "",
+      confim: "",
+    },
+    onSubmit: values =>{
+      alert(JSON.stringify(values,null,2))
+    }
+  })
+
   const passwordList = [
     {
+      value: "old",
       title: "Old Password",
       placeholder: "Enter old password",
     },
     {
+      value: "new",
       title: "New Password",
       placeholder: "Enter new password",
     },
     {
+      value: "confirm",
       title: "Confirm Password",
       placeholder: "Re-Enter new password",
     },
@@ -24,8 +40,10 @@ export default function StudentSecurity() {
           <input
             type="password"
             className="container w-fit flex pl-4 pr-10 py-2"
-            name={item.title}
+            name={item.value}
             id={item.title}
+            onBlur = {formik.handleChange}
+            defaultValue = {formik.values[item.value]}
             placeholder={item.placeholder}
             size="34"
             required
@@ -36,7 +54,7 @@ export default function StudentSecurity() {
   };
 
   return (
-    <form action="" className="flex flex-col gap-6 w-fit">
+    <form onSubmit={formik.handleSubmit} className="flex flex-col gap-6 w-fit">
       <RenderPasswordInputs />
       <div className="flex justify-end">
         <input

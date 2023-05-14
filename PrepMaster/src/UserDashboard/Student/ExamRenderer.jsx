@@ -76,10 +76,17 @@ export default function ExamRenderer() {
               <img src={PencilPaper} alt="Question amount" className="" />
               <p className="text-xs w-32 self-center">{exam.amount}</p>
             </div>
-            <NavLink to="/ExamSheet" element={<ExamSheet/>}>
-            <CustomButton text={"Start"} padding={"0.5rem 1.5rem"} />
+            <NavLink
+              to="/ExamSheet"
+              element={
+                <ExamSheet
+                  CourseTitle={exam.CourseTitle}
+                  ExamTitle={exam.ExamTitle}
+                />
+              }
+            >
+              <CustomButton text={"Start"} padding={"0.5rem 1.5rem"} />
             </NavLink>
-            
           </div>
         </div>
       );
