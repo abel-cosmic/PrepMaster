@@ -42,8 +42,8 @@ export default function DemosContainer() {
               key={demo.id || demos.indexOf(demo)}
               className={`flex ${
                 index % 2 === 1 ? "flex-row" : "flex-row-reverse"
-              } p-4 items-center p-20`}
-              style={{ backgroundColor: containerBgColor }}
+              } p-4 items-center p-52`}
+              style={{ backgroundColor: containerBgColor } }
             >
               <div className="flex-shrink-0 w-1/2">
                 <img src={demo.image} alt={demo.title} className="h-auto max-w-full" />

@@ -22,14 +22,14 @@ export default function Home(){
           <CustomButton text={"Try for free"} padding={"0.8rem 3.4rem"} />
         </NavLink>
       </div>
-      <div className="flex flex-row  justify-center pt-24 ">
+      <div className="flex flex-row  justify-center pt-36 ">
         <p>
           <span className="span"> Companies </span> and{" "}
           <span className="span"> Universities </span> Trust PrepMaster
         </p>
       </div>
       <div className="flex flex-row justify-evenly items-center mt-20">
-        <img src={Chapa} className="w-52" />
+        <img src={Chapa} className="w-72" />
         <img src={AAU} className="w-28" />
         <img src={BDU} className="w-28" />
         <img src={HEUC} className="w-48" />
