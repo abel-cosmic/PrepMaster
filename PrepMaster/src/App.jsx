@@ -22,6 +22,9 @@ import SigninTeacher from "./Signin/SigninTeacher";
 import SigninOrganization from "./Signin/SigninOrganization";
 import ExamSheet from "./UserDashboard/Student/ExamSheet";
 import DisplayScore from "./UserDashboard/Student/DisplayScore";
+import AdminDashboard from "./UserDashboard/Admin/AdminDashboard";
+import Admin from "./UserDashboard/Admin/Admin";
+import AdminUsers from "./UserDashboard/Admin/AdminUsers";
 
 function App() {
   const router = createBrowserRouter(
@@ -44,6 +47,10 @@ function App() {
             <Route index element={<StudentProfile />} />
             <Route path="StudentSecurity" element={<StudentSecurity />} />
           </Route>
+        </Route>
+        <Route path="AdminDashboard" element={<Admin />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="AdminUsers" element={<AdminUsers />} />
         </Route>
         <Route path="ExamSheet" element={<ExamSheet />} />
         <Route path="/displayScore" element={<DisplayScore />} />
