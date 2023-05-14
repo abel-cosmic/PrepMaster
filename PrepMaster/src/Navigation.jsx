@@ -7,7 +7,7 @@ import Signin from "./Signin/Signin";
 export default function Navigation() {
   return (
     <div className=" mx-6 mt-10 flex flex-row justify-between self-center  ">
-      <img src={Logo} alt="logo" className="left w-72" />
+      <img src={Logo} alt="logo" className="left w-72 ml-5" />
       <ul
         className="flex felx-row gap-10 self-center text-sm"
         style={{ fontWeight: "500" }}
