@@ -1,9 +1,9 @@
 import Button from "@mui/material/Button";
-import Logo from "./assets/logo.svg";
-import CustomButton from "./Components/CustomButton";
+import Logo from "./../assets/logo.svg";
+import CustomButton from "../Components/CustomButton";
 import { NavLink } from "react-router-dom";
-import Signup from "./Signup/Signup";
-import Signin from "./Signin/Signin";
+import Signup from "../Signup/Signup";
+import Signin from "../Signin/Signin";
 export default function Navigation() {
   return (
     <div className=" mx-6 mt-10 flex flex-row justify-between self-center  ">

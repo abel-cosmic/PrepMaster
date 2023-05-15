@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import LandingPage from "../LandingPage";
+import LandingPage from "../LandingPage/LandingPage";
 import tick from "../assets/tick.svg";
 import SigninTeacher from "./SigninTeacher";
 import SigninOrganization from "./SigninOrganization";
