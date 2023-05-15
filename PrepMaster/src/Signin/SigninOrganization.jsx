@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { useFormik } from "formik";
 
 export default function SigninOrganization() {
@@ -10,11 +9,11 @@ export default function SigninOrganization() {
       email: "",
       password: "",
     },
-    onSubmit : values =>{
-      alert(JSON.stringify(values,null,2));
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
       navigate("/StudentDashboard");
-    }
-  })
+    },
+  });
   const inputs = [
     {
       title: "Email",
