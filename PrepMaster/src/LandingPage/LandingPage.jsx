@@ -4,6 +4,8 @@ import Services from "./Services";
 import { Testimonials } from "./Testimonials";
 import { Contacts } from "./Contacts";
 import { Payments } from "./Payments";
+import { ExploreOurOptions } from "./ExploreOurOptions";
+import { Packages } from "./Packages";
 
 export default function LandingPage() {
   return (
@@ -20,6 +22,8 @@ export default function LandingPage() {
       <Services />
       <Payments/>
       <Testimonials/>
+      <ExploreOurOptions/>
+      <Packages/>
       <Contacts/>
     </div>
   );
