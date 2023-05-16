@@ -12,7 +12,6 @@ import { FAQ } from "./FAQ";
 export default function LandingPage() {
   return (
     <div>
-      <div></div>
       <Navigation />
       <Home />
       <div className="w-full flex felx-col justify-center mt-52 text-5xl font-bold ">

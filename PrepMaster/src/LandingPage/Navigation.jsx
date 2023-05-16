@@ -6,7 +6,7 @@ import Signup from "../Signup/Signup";
 import Signin from "../Signin/Signin";
 export default function Navigation() {
   return (
-    <div className=" mx-6 mt-10 flex flex-row justify-between self-center  ">
+    <div className=" flex flex-row justify-between self-center fixed-nav z-50">
       <img src={Logo} alt="logo" className="left w-72 ml-5" />
       <ul
         className="flex felx-row gap-10 self-center text-sm"

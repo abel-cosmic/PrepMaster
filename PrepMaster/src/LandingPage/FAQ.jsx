@@ -38,7 +38,7 @@ export function FAQ() {
         };
       
         return (
-          <div className="flex flex-col justify-evenly items-center my-32">
+          <div className="flex flex-col justify-evenly items-center  my-40">
             <div className="text-5xl mb-10">
               Got Any <span className="span">Questions</span>? We've Got The{" "}
               <span className="span">Answers</span>
@@ -51,8 +51,8 @@ export function FAQ() {
                   }`}
                   key={faq.id}
                 >
-                  <div className="flex flex-row justify-between items-center">
-                    <div className="flex-1 text-3xl">{faq.question}</div>
+                  <div className="flex flex-row justify-between items-center font-medium">
+                    <div className="flex-1 text-2xl">{faq.question}</div>
                     <img
                       src={showAnswer ? minus : plus}
                       alt="Toggle Icon"
@@ -61,7 +61,7 @@ export function FAQ() {
                     />
                   </div>
                   {showAnswer && (
-                    <div className="border-b border-gray-400 py-6 text-xl">
+                    <div className=" py-6 text-lg">
                       {faq.answer}
                     </div>
                   )}
