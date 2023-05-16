@@ -39,11 +39,11 @@ export function Contacts(){
             </div>
             <div className="flex flex-col justify-between mt-12" style={{width:"40rem"}}>
                 <div className="flex felx-row justify-between ">
-                    <input type="text" placeholder="Full Name" className=" py-4 pl-4 rounded-2xl border border-gray-300 input-field"/>
-                    <input type="text" placeholder="Email"className="py-4 pl-4 rounded-2xl border border-gray-300 input-field"/>
+                    <input type="text" placeholder="Full Name" className=" py-4 pl-6 rounded-2xl border border-gray-300 input-field"/>
+                    <input type="text" placeholder="Email"className="py-4 pl-6 rounded-2xl border border-gray-300 input-field"/>
                 </div>
-                <input type="text" placeholder="Subject" className="  w-full py-4 pl-4 rounded-2xl border border-gray-300 input-field"/>
-                <input type="text" placeholder="Message" className=" rounded-2xl  pt-4 pl-4  pb-72 w-full border border-gray-300 input-field"/>
+                <input type="text" placeholder="Subject" className="  w-full py-4 pl-6 rounded-2xl border border-gray-300 input-field"/>
+                <input type="text" placeholder="Message" className=" rounded-2xl  pt-6 pl-4  pb-72 w-full border border-gray-300 input-field"/>
             </div>
         </div>
     );
