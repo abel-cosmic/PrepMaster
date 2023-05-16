@@ -1,6 +1,8 @@
 import CustomButton from "../Components/CustomButton";
 import unfilledStar from "./../assets/unfilled-star.svg";
 import filledStar from "./../assets/fill-star.svg";
+import { NavLink } from "react-router-dom";
+import Signup from "../Signup/Signup";
 const packages = [
   {
     id: 1,
@@ -36,14 +38,14 @@ const packages = [
 
 export function Packages() {
     return (
-      <div className="flex flex-row justify-evenly  mt-20 px-60">
+      <div className="flex flex-row justify-evenly  mt-20 mx-10 mb-32">
         {packages.map((pkg) => (
           <div
-            className={`flex flex-col items-center ${
+            className={`flex flex-col items-center justify-evenly ${
               pkg.id === 1
                 ? "bg-gradient-to-r from-[#FFFFFF] via-[#FFFFFF] to-[#FFFFFF]"
                 : "bg-gradient-to-r from-[#60BFCD] via-[#60BFCD] to-[#60BFCD]"
-            } py-16 px-16  rounded-3xl shadow-lg`}
+            } py-12 px-16  rounded-3xl shadow-lg`}
             key={pkg.id}
           >
             <h1 className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 text-2xl font-light`}>
@@ -53,7 +55,7 @@ export function Packages() {
               {pkg.price}
             </h2>
             <ul>
-              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 flex flex-row`}>
+              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 flex flex-row gap-4`}>
                 {pkg.id === 1 ? (
                   <img src={unfilledStar} alt="unfilled star" />
                 ) : (
@@ -61,7 +63,7 @@ export function Packages() {
                 )}{" "}
                 {pkg.list1}
               </li>
-              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 flex flex-row`}>
+              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 flex flex-row gap-4`}>
               {pkg.id === 1 ? (
                   <img src={unfilledStar} alt="unfilled star" />
                 ) : (
@@ -69,7 +71,7 @@ export function Packages() {
                 )}{" "}
                 {pkg.list2}
               </li>
-              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 flex flex-row`}>
+              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 flex flex-row gap-4`}>
               {pkg.id === 1 ? (
                   <img src={unfilledStar} alt="unfilled star" />
                 ) : (
@@ -77,7 +79,7 @@ export function Packages() {
                 )}{" "}
                 {pkg.list3}
               </li>
-              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-16 flex flex-row`}>
+              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-16 flex flex-row gap-4`}>
               {pkg.id === 1 ? (
                   <img src={unfilledStar} alt="unfilled star" />
                 ) : (
@@ -86,7 +88,9 @@ export function Packages() {
                 {pkg.list4}
               </li>
             </ul>
-            <CustomButton text={pkg.text} padding="0.7rem 1.7rem" />
+            <NavLink to="Signup" element={<Signup />}>
+                <CustomButton text={pkg.text} padding={"0.7rem 1.7rem"} />
+            </NavLink>
           </div>
         ))}
       </div>

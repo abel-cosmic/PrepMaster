@@ -6,6 +6,8 @@ import { Contacts } from "./Contacts";
 import { Payments } from "./Payments";
 import { ExploreOurOptions } from "./ExploreOurOptions";
 import { Packages } from "./Packages";
+import { Footer } from "./Footer";
+import { FAQ } from "./FAQ";
 
 export default function LandingPage() {
   return (
@@ -24,7 +26,9 @@ export default function LandingPage() {
       <Testimonials/>
       <ExploreOurOptions/>
       <Packages/>
+      <FAQ/>
       <Contacts/>
+      <Footer/>
     </div>
   );
 }
