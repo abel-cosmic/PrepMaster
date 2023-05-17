@@ -44,7 +44,7 @@ export function FAQ() {
               <span className="span">Answers</span>
             </div>
             <div className=" flex flex-col justify-evenly gap-6" style={{width:"80rem"}}>
-              {faqs.map((faq) => (
+              {faqs.map((faq,index) => (
                 <div
                   className={`flex flex-col border-b border-gray-400 pb-4 ${
                     showAnswer ? "pb-0" : "pb-4"
@@ -61,7 +61,7 @@ export function FAQ() {
                     />
                   </div>
                   {showAnswer && (
-                    <div className=" py-6 text-lg">
+                    <div className={`py-6 text-lg ${showAnswer?"hidden":"visible"}`}>
                       {faq.answer}
                     </div>
                   )}
