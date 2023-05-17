@@ -27,7 +27,7 @@ const lists = [
 
 export function Footer() {
     return (
-        <div className="w-full flex flex-col justify-between pt-10 pb-2 footer mt-20" style={{ height: "30rem" }}>
+        <div className="w-full flex flex-col justify-between pt-10 pb-2 footer-new mt-20" style={{ height: "30rem" }}>
             <div className="px-12 flex flex-row justify-between mr-8">
                 <img src={prepmaster} alt="prepmaster" style={{ height: "3rem" }} />
                 <div className="flex flex-row justify-between" style={{ width: "30rem" }}>
