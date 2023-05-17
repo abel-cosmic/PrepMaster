@@ -8,26 +8,22 @@ import { ExploreOurOptions } from "./ExploreOurOptions";
 import { Packages } from "./Packages";
 import { Footer } from "./Footer";
 import { FAQ } from "./FAQ";
+import { WhatMakes } from "./WhatMakes";
 
 export default function LandingPage() {
   return (
     <div>
       <Navigation />
       <Home />
-      <div className="w-full flex felx-col justify-center mt-52 text-5xl font-bold ">
-        <p>
-           What Makes Us
-          <span className="span"> Different </span>
-        </p>
-      </div>
+      <WhatMakes />
       <Services />
-      <Payments/>
-      <Testimonials/>
-      <ExploreOurOptions/>
-      <Packages/>
-      <FAQ/>
-      <Contacts/>
-      <Footer/>
+      <Payments />
+      <Testimonials />
+      <ExploreOurOptions />
+      <Packages />
+      <FAQ />
+      <Contacts />
+      <Footer />
     </div>
   );
 }

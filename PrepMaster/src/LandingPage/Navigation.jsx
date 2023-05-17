@@ -6,11 +6,18 @@ import Signup from "../Signup/Signup";
 import Signin from "../Signin/Signin";
 export default function Navigation() {
   const handleScrollTo = (tag) => {
-    document.getElementById(tag).scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(tag);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 200,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
-    <div className=" flex flex-row justify-between self-center fixed-nav z-50">
+   <div>
+     <div className=" flex flex-row justify-between self-center fixed-nav z-50">
       <img src={Logo} alt="logo" className="left w-72 ml-5" />
       <ul
         className="flex felx-row gap-10 self-center text-sm"
@@ -50,5 +57,6 @@ export default function Navigation() {
         </NavLink>
       </div>
     </div>
+   </div>
   );
 }
