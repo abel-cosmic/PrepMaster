@@ -7,10 +7,11 @@ import facebook from "./../assets/facebook.svg";
 import message from "./../assets/memo.svg";
 import whatsup from "./../assets/whatsapp.svg";
 import maper from "./../assets/Mapsicle Map.svg";
+import CustomButton from "../Components/CustomButton";
 export function Contacts() {
   return (
     <div id="contacts">
-      <div className="flex felx-row justify-evenly mt-64 mb-6 " id="contact">
+      <div className="flex felx-row justify-evenly mt-64 mb-24 " id="contact">
         <div className="flex flex-col gap-6">
           <p className="text-5xl font-semibold">
             Need Additional <span className="span"> Infromation ? </span>
@@ -67,6 +68,10 @@ export function Contacts() {
           />
         </div>
       </div>
+      <div className="flex flex-row w-full justify-between items-center py-2 px-44">
+            <div className="opacity-0">PrepMasters © 2023 All rights reserved</div>
+            <CustomButton text={"Send"} padding={"0.7rem 2.3rem"} />
+        </div>
     </div>
   );
 }
