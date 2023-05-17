@@ -14,7 +14,17 @@
   font-family: "Plus Jakarta Sans", "system-ui";
   color: #2a2a2a;
 }
+  /* TODO: make the absolute oval shade on top */
 
+.top{
+  position: relative;
+}
+.back{
+  position: absolute;
+  top:-62rem;
+  left: 2rem;
+  right:0;
+}
 .fixed-nav {
   position: fixed;
   top: 0;
@@ -45,6 +55,15 @@
 
 .test {
   border: solid 1px red;
+}
+.last{
+  border: solid 2px #2e2e2e;
+  border-top-left-radius:0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  margin-right: -1rem;
+}
+.last:focus::placeholder {
+  color:white;
 }
 
 .Navigations .active {
