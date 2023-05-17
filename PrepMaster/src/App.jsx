@@ -7,7 +7,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import LandingPage from "./LandingPage";
+import LandingPage from "./LandingPage/LandingPage";
 import Student from "./UserDashboard/Student/Student";
 import StudentExam from "./UserDashboard/Student/StudentExam";
 import StudentSetting from "./UserDashboard/Student/StudentSetting";

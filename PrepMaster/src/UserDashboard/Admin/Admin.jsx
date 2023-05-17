@@ -9,7 +9,7 @@ import SpreadLine from "../../assets/SpreadLine.png";
 import { NavLink, Outlet } from "react-router-dom";
 import HeaderDashboard from "../HeaderDashboard";
 import Logout from "../Logout";
-import LandingPage from "../../LandingPage";
+import LandingPage from "../../LandingPage/LandingPage";
 
 export default function Admin() {
   return (

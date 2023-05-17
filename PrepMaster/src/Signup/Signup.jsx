@@ -3,7 +3,7 @@ import logo from "../assets/logo.svg";
 import tick from "../assets/tick.svg";
 import CustomButton from "../Components/CustomButton";
 import SignupOrganization from "./SignupOrganization";
-import LandingPage from "../LandingPage";
+import LandingPage from "../LandingPage/LandingPage";
 
 export default function Signup() {
   const features = [

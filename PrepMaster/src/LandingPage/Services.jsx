@@ -1,6 +1,6 @@
-import paper from"./assets/papers-lines 1.svg";
-import brain from"./assets/brain 1.svg";
-import key from"./assets/key-monitor 1.svg";
+import paper from"./../assets/papers-lines 1.svg";
+import brain from"./../assets/brain 1.svg";
+import key from"./../assets/key-monitor 1.svg";
 
 const services = [
   {

@@ -1,8 +1,8 @@
 import Button from "@mui/material/Button";
-import CustomButton from "./Components/CustomButton";
-import SampleQuestions from "./assets/questions-sample.svg";
-import AnswerFeedBack from "./assets/incorrect-answer-sample.svg";
-import Register from "./assets/analytics-sample.svg";
+import CustomButton from "../Components/CustomButton";
+import SampleQuestions from "./../assets/questions-sample.svg";
+import AnswerFeedBack from "./../assets/incorrect-answer-sample.svg";
+import Register from "./../assets/analytics-sample.svg";
 
 const demos = [
     {
@@ -27,7 +27,7 @@ const demos = [
 
 export default function DemosContainer() {
     return (
-      <div className="flex flex-col justify-center mt-40">
+      <div className="flex flex-col justify-center mt-40 justify-between">
         {demos.map((demo, index) => {
           const titleWords = demo.title.split(" ");
           const firstWord = titleWords[0];
@@ -42,7 +42,7 @@ export default function DemosContainer() {
               key={demo.id || demos.indexOf(demo)}
               className={`flex ${
                 index % 2 === 1 ? "flex-row" : "flex-row-reverse"
-              } p-4 items-center p-52`}
+              } px-6 py-32 items-center`}
               style={{ backgroundColor: containerBgColor } }
             >
               <div className="flex-shrink-0 w-1/2">
@@ -62,7 +62,7 @@ export default function DemosContainer() {
                   </span>{" "}
                   {restOfTitle} {lastWord}
                 </h2>
-                <p className="mb-10">{demo.description}</p>
+                <p className="mb-10 text-xl font-light">{demo.description}</p>
                 <div className={`flex ${isButtonJustify}`}>
                   <CustomButton text={"Try for free"} padding={"0.7rem 1.7rem"} />
                 </div>

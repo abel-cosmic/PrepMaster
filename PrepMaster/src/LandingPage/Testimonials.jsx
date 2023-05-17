@@ -1,8 +1,8 @@
-import filledCircle from "./assets/Ellipse 17.svg";
-import unfilledCircle from "./assets/Ellipse 18.svg";
-import testimonials from "./assets/testimonial.svg";
-import left from "./assets/left-arrow.svg";
-import right from "./assets/right-arrow.svg";
+import filledCircle from "./../assets/Ellipse 17.svg";
+import unfilledCircle from "./../assets/Ellipse 18.svg";
+import testimonials from "./../assets/testimonial.svg";
+import left from "./../assets/left-arrow.svg";
+import right from "./../assets/right-arrow.svg";
 
 
 export function Testimonials(){
