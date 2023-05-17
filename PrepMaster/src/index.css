@@ -173,5 +173,4 @@ input:focus {
 
 .bottom-styled {
   border-bottom: rgba(42, 42, 42, 0.15) solid 1px;
-  filter: drop-shadow(10px 0px 40px rgba(46, 46, 46, 0.1));
 }
