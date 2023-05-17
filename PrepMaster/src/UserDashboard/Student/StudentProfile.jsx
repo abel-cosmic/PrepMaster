@@ -10,9 +10,9 @@ export default function StudentProfile() {
       school: "",
       department: "",
     },
-    onSubmit : values =>{
+    onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-    }
+    },
   });
 
   const inputs = [
@@ -32,13 +32,13 @@ export default function StudentProfile() {
       title: "Telephone",
       placeHolder: "+251912345678 (Optional)",
       inputType: "text",
-      required: true,
+      required: false,
     },
     {
       title: "School",
       placeHolder: "Hope Enterprise University College (Optonal)",
       inputType: "text",
-      required: true,
+      required: false,
     },
     {
       title: "Department",
@@ -47,12 +47,6 @@ export default function StudentProfile() {
       required: true,
     },
   ];
-
-  const patcher = (title) => {
-    console.log(title);
-    let words = title.toString().split(" ");
-    return words[0].toLowerCase();
-  };
 
   function RenderInputField() {
     return inputs.map((item) => {
@@ -104,18 +98,21 @@ export default function StudentProfile() {
       );
     });
   }
-  
-  
 
   return (
-    <form onSubmit={formik.handleSubmit} className="fields flex flex-col gap-10 w-fit">
+    <form
+      onSubmit={formik.handleSubmit}
+      className="fields flex flex-col gap-10 w-fit"
+    >
       <RenderInputField />
       <div className="flex justify-end">
         <button
           type="submit"
           className="submit-btn flex justify-center self-center"
-        > Save Changes
-          </button>
+        >
+          {" "}
+          Save Changes
+        </button>
       </div>
     </form>
   );

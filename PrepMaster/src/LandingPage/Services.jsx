@@ -1,6 +1,6 @@
-import paper from"./../assets/papers-lines 1.svg";
-import brain from"./../assets/brain 1.svg";
-import key from"./../assets/key-monitor 1.svg";
+import paper from "./../assets/papers-lines 1.svg";
+import brain from "./../assets/brain 1.svg";
+import key from "./../assets/key-monitor 1.svg";
 
 const services = [
   {
@@ -26,20 +26,23 @@ const services = [
   },
 ];
 export default function Services() {
-    return (
-      <div className="flex flex-row justify-center my-52 mx-32">
-        {services.map((service, index) => {
-          return (
-            <div key={service.id} className="flex items-start mx-2">
-              <img src={service.image} alt="icon" className="w-3.125rem h-3.125rem mr-4" />
-              <div className="text-left text-xl space-y-10">
-                <h1 className="text-2xl font-bold">{service.title}</h1>
-                <p>{service.description}</p>
-              </div>
+  return (
+    <div className="flex flex-row justify-center my-52 mx-32" id="services">
+      {services.map((service, index) => {
+        return (
+          <div key={service.id} className="flex items-start mx-2">
+            <img
+              src={service.image}
+              alt="icon"
+              className="w-3.125rem h-3.125rem mr-4"
+            />
+            <div className="text-left text-xl space-y-10">
+              <h1 className="text-2xl font-bold">{service.title}</h1>
+              <p>{service.description}</p>
             </div>
-          );
-        })}
-      </div>
-    );
-  }
-  
+          </div>
+        );
+      })}
+    </div>
+  );
+}

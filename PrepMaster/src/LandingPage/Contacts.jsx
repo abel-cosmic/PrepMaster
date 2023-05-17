@@ -9,7 +9,7 @@ import whatsup from "./../assets/whatsapp.svg";
 import maper from "./../assets/Mapsicle Map.svg";
 export function Contacts() {
   return (
-    <div className="flex felx-row justify-evenly mt-14 mb-6 ">
+    <div className="flex felx-row justify-evenly mt-14 mb-6 " id="contact">
       <div className="flex flex-col gap-6">
         <p className="text-5xl font-semibold">
           Need Additional <span className="span"> Infromation ? </span>

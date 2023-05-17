@@ -64,7 +64,7 @@ export function FAQ() {
             <div className="flex flex-row justify-between items-center font-medium">
               <div className="flex-1 text-2xl">{faq.question}</div>
               <img
-                src={showAnswer ? minus : plus}
+                src={activeAnswer === index ? minus : plus}
                 alt="Toggle Icon"
                 className="cursor-pointer"
                 onClick={() => toggleAnswer(index)}

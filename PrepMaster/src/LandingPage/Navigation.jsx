@@ -5,6 +5,10 @@ import { NavLink } from "react-router-dom";
 import Signup from "../Signup/Signup";
 import Signin from "../Signin/Signin";
 export default function Navigation() {
+  const handleScrollTo = (tag) => {
+    document.getElementById(tag).scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className=" flex flex-row justify-between self-center fixed-nav z-50">
       <img src={Logo} alt="logo" className="left w-72 ml-5" />
@@ -13,24 +17,28 @@ export default function Navigation() {
         style={{ fontWeight: "500" }}
       >
         <li>
-          <a href="" className="links">
+          <button onClick={() => handleScrollTo("home")} className="links">
             HOME
-          </a>
+          </button>
         </li>
         <li>
-          <a href="" className="links">
+          <button
+            href="#"
+            onClick={() => handleScrollTo("services")}
+            className="links"
+          >
             SERVICES
-          </a>
+          </button>
         </li>
         <li>
-          <a href="" className="links">
+          <button onClick={() => handleScrollTo("pricing")} className="links">
             PRICING
-          </a>
+          </button>
         </li>
         <li>
-          <a href="" className="links">
+          <button onClick={() => handleScrollTo("contact")} className="links">
             CONTACT
-          </a>
+          </button>
         </li>
       </ul>
       <div className="flex felx-row gap-6 justify-between items-center">

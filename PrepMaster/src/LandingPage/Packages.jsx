@@ -37,64 +37,86 @@ const packages = [
 ];
 
 export function Packages() {
-    return (
-      <div className="flex flex-row justify-evenly  mt-20 mx-10 mb-32">
-        {packages.map((pkg) => (
-          <div
-            className={`flex flex-col items-center justify-evenly ${
-              pkg.id === 1
-                ? "bg-gradient-to-r from-[#FFFFFF] via-[#FFFFFF] to-[#FFFFFF]"
-                : "bg-gradient-to-r from-[#60BFCD] via-[#60BFCD] to-[#60BFCD]"
-            } py-12 px-16  rounded-3xl shadow-lg`}
-            key={pkg.id}
+  return (
+    <div className="flex flex-row justify-evenly  mt-20 mx-10 mb-32">
+      {packages.map((pkg) => (
+        <div
+          className={`flex flex-col items-center justify-evenly ${
+            pkg.id === 1
+              ? "bg-gradient-to-r from-[#FFFFFF] via-[#FFFFFF] to-[#FFFFFF]"
+              : "bg-gradient-to-r from-[#60BFCD] via-[#60BFCD] to-[#60BFCD]"
+          } py-12 px-16  rounded-3xl shadow-lg`}
+          key={pkg.id}
+        >
+          <h1
+            className={`${
+              pkg.id === 1 ? "text-black" : "text-white"
+            } mb-4 text-2xl font-light`}
           >
-            <h1 className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 text-2xl font-light`}>
-              {pkg.type}
-            </h1>
-            <h2 className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-16 text-3xl font-bold`}>
-              {pkg.price}
-            </h2>
-            <ul>
-              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 flex flex-row gap-4`}>
-                {pkg.id === 1 ? (
-                  <img src={unfilledStar} alt="unfilled star" />
-                ) : (
-                  <img src={filledStar} alt="filled star"/>
-                )}{" "}
-                {pkg.list1}
-              </li>
-              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 flex flex-row gap-4`}>
+            {pkg.type}
+          </h1>
+          <h2
+            className={`${
+              pkg.id === 1 ? "text-black" : "text-white"
+            } mb-16 text-3xl font-bold`}
+          >
+            {pkg.price}
+          </h2>
+          <ul>
+            <li
+              className={`${
+                pkg.id === 1 ? "text-black" : "text-white"
+              } mb-4 flex flex-row gap-4`}
+            >
               {pkg.id === 1 ? (
-                  <img src={unfilledStar} alt="unfilled star" />
-                ) : (
-                  <img src={filledStar} alt="filled star"/>
-                )}{" "}
-                {pkg.list2}
-              </li>
-              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-4 flex flex-row gap-4`}>
+                <img src={unfilledStar} alt="unfilled star" />
+              ) : (
+                <img src={filledStar} alt="filled star" />
+              )}{" "}
+              {pkg.list1}
+            </li>
+            <li
+              className={`${
+                pkg.id === 1 ? "text-black" : "text-white"
+              } mb-4 flex flex-row gap-4`}
+            >
               {pkg.id === 1 ? (
-                  <img src={unfilledStar} alt="unfilled star" />
-                ) : (
-                  <img src={filledStar} alt="filled star"/>
-                )}{" "}
-                {pkg.list3}
-              </li>
-              <li className={`${pkg.id === 1 ? "text-black" : "text-white"} mb-16 flex flex-row gap-4`}>
+                <img src={unfilledStar} alt="unfilled star" />
+              ) : (
+                <img src={filledStar} alt="filled star" />
+              )}{" "}
+              {pkg.list2}
+            </li>
+            <li
+              className={`${
+                pkg.id === 1 ? "text-black" : "text-white"
+              } mb-4 flex flex-row gap-4`}
+            >
               {pkg.id === 1 ? (
-                  <img src={unfilledStar} alt="unfilled star" />
-                ) : (
-                  <img src={filledStar} alt="filled star"/>
-                )}{" "}
-                {pkg.list4}
-              </li>
-            </ul>
-            <NavLink to="Signup" element={<Signup />}>
-                <CustomButton text={pkg.text} padding={"0.7rem 1.7rem"} />
-            </NavLink>
-          </div>
-        ))}
-      </div>
-    );
-  }
-  
-  
+                <img src={unfilledStar} alt="unfilled star" />
+              ) : (
+                <img src={filledStar} alt="filled star" />
+              )}{" "}
+              {pkg.list3}
+            </li>
+            <li
+              className={`${
+                pkg.id === 1 ? "text-black" : "text-white"
+              } mb-16 flex flex-row gap-4`}
+            >
+              {pkg.id === 1 ? (
+                <img src={unfilledStar} alt="unfilled star" />
+              ) : (
+                <img src={filledStar} alt="filled star" />
+              )}{" "}
+              {pkg.list4}
+            </li>
+          </ul>
+          <NavLink to="Signup" element={<Signup />}>
+            <CustomButton text={pkg.text} padding={"0.7rem 1.7rem"} />
+          </NavLink>
+        </div>
+      ))}
+    </div>
+  );
+}
