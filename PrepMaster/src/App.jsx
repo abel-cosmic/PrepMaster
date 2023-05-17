@@ -25,6 +25,12 @@ import DisplayScore from "./UserDashboard/Student/DisplayScore";
 import AdminDashboard from "./UserDashboard/Admin/AdminDashboard";
 import Admin from "./UserDashboard/Admin/Admin";
 import AdminUsers from "./UserDashboard/Admin/AdminUsers";
+import AddUser from "./UserDashboard/Admin/AddUser";
+import EditUser from "./UserDashboard/Admin/EditUser";
+import AdminDepartment from "./UserDashboard/Admin/AdminDepartment";
+import AddDepartment from "./UserDashboard/Admin/AddDepartment";
+import EditDepartment from "./UserDashboard/Admin/EditDepartment";
+import Logout from "./UserDashboard/Logout";
 
 function App() {
   const router = createBrowserRouter(
@@ -51,9 +57,15 @@ function App() {
         <Route path="AdminDashboard" element={<Admin />}>
           <Route index element={<AdminDashboard />} />
           <Route path="AdminUsers" element={<AdminUsers />} />
+          <Route path="AdminDepartment" element={<AdminDepartment />} />
         </Route>
         <Route path="ExamSheet" element={<ExamSheet />} />
         <Route path="/displayScore" element={<DisplayScore />} />
+        <Route path="/addUser" element={<AddUser />} />
+        <Route path="/edituser" element={<EditUser />} />
+        <Route path="/addDepartment" element={<AddDepartment />} />
+        <Route path="/editDepartment" element={<EditDepartment />} />
+        <Route path="/Logout" element={<Logout />} />
       </Route>
     )
   );

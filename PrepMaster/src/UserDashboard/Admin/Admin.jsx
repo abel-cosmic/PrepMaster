@@ -10,6 +10,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import HeaderDashboard from "../HeaderDashboard";
 import Logout from "../Logout";
 import LandingPage from "../../LandingPage/LandingPage";
+import DepartmentIcon from "../../assets/Department.svg";
 
 export default function Admin() {
   return (
@@ -34,6 +35,12 @@ export default function Admin() {
               <p>Users</p>
             </div>
           </NavLink>
+          <NavLink to="AdminDepartment" className="w-72 flex justify-center">
+            <div className="side-bar  text-md " id="Users">
+              <img src={DepartmentIcon} alt="Department Icon" />
+              <p>Department</p>
+            </div>
+          </NavLink>
           <div className="side-bar text-md " id="Analytics">
             <img src={AnalyticsIcon} alt="Analytics Icon" />
             <p>Analytics</p>
@@ -45,13 +52,13 @@ export default function Admin() {
             <img src={SupportIcon} alt="Support Icon" />
             <p>Support</p>
           </div>
-          <NavLink to="StudentSetting" className="w-72 flex justify-center">
+          <NavLink to="AdminSetting" className="w-72 flex justify-center">
             <div className="side-bar text-md" id="Settings">
               <img src={SettingsIcon} alt="Settings Icon" />
               <p>Settings</p>
             </div>
           </NavLink>
-          <NavLink to="Logout" element={<Logout />}>
+          <NavLink to="/Logout" element={<Logout />}>
             <div className="side-bar text-md" id="Logout">
               <img src={LogoutIcon} alt="Logout Icon" />
               <p>Logout</p>

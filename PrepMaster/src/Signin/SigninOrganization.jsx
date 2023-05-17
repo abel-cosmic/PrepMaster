@@ -11,7 +11,7 @@ export default function SigninOrganization() {
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      navigate("/StudentDashboard");
+      navigate("/AdminDashboard");
     },
   });
   const inputs = [
