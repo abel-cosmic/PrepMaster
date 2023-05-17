@@ -30,7 +30,7 @@ const demos = [
 
 export default function DemosContainer() {
   return (
-    <div className="flex flex-col mt-40 justify-between">
+    <div className="flex flex-col mt-40 justify-between ">
       {demos.map((demo, index) => {
         const titleWords = demo.title.split(" ");
         const firstWord = titleWords[0];
