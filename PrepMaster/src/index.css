@@ -14,17 +14,20 @@
   font-family: "Plus Jakarta Sans", "system-ui";
   color: #2a2a2a;
 }
-  /* TODO: make the absolute oval shade on top */
 
-.top{
+/* TODO: make the absolute oval shade on top */
+
+.top {
   position: relative;
 }
-.back{
+
+.back {
   position: absolute;
-  top:-62rem;
+  top: -62rem;
   left: 2rem;
-  right:0;
+  right: 0;
 }
+
 .fixed-nav {
   position: fixed;
   top: 0;
@@ -56,14 +59,16 @@
 .test {
   border: solid 1px red;
 }
-.last{
+
+.last {
   border: solid 2px #2e2e2e;
-  border-top-left-radius:0.5rem;
+  border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   margin-right: -1rem;
 }
+
 .last:focus::placeholder {
-  color:white;
+  color: white;
 }
 
 .Navigations .active {
@@ -162,7 +167,8 @@ input:focus {
   background-color: #088395;
   color: #fff;
   border-radius: 0.3rem;
-  padding: 0.4rem 1.7rem;
+  padding: 0.8rem 3rem;
+  font-weight: 500;
   font-size: 14px;
   cursor: pointer;
   width: fit-content;
@@ -193,6 +199,7 @@ input:focus {
 .bottom-styled {
   border-bottom: rgba(42, 42, 42, 0.1) solid 1px;
 }
-.footer-new{
+
+.footer-new {
   background-color: #088395;
 }
