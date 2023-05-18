@@ -194,7 +194,7 @@ input:focus {
 }
 
 .bottom-styled {
-  border-bottom: rgba(42, 42, 42, 0.15) solid 1px;
+  border-bottom: rgba(42, 42, 42, 0.1) solid 1px;
 }
 .footer-new{
   background-color: #088395;

@@ -2,7 +2,6 @@ import { useState } from "react";
 import minus from "./../assets/minus.png";
 import plus from "./../assets/plus.png";
 
-
 export function FAQ() {
   const [activeAnswer, setActiveAnswer] = useState();
   const [showAnswer, setShowAnswer] = useState(false);
@@ -46,13 +45,13 @@ export function FAQ() {
   };
 
   return (
-    <div className="flex flex-col justify-evenly items-center  my-40">
-      <div className="text-5xl mb-10">
+    <div className="flex flex-col justify-evenly items-center my-40">
+      <div className="text-5xl mb-10 font-semibold">
         Got Any <span className="span">Questions</span>? We've Got The{" "}
         <span className="span">Answers</span>
       </div>
       <div
-        className=" flex flex-col justify-evenly gap-6"
+        className=" flex flex-col justify-between gap-10 mt-10"
         style={{ width: "80rem" }}
       >
         {faqs.map((faq, index) => (
@@ -62,7 +61,7 @@ export function FAQ() {
             }`}
             key={faq.id}
           >
-            <div className="flex flex-row justify-between items-center font-medium px-20">
+            <div className="flex flex-row justify-between items-center font-medium">
               <div className="flex-1 text-2xl">{faq.question}</div>
               <img
                 src={activeAnswer === index ? minus : plus}

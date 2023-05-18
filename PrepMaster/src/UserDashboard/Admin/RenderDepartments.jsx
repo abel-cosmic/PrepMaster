@@ -4,38 +4,33 @@ import DeleteButton from "../../Components/DeleteButton";
 import Filter from "../../assets/Filter.svg";
 import search from "../../assets/search.svg";
 import EditUser from "./EditUser";
+import EditDepartment from "./EditDepartment";
 
-export default function RenderUsers() {
-  const users = [
+export default function RenderDepartments() {
+  const departments = [
     {
-      name: "Abel Shibabaw",
-      type: "Student",
-      email: "abel@gmail.com",
+      name: "Computer Science",
+      dean: "Shewatatek Lema",
     },
     {
-      name: "Abel Shibabaw",
-      type: "Student",
-      email: "abel@gmail.com",
+      name: "Computer Science",
+      dean: "Shewatatek Lema",
     },
     {
-      name: "Abel Shibabaw",
-      type: "Student",
-      email: "abel@gmail.com",
+      name: "Computer Science",
+      dean: "Shewatatek Lema",
     },
     {
-      name: "Mohammed Ibrahim",
-      type: "Teacher",
-      email: "mohammed@gmail.com",
+      name: "Computer Science",
+      dean: "Shewatatek Lema",
     },
     {
-      name: "Mohammed Ibrahim",
-      type: "Teacher",
-      email: "mohammed@gmail.com",
+      name: "Computer Science",
+      dean: "Shewatatek Lema",
     },
     {
-      name: "Mohammed Ibrahim",
-      type: "Teacher",
-      email: "mohammedibrahim4641@gmail.com",
+      name: "Computer Science",
+      dean: "Shewatatek Lema",
     },
   ];
 
@@ -43,8 +38,7 @@ export default function RenderUsers() {
     <div className="flex flex-col gap-6">
       <div className="flex flex-row justify-between pb-4 bottom-styled">
         <p className="self-center opacity-50">Name</p>
-        <p className="self-center opacity-50">Email</p>
-        <p className="self-center opacity-50">User Type</p>
+        <p className="self-center opacity-50">Dean</p>
         <div className="search-bar container py-2 pr-16 pl-4 flex flex-row gap-2 w-fit">
           <img src={search} alt="search" />
           <input type="search" name="search" id="search" placeholder="Search" />
@@ -54,16 +48,15 @@ export default function RenderUsers() {
           <img src={Filter} alt="Filter" />
         </div>
       </div>
-      {users.map((user) => {
+      {departments.map((department) => {
         return (
           <div
-            key={user.email}
+            key={department.name}
             className="flex flex-row gap-24 bottom-styled pb-6"
           >
-            <p className="w-44 self-center">{user.name}</p>
-            <p className="w-64 self-center">{user.email}</p>
-            <p className="w-52 self-center">{user.type}</p>
-            <NavLink to="/edituser" element={<EditUser />}>
+            <p className="w-64 self-center">{department.name}</p>
+            <p className="w-64 self-center">{department.dean}</p>
+            <NavLink to="/editDepartment" element={<EditDepartment />}>
               <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
             </NavLink>
             <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />

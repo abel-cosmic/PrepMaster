@@ -4,7 +4,8 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import AdminUsers from "./AdminUsers";
 
-export default function AddUser() {
+export default function EditUser() {
+  //take a prop that passes all the users info here
   const inputs = [
     {
       value: "firstname",
@@ -59,7 +60,7 @@ export default function AddUser() {
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      navigate("/AdminDashboard/AdminUsers");
+      navigate("/AdminUsers");
     },
   });
 
@@ -70,7 +71,7 @@ export default function AddUser() {
         className="bg-white flex flex-col gap-6 w-fit rounded-xl p-12"
       >
         <p className="text-3xl font-medium self-center mb-4">
-          Enter User Details
+          Edit User Details
         </p>
         {inputs.map((input) => {
           return (
@@ -120,7 +121,6 @@ export default function AddUser() {
               Cancel
             </Button>
           </NavLink>
-
           <input type="submit" value="Save" className="submit-btn" />
         </div>
       </form>

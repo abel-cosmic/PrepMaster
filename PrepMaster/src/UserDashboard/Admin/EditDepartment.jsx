@@ -4,45 +4,20 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import AdminUsers from "./AdminUsers";
 
-export default function AddUser() {
+export default function EditDepartment() {
+  //take a prop that passes all the users info here
   const inputs = [
     {
-      value: "firstname",
-      title: "First Name",
-      placeholder: "Enter first name",
+      value: "name",
+      title: "Department Name",
+      placeholder: "Enter department name",
       type: "text",
     },
     {
-      value: "lastname",
-      title: "Last Name",
-      placeholder: "Enter last name",
-      type: "text",
-    },
-    {
-      value: "department",
-      title: "Department",
-      placeholder: "Enter department",
+      value: "dean",
+      title: "Department Dean",
       type: "select",
-      options: ["CS", "IT", "SE", "CE", "EE", "ME"],
-    },
-    {
-      value: "role",
-      title: "Role",
-      placeholder: "Enter role",
-      type: "select",
-      options: ["Student", "Teacher"],
-    },
-    {
-      value: "email",
-      title: "Email",
-      placeholder: "Enter email",
-      type: "email",
-    },
-    {
-      value: "password",
-      title: "Password",
-      placeholder: "Enter password",
-      type: "password",
+      options: ["Shewatatek", "Abraham", "Eshetu", "Belilign", "Faris"],
     },
   ];
 
@@ -50,16 +25,12 @@ export default function AddUser() {
 
   const formik = useFormik({
     initialValues: {
-      firstname: "",
-      lastname: "",
-      department: "",
-      role: "",
-      email: "",
-      password: "",
+      name: "",
+      dean: "",
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      navigate("/AdminDashboard/AdminUsers");
+      navigate("/AdminDashboard/AdminDepartment");
     },
   });
 
@@ -70,7 +41,7 @@ export default function AddUser() {
         className="bg-white flex flex-col gap-6 w-fit rounded-xl p-12"
       >
         <p className="text-3xl font-medium self-center mb-4">
-          Enter User Details
+          Edit Department Details
         </p>
         {inputs.map((input) => {
           return (
@@ -120,7 +91,6 @@ export default function AddUser() {
               Cancel
             </Button>
           </NavLink>
-
           <input type="submit" value="Save" className="submit-btn" />
         </div>
       </form>
