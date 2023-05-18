@@ -33,6 +33,8 @@ import EditDepartment from "./UserDashboard/Admin/EditDepartment";
 import Logout from "./UserDashboard/Logout";
 import Teacher from "./UserDashboard/Teacher/Teacher";
 import TeacherDashboard from "./UserDashboard/Teacher/TeacherDashboard";
+import CreateExam from "./UserDashboard/Teacher/CreateExam";
+import QuestionCreator from "./UserDashboard/Teacher/QuestionCreator";
 
 function App() {
   const router = createBrowserRouter(
@@ -70,7 +72,9 @@ function App() {
         <Route path="/Logout" element={<Logout />} />
         <Route path="TeacherDashboard" element={<Teacher />}>
           <Route index element={<TeacherDashboard />} />
+          <Route path="CreateExam" element={<CreateExam />} />
         </Route>
+        <Route path="/QuestionCreator" element={<QuestionCreator />} />
       </Route>
     )
   );

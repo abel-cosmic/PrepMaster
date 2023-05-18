@@ -5,6 +5,7 @@ import SettingsIcon from "../../assets/SettingsIcon.svg";
 import SupportIcon from "../../assets/SupportIcon.svg";
 import LogoutIcon from "../../assets/LogoutIcon.svg";
 import ExamIcon from "../../assets/ExamIcon.svg";
+import ViewExams from "../../assets/ViewExams.svg";
 import SpreadLine from "../../assets/SpreadLine.png";
 import { NavLink, Outlet } from "react-router-dom";
 import HeaderDashboard from "../HeaderDashboard";
@@ -28,10 +29,16 @@ export default function Teacher() {
               <p>Dashboard</p>
             </div>
           </NavLink>
-          <NavLink to="StudentExam" className="w-72 flex justify-center">
+          <NavLink to="CreateExam" className="w-72 flex justify-center">
             <div className="side-bar  text-md " id="Exam">
               <img src={ExamIcon} alt="Create Exam Icon" />
               <p>Create Exam</p>
+            </div>
+          </NavLink>
+          <NavLink to="ViewExam" className="w-72 flex justify-center">
+            <div className="side-bar  text-md " id="Exam">
+              <img src={ViewExams} alt="View Exams Icon" />
+              <p>View Exams</p>
             </div>
           </NavLink>
           <div className="side-bar text-md " id="Analytics">
