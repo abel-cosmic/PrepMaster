@@ -31,6 +31,8 @@ import AdminDepartment from "./UserDashboard/Admin/AdminDepartment";
 import AddDepartment from "./UserDashboard/Admin/AddDepartment";
 import EditDepartment from "./UserDashboard/Admin/EditDepartment";
 import Logout from "./UserDashboard/Logout";
+import Teacher from "./UserDashboard/Teacher/Teacher";
+import TeacherDashboard from "./UserDashboard/Teacher/TeacherDashboard";
 
 function App() {
   const router = createBrowserRouter(
@@ -66,6 +68,9 @@ function App() {
         <Route path="/addDepartment" element={<AddDepartment />} />
         <Route path="/editDepartment" element={<EditDepartment />} />
         <Route path="/Logout" element={<Logout />} />
+        <Route path="TeacherDashboard" element={<Teacher />}>
+          <Route index element={<TeacherDashboard />} />
+        </Route>
       </Route>
     )
   );

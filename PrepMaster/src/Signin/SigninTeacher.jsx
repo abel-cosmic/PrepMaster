@@ -9,11 +9,11 @@ export default function SigninTeacher() {
       email: "",
       password: "",
     },
-    onSubmit : values =>{
-      alert(JSON.stringify(values,null,2));
-      navigate("/StudentDashboard");
-    }
-  })
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+      navigate("/TeacherDashboard");
+    },
+  });
   const inputs = [
     {
       title: "Email",
