@@ -3,6 +3,8 @@ import CustomButton from "../Components/CustomButton";
 import SampleQuestions from "./../assets/questions-sample.svg";
 import AnswerFeedBack from "./../assets/incorrect-answer-sample.svg";
 import Register from "./../assets/analytics-sample.svg";
+import { NavLink } from "react-router-dom";
+import Signup from "../Signup/Signup";
 
 const demos = [
   {
@@ -45,11 +47,9 @@ export default function DemosContainer() {
         return (
           <div
             key={demo.id || demos.indexOf(demo)}
-            className={`flex ${
-              index % 2 === 1 ? "flex-row" : "flex-row-reverse"
-            } px-6 py-32 items-center`}
-            style={{ backgroundColor: containerBgColor }}
-          >
+            className={`flex ${index % 2 === 1 ? "flex-row" : "flex-row-reverse"
+              } px-6 py-32 items-center`}
+            style={{ backgroundColor: containerBgColor }}>
             <div className="flex-shrink-0 w-1/2">
               <img
                 src={demo.image}
@@ -64,18 +64,18 @@ export default function DemosContainer() {
                   fontSize: "2.5rem",
                   fontWeight: 700,
                   color: isFirstTitleColorful ? "#088395" : "black",
-                }}
-              >
+                }}>
                 <span
-                  style={{ color: isFirstTitleColorful ? "black" : "#088395" }}
-                >
+                  style={{ color: isFirstTitleColorful ? "black" : "#088395" }}>
                   {firstWord}
                 </span>{" "}
                 {restOfTitle} {lastWord}
               </h2>
               <p className="mb-10 text-xl font-light">{demo.description}</p>
               <div className={`flex ${isButtonJustify}`}>
-                <CustomButton text={"Try for free"} padding={"0.7rem 1.7rem"} />
+                <NavLink to="Signup" element={<Signup />}>
+                  <CustomButton text={"Try for free"} padding={"0.8rem 3.4rem"} />
+                </NavLink>
               </div>
             </div>
           </div>

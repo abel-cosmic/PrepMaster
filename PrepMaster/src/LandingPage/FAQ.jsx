@@ -71,7 +71,7 @@ export function FAQ() {
               />
             </div>
             <div
-              className={`py-6 text-lg ${
+              className={`py-6 text-lg pl-20 ${
                 activeAnswer === index ? "visible" : "hidden"
               }`}
             >
