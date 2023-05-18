@@ -29,12 +29,12 @@ export function Contacts() {
           </div>
           <div>Follow us on</div>
           <div className="flex flex-row gap-6">
-            <img src={instagram} alt="instagram" />
-            <img src={twitter} alt="twitter" />
-            <img src={linkedin} alt="linkedin" />
-            <img src={facebook} alt="facebook" />
-            <img src={message} alt="message" />
-            <img src={whatsup} alt="whatsup" />
+            <a href="#prepmaster-instagram"><img src={instagram} alt="instagram" className="login"  /></a>
+            <a href="#prepmaster-twitter"><img src={twitter} alt="twitter" className="login" /></a>
+            <a href="#prepmaster-linkedin"><img src={linkedin} alt="linkedin" className="login" /></a>
+            <a href="#prepmaster-facebook"><img src={facebook} alt="facebook" className="login" /></a>
+            <a href="#prepmaster-message"><img src={message} alt="message" className="login" /></a>
+            <a href="#prepmaster-whatsup"><img src={whatsup} alt="whatsup" className="login" /></a>
           </div>
           <img src={maper} alt="map" />
         </div>

@@ -46,7 +46,7 @@ export function FAQ() {
   };
 
   return (
-    <div className="flex flex-col justify-evenly items-center text-center my-40">
+    <div className="flex flex-col justify-evenly items-center  my-40">
       <div className="text-5xl mb-10">
         Got Any <span className="span">Questions</span>? We've Got The{" "}
         <span className="span">Answers</span>
@@ -72,7 +72,7 @@ export function FAQ() {
               />
             </div>
             <div
-              className={`py-6 text-lg ${
+              className={`py-6 text-lg pl-20 ${
                 activeAnswer === index ? "visible" : "hidden"
               }`}
             >
