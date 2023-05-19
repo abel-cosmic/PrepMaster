@@ -29,8 +29,8 @@ export function Footer() {
   return (
     <div className=" flex flex-col justify-between pt-10 pb-2 footer-new mt-20">
       <div className="md:px-12 max-md:px-6 flex md:flex-row max-md:flex-col max-md:gap-6 md:justify-between md:mr-8">
-        <img src={prepmaster} alt="prepmaster" className=" max-md:w-1/2" />
-        <div className="flex flex-row justify-between md:w-[35rem]">
+        <img src={prepmaster} alt="prepmaster" className=" max-md:w-1/2 md:self-start"/>
+        <div className="flex flex-row justify-between md:w-[27rem] max-md:px-10">
           {lists.map((list) => (
             <div className="flex flex-col justify-between login" key={list.id}>
               <div className="font-medium text-white md:text-lg max-md:text-base login linked">
@@ -48,7 +48,7 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col md:justify-between max-md:justify-evenly h-44 w-fit">
+        <div className="flex flex-col md:justify-between max-md:justify-evenly h-44 w-[30rem]">
           <div className="text-white text-lg font-medium">
             Subscribe to our newsletter
           </div>
@@ -59,7 +59,7 @@ export function Footer() {
           <form className="flex flex-row w-full md:justify-end max-md:my-6">
             <input
               type="text"
-              className="md:w-1/2 max-md:w-2/3 bg-transparent last pl-4 placeholder-white focus::placeholder-white"
+              className="md:w-full max-md:w-2/3 bg-transparent last pl-4 placeholder-white focus::placeholder-white"
               placeholder="Enter Email Address"
             />
             <input
@@ -75,6 +75,26 @@ export function Footer() {
           PrepMasters © 2023 All rights reserved
         </div>
         <div className="text-white text-lg">Made by Trident Technologies</div>
+        <div className="md:flex md:flex-row md:gap-6 max-md:hidden">
+            <a href="#prepmaster-instagram">
+              <img src={instagram} alt="instagram" className="login" />
+            </a>
+            <a href="#prepmaster-twitter">
+              <img src={twitter} alt="twitter" className="login" />
+            </a>
+            <a href="#prepmaster-linkedin">
+              <img src={linkedin} alt="linkedin" className="login" />
+            </a>
+            <a href="#prepmaster-facebook">
+              <img src={facebook} alt="facebook" className="login" />
+            </a>
+            <a href="#prepmaster-message">
+              <img src={message} alt="message" className="login" />
+            </a>
+            <a href="#prepmaster-whatsup">
+              <img src={whatsup} alt="whatsup" className="login" />
+            </a>
+          </div>
       </div>
     </div>
   );
