@@ -51,7 +51,7 @@ export default function DemosContainer() {
             key={demo.id || demos.indexOf(demo)}
             className={`flex ${
               index % 2 === 1
-                ? "md:flex-row max-md:flex-col"
+                ? "md:flex-row max-md:flex-col-reverse"
                 : "md:flex-row-reverse max-md:flex-col-reverse"
             } px-6 md:py-32 max-md:py-16 items-center max-md:gap-6`}
             style={{ backgroundColor: containerBgColor }}
