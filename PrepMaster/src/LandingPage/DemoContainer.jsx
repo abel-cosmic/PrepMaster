@@ -56,6 +56,13 @@ export default function DemosContainer() {
             } px-6 md:py-32 max-md:py-16 items-center max-md:gap-6`}
             style={{ backgroundColor: containerBgColor }}
           >
+            <div className="flex-shrink-0 md:w-1/2">
+              <img
+                src={demo.image}
+                alt={demo.title}
+                className="h-auto max-w-full"
+              />
+            </div>
             <div className="pl-4 flex flex-col">
               <h2
                 className={`md:text-5xl max-md:text-3xl font-bold md:mb-16 max-md:mb-6 max-md:self-center  ${
@@ -69,13 +76,6 @@ export default function DemosContainer() {
                 </span>{" "}
                 {restOfTitle} {lastWord}
               </h2>
-              <div className="flex-shrink-0 md:w-1/2">
-                <img
-                  src={demo.image}
-                  alt={demo.title}
-                  className="h-auto max-w-full"
-                />
-              </div>
               <p className="md:mb-10 max-md:my-6 md:text-xl max-md:text-sm max-md:text-justify font-light">
                 {demo.description}
               </p>
