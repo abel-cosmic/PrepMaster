@@ -9,7 +9,7 @@ export default function Navigation() {
     const element = document.getElementById(tag);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 200,
+        top: element.offsetTop - 280,
         behavior: "smooth",
       });
     }
