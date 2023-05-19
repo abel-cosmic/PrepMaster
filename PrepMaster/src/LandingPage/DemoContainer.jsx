@@ -32,7 +32,7 @@ const demos = [
 
 export default function DemosContainer() {
   return (
-    <div className="flex flex-col mt-40 justify-between ">
+    <div className="flex flex-col md:mt-40 max-md:mt-16 justify-between ">
       {demos.map((demo, index) => {
         const titleWords = demo.title.split(" ");
         const firstWord = titleWords[0];
@@ -40,41 +40,51 @@ export default function DemosContainer() {
         const restOfTitle = titleWords.slice(1, -1).join(" ");
         const isFirstTitleColorful = index % 2 === 1;
         const isButtonJustify =
-          index % 2 === 0 ? "justify-start" : "justify-end";
+          index % 2 === 0
+            ? "md:justify-start max-md:justify-center"
+            : "md:justify-end max-md:justify-center";
         const containerBgColor =
           index % 2 === 0 ? "rgba(5, 191, 219, 0.08)" : "";
 
         return (
           <div
             key={demo.id || demos.indexOf(demo)}
-            className={`flex ${index % 2 === 1 ? "flex-row" : "flex-row-reverse"
-              } px-6 py-32 items-center`}
-            style={{ backgroundColor: containerBgColor }}>
-            <div className="flex-shrink-0 w-1/2">
-              <img
-                src={demo.image}
-                alt={demo.title}
-                className="h-auto max-w-full"
-              />
-            </div>
+            className={`flex ${
+              index % 2 === 1
+                ? "md:flex-row max-md:flex-col"
+                : "md:flex-row-reverse max-md:flex-col-reverse"
+            } px-6 md:py-32 max-md:py-16 items-center max-md:gap-6`}
+            style={{ backgroundColor: containerBgColor }}
+          >
             <div className="pl-4 flex flex-col">
               <h2
-                className="text-2xl font-bold mb-16"
-                style={{
-                  fontSize: "2.5rem",
-                  fontWeight: 700,
-                  color: isFirstTitleColorful ? "#088395" : "black",
-                }}>
+                className={`md:text-5xl max-md:text-3xl font-bold md:mb-16 max-md:mb-6 max-md:self-center  ${
+                  isFirstTitleColorful ? "text-[#088395]" : "text-[#2e2e2e]"
+                }`}
+              >
                 <span
-                  style={{ color: isFirstTitleColorful ? "black" : "#088395" }}>
+                  style={{ color: isFirstTitleColorful ? "black" : "#088395" }}
+                >
                   {firstWord}
                 </span>{" "}
                 {restOfTitle} {lastWord}
               </h2>
-              <p className="mb-10 text-xl font-light">{demo.description}</p>
+              <div className="flex-shrink-0 md:w-1/2">
+                <img
+                  src={demo.image}
+                  alt={demo.title}
+                  className="h-auto max-w-full"
+                />
+              </div>
+              <p className="md:mb-10 max-md:my-6 md:text-xl max-md:text-sm max-md:text-justify font-light">
+                {demo.description}
+              </p>
               <div className={`flex ${isButtonJustify}`}>
                 <NavLink to="Signup" element={<Signup />}>
-                  <CustomButton text={"Try for free"} padding={"0.8rem 3.4rem"} />
+                  <CustomButton
+                    text={"Try for free"}
+                    padding={"0.8rem 3.4rem"}
+                  />
                 </NavLink>
               </div>
             </div>

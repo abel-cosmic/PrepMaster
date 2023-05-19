@@ -10,6 +10,10 @@
 
 /*Write your custom CSS here*/
 
+:root {
+  width: 100%;
+}
+
 * {
   font-family: "Plus Jakarta Sans", "system-ui";
   color: #2a2a2a;
@@ -100,7 +104,8 @@ input:focus {
   transition: ease-in 150ms;
   color: #088395;
 }
-.linked:hover{
+
+.linked:hover {
   font-weight: 700;
 }
 

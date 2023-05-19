@@ -12,7 +12,7 @@ import { WhatMakes } from "./WhatMakes";
 
 export default function LandingPage() {
   return (
-    <div>
+    <div className="w-full">
       <Navigation />
       <Home />
       <WhatMakes />

@@ -4,16 +4,14 @@ import BDU from "./../assets/Bahir Dar University .svg";
 import HEUC from "./../assets/HEUC.svg";
 import ASTU from "./../assets/AASTU.svg";
 
-
-
-export function Companies(){
-    return(
-        <div className="flex flex-row justify-evenly items-center mt-20">
-        <img src={Chapa} className="w-72" />
-        <img src={AAU} className="w-28" />
-        <img src={BDU} className="w-28" />
-        <img src={HEUC} className="w-48" />
-        <img src={ASTU} className="w-72" />
-      </div>
-    );
+export function Companies() {
+  return (
+    <div className="flex flex-row md:justify-evenly max-md:gap-6  items-center md:mt-20 max-md:mt-6 max-md:px-6 max-md:w-2/3 ">
+      <img src={Chapa} className=" max-md:w-1/4 " />
+      <img src={AAU} className=" max-md:w-1/4 " />
+      <img src={BDU} className=" max-md:w-1/4 " />
+      <img src={HEUC} className=" max-md:w-1/4 " />
+      <img src={ASTU} className=" max-md:w-1/4 " />
+    </div>
+  );
 }

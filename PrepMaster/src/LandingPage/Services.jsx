@@ -28,18 +28,25 @@ const services = [
 export default function Services() {
   return (
     <div>
-      <div className="flex flex-row justify-center my-72 mx-32" id="services">
+      <div
+        className="flex md:flex-row max-md:flex-col justify-center md:my-72 md:mx-32 max-md:my-16 max-md:gap-6 max-md:mx-6"
+        id="services"
+      >
         {services.map((service, index) => {
           return (
             <div key={service.id} className="flex items-start mx-2">
               <img
                 src={service.image}
                 alt="icon"
-                className="w-3.125rem h-3.125rem mr-4"
+                className="max-md:w-1/12 mr-4"
               />
-              <div className="text-left text-xl space-y-10">
-                <h1 className="text-2xl font-bold">{service.title}</h1>
-                <p>{service.description}</p>
+              <div className="text-left md:space-y-10 max-md:space-y-4">
+                <h1 className="md:text-2xl max-md:text-xl self-center font-semibold">
+                  {service.title}
+                </h1>
+                <p className="md:text-xl max-md:text-sm text-justify">
+                  {service.description}
+                </p>
               </div>
             </div>
           );

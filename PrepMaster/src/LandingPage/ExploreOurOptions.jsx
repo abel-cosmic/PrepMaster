@@ -1,11 +1,13 @@
 export function ExploreOurOptions() {
   return (
     <div id="pricing">
-      <div
-        className="flex flex-col justify-evenly items-center content-between mt-20">
-        <div className="text-5xl font-semibold">
+      <div className="flex flex-col justify-evenly items-center max-md:self-center content-between md:mt-20">
+        <div className="md:text-5xl max-md:text-3xl font-semibold">
           Explore Our{" "}
-          <span className="span text-5xl font-semibold"> Options</span>
+          <span className="span md:text-5xl max-md:text-3xl font-semibold">
+            {" "}
+            Options
+          </span>
         </div>
       </div>
     </div>

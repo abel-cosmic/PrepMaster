@@ -79,7 +79,7 @@ function App() {
     )
   );
   return (
-    <div>
+    <div className="w-screen">
       <RouterProvider router={router} />
     </div>
   );
