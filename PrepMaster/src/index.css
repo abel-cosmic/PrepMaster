@@ -211,3 +211,8 @@ input:focus {
 .footer-new {
   background-color: #088395;
 }
+
+.black-btn {
+  background-color: #2e2e2e;
+  color: #fff;
+}

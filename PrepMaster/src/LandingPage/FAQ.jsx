@@ -45,15 +45,12 @@ export function FAQ() {
   };
 
   return (
-    <div className="flex flex-col justify-evenly items-center my-40">
-      <div className="text-5xl mb-10 font-semibold">
+    <div className="flex flex-col justify-evenly items-center md:my-40 max-md:my-16 max-md:mx-8">
+      <div className="md:text-5xl max-md:text-3xl mb-10 font-semibold max-md:text-center">
         Got Any <span className="span">Questions</span>? We've Got The{" "}
         <span className="span">Answers</span>
       </div>
-      <div
-        className=" flex flex-col justify-between gap-10 mt-10"
-        style={{ width: "80rem" }}
-      >
+      <div className=" flex flex-col justify-between gap-10 mt-10 md:w-[80rem]">
         {faqs.map((faq, index) => (
           <div
             className={`flex flex-col border-b border-gray-400 pb-4 ${
@@ -62,16 +59,18 @@ export function FAQ() {
             key={faq.id}
           >
             <div className="flex flex-row justify-between items-center font-medium">
-              <div className="flex-1 text-2xl">{faq.question}</div>
+              <div className="flex-1 md:text-2xl max-md:font-medium max-md:text-lg">
+                {faq.question}
+              </div>
               <img
                 src={activeAnswer === index ? minus : plus}
                 alt="Toggle Icon"
-                className="cursor-pointer"
+                className="cursor-pointer max-md:w-1/12"
                 onClick={() => toggleAnswer(index)}
               />
             </div>
             <div
-              className={`py-6 text-lg pl-20 ${
+              className={`py-6 md:text-lg max-md:text-md max-md:text-justify max-md:px-4 md:pl-20 ${
                 activeAnswer === index ? "visible" : "hidden"
               }`}
             >
