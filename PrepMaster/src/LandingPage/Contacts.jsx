@@ -11,9 +11,10 @@ import CustomButton from "../Components/CustomButton";
 export function Contacts() {
   return (
     <div id="contacts">
-      <p className="md:text-5xl max-md:text-3xl md:mt-44 flex justify-center font-semibold">
-        Need Additional <span className="span"> Infromation ? </span>
+      <p className="md:text-5xl max-md:text-3xl md:mt-44 flex font-semibold justify-center md:justify-start md:pl-16">
+        Need Additional <span className="span">Information?</span>
       </p>
+
       <div
         className="flex md:flex-row md:justify-around md:gap-72 max-md:flex-col md:mt-16 md:mb-14 max-md:my-16 "
         id="contact"
