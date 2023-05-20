@@ -71,10 +71,10 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t md:mt-8 py-4 px-12 flex flex-row max-md:flex-col justify-between items-center md:w-full  flex-shrink-0">
-        <div className="text-white text-base">
+        <div className="text-white text-base max-md:text-sm">
           PrepMasters © 2023 All rights reserved
         </div>
-        <div className="text-white text-lg">Made by Trident Technologies</div>
+        <div className="text-white text-lg max-md:text-sm">Made by Trident Technologies</div>
         <div className="md:flex md:flex-row md:gap-6  max-md:gap-0 max-md:hidden max-md:w-[1rem] ">
             <a href="#prepmaster-instagram">
               <img src={instagram} alt="instagram" className="login" />
