@@ -15,8 +15,8 @@ export function MobileNavigation() {
     };
 
     return (
-        <div className="md:hidden max-md:flex max-md:flex-row fixed-mobile-nav max-md:justify-between max-md:items-center ">
-            <img src={logo} alt="prepmaster" />
+        <div className="md:hidden max-md:flex max-md:flex-row fixed-mobile-nav max-md:justify-between max-md:items-center z-50">
+            <img src={logo} alt="prepmaster" className="w-1/2" />
 
             <div className="max-md:flex max-md:flex-col max-md:justify-end max-md:items-center">
                 <img
