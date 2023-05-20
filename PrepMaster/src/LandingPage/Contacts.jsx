@@ -11,7 +11,7 @@ import CustomButton from "../Components/CustomButton";
 export function Contacts() {
   return (
     <div id="contacts">
-      <p className="md:text-5xl max-md:text-3xl md:mt-44 flex font-semibold justify-center md:justify-start md:pl-16">
+      <p className="md:text-5xl max-md:text-2xl md:mt-44 flex font-semibold justify-center md:justify-start md:pl-16">
         Need Additional <span className="span">Information?</span>
       </p>
 
@@ -20,18 +20,18 @@ export function Contacts() {
         id="contact"
       >
         <div className="flex flex-col gap-6 max-md:mx-6 ">
-          <div>Fill the form 📝 or give us a call 📞</div>
-          <div className="flex md:flex-row max-md:flex-col md:gap-20 max-md:gap-6">
+          <div className="text-sm">Fill the form 📝 or give us a call 📞</div>
+          <div className="flex md:flex-row max-md:flex-col md:gap-20 max-md:gap-6 text-sm">
             <div className="flex flex-row gap-4">
               <img src={phone} alt="phone" />
-              <div>+2511198456321</div>
+              <div className="text-sm">+2511198456321</div>
             </div>
             <div className="flex flex-row gap-4">
               <img src={mail} alt="mail" />
-              <div>+contact@prepmasters.com</div>
+              <div className="text-sm">+contact@prepmasters.com</div>
             </div>
           </div>
-          <div>Follow us on</div>
+          <div className="text-sm">Follow us on</div>
           <div className="flex flex-row gap-6">
             <a href="#prepmaster-instagram">
               <img src={instagram} alt="instagram" className="login" />

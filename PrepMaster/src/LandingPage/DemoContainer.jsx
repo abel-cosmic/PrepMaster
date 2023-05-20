@@ -65,12 +65,12 @@ export default function DemosContainer() {
             </div>
             <div className="pl-4 flex flex-col">
               <h2
-                className={`md:text-5xl max-md:text-3xl font-bold md:mb-16 max-md:mb-6 max-md:self-center  ${
+                className={`md:text-5xl max-md:text-2xl font-bold md:mb-16 max-md:mb-6 max-md:self-center  ${
                   isFirstTitleColorful ? "text-[#088395]" : "text-[#2e2e2e]"
                 }`}
               >
                 <span
-                  style={{ color: isFirstTitleColorful ? "black" : "#088395" }}
+                  style={{ color: isFirstTitleColorful ? "black" : "#088395" , fontWeight: "600"}}
                 >
                   {firstWord}
                 </span>{" "}

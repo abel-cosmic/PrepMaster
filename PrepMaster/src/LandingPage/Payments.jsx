@@ -8,14 +8,14 @@ import HIBRET from "./../assets/Hibret Bank ( No text ) Logo 1.svg";
 export function Payments() {
   return (
     <div className="flex flex-col justify-evenly items-center content-between">
-      <div className="md:text-5xl max-md:text-3xl font-semibold">
+      <div className="md:text-5xl max-md:text-2xl font-semibold">
         Payment Made With{" "}
-        <span className="span md:text-5xl max-md:text-3xl font-semibold">
+        <span className="span md:text-5xl max-md:text-2xl font-semibold">
           {" "}
           Ease
         </span>
       </div>
-      <div className="flex flex-row justify-evenly max-md:gap-6 md:gap-20  items-center md:mt-20 max-md:mt-6 max-md:px-6  max-md:w-2/3  ">
+      <div className="flex flex-row justify-evenly max-md:gap-6 md:gap-20  items-center md:mt-20 max-md:mt-6 max-md:px-6  max-md:w-1/2  ">
         <img src={Chapa} className="w-1/2" />
         <img src={CBE} className="w-1/4" />
         <img src={AWASH} className="w-1/4" />

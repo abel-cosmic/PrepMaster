@@ -9,7 +9,7 @@ export function Testimonials() {
     <div>
       <div
         className="w-full flex felx-col md:justify-center md:mt-52 max-md:mt-16 md:text-5xl 
-                      max-md:text-3xl max-md:w-3/4 max-md:text-center font-semibold"
+                      max-md:text-xl max-md:w-3/4 max-md:text-center font-semibold max-md:mx-auto"
       >
         <p>
           Dont Just

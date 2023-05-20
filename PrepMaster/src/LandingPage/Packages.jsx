@@ -38,7 +38,7 @@ const packages = [
 
 export function Packages() {
   return (
-    <div className="flex md:flex-row max-md:flex-col justify-evenly md:mt-20 mx-10 md:mb-32 max-md:my-6 max-md:gap-6">
+    <div className="flex md:flex-row max-md:flex-col justify-evenly md:mt-20 max-md:mt-4 mx-10 md:mb-32 max-md:gap-6">
       {packages.map((pkg) => (
         <div
           className={`flex flex-col items-center justify-evenly ${
@@ -51,14 +51,14 @@ export function Packages() {
           <h1
             className={`${
               pkg.id === 1 ? "text-[#2e2e2e]" : "text-white"
-            } mb-4 md:text-2xl max-md:text-xl font-light`}
+            } mb-4 md:text-xl max-md:text-xl font-light`}
           >
             {pkg.type}
           </h1>
           <h2
             className={`${
               pkg.id === 1 ? "text-[#2e2e2e]" : "text-white"
-            } md:mb-16 max-md:mb-4 md:text-3xl max-md:text-2xl font-bold`}
+            } md:mb-16 max-md:mb-4 md:text-2xl max-md:text-2xl font-bold`}
           >
             {pkg.price}
           </h2>

@@ -46,7 +46,7 @@ export function FAQ() {
 
   return (
     <div className="flex flex-col justify-evenly items-center md:my-40 max-md:my-16 max-md:mx-8 ">
-      <div className="md:text-5xl max-md:text-3xl mb-10 font-semibold max-md:text-left">
+      <div className="md:text-5xl max-md:text-2xl mb-10 font-semibold max-md:text-center">
         Got Any <span className="span">Questions</span>? We've Got The{" "}
         <span className="span">Answers</span>
       </div>
@@ -59,7 +59,7 @@ export function FAQ() {
             key={faq.id}
           >
             <div className="flex flex-row justify-between items-center font-medium">
-              <div className="flex-1 md:text-2xl max-md:font-medium max-md:text-lg">
+              <div className="flex-1 md:text-xl max-md:font-medium max-md:text-md">
                 {faq.question}
               </div>
               <img
@@ -70,7 +70,7 @@ export function FAQ() {
               />
             </div>
             <div
-              className={`py-6 md:text-lg max-md:text-md max-md:text-justify max-md:px-4 md:pl-20 ${
+              className={`py-6 md:text-lg max-md:text-sm max-md:text-justify max-md:px-4 md:pl-20 ${
                 activeAnswer === index ? "visible" : "hidden"
               }`}
             >

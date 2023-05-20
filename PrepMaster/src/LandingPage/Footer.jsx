@@ -30,7 +30,7 @@ export function Footer() {
     <div className=" flex flex-col justify-between pt-10 pb-2 footer-new mt-20 ">
       <div className="md:px-12 max-md:px-6 flex md:flex-row max-md:flex-col max-md:gap-6 md:justify-between md:mr-8">
         <img src={prepmaster} alt="prepmaster" className=" max-md:w-[10rem] md:self-start"/>
-        <div className="flex flex-row justify-between md:w-[27rem] max-md:px-10">
+        <div className="flex flex-row justify-between md:w-[27rem] max-md:px-0">
           {lists.map((list) => (
             <div className="flex flex-col justify-between login" key={list.id}>
               <div className="font-medium text-white md:text-lg max-md:text-base login linked">
@@ -70,7 +70,7 @@ export function Footer() {
           </form>
         </div>
       </div>
-      <div className="border-t md:mt-8 py-4 px-12 flex flex-row justify-between items-center md:w-full  flex-shrink-0">
+      <div className="border-t md:mt-8 py-4 px-12 flex flex-row max-md:flex-col justify-between items-center md:w-full  flex-shrink-0">
         <div className="text-white text-base">
           PrepMasters © 2023 All rights reserved
         </div>
