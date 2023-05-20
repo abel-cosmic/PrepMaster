@@ -16,7 +16,7 @@ export function Contacts() {
       </p>
 
       <div
-        className="flex md:flex-row md:justify-around md:gap-72 max-md:flex-col md:mt-16 md:mb-14 max-md:my-16 "
+        className="flex md:flex-row md:justify-around md:gap-32 max-md:flex-col md:mt-16 md:mb-14 max-md:my-16 "
         id="contact"
       >
         <div className="flex flex-col gap-6 max-md:mx-6 ">

@@ -15,7 +15,7 @@ export function Payments() {
           Ease
         </span>
       </div>
-      <div className="flex flex-row justify-evenly max-md:gap-6 md:gap-40 items-center md:mt-20 max-md:mt-6 max-md:px-6  max-md:w-2/3  ">
+      <div className="flex flex-row justify-evenly max-md:gap-6 md:gap-20  items-center md:mt-20 max-md:mt-6 max-md:px-6  max-md:w-2/3  ">
         <img src={Chapa} className="w-1/2" />
         <img src={CBE} className="w-1/4" />
         <img src={AWASH} className="w-1/4" />

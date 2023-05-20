@@ -27,9 +27,9 @@ const lists = [
 
 export function Footer() {
   return (
-    <div className=" flex flex-col justify-between pt-10 pb-2 footer-new mt-20">
+    <div className=" flex flex-col justify-between pt-10 pb-2 footer-new mt-20 ">
       <div className="md:px-12 max-md:px-6 flex md:flex-row max-md:flex-col max-md:gap-6 md:justify-between md:mr-8">
-        <img src={prepmaster} alt="prepmaster" className=" max-md:w-1/2 md:self-start"/>
+        <img src={prepmaster} alt="prepmaster" className=" max-md:w-[10rem] md:self-start"/>
         <div className="flex flex-row justify-between md:w-[27rem] max-md:px-10">
           {lists.map((list) => (
             <div className="flex flex-col justify-between login" key={list.id}>
@@ -48,7 +48,7 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col md:justify-between max-md:justify-evenly h-44 w-[30rem]">
+        <div className="flex flex-col md:justify-between max-md:justify-evenly h-44 md:w-[30rem] max-md:w-[23rem] ">
           <div className="text-white text-lg font-medium">
             Subscribe to our newsletter
           </div>
@@ -56,7 +56,7 @@ export function Footer() {
             Get all of the latest education news about our services and offers
             by subscribing to our weekly newsletter.
           </div>
-          <form className="flex flex-row w-full md:justify-end max-md:my-6">
+          <form className="flex flex-row w-full md:justify-end max-md:my-6 ">
             <input
               type="text"
               className="md:w-full max-md:w-2/3 bg-transparent last pl-4 placeholder-white focus::placeholder-white"
@@ -70,12 +70,12 @@ export function Footer() {
           </form>
         </div>
       </div>
-      <div className="border-t md:mt-8 py-4 px-12 flex flex-row justify-between items-center w-full">
+      <div className="border-t md:mt-8 py-4 px-12 flex flex-row justify-between items-center md:w-full  flex-shrink-0">
         <div className="text-white text-base">
           PrepMasters © 2023 All rights reserved
         </div>
         <div className="text-white text-lg">Made by Trident Technologies</div>
-        <div className="md:flex md:flex-row md:gap-6 max-md:hidden">
+        <div className="md:flex md:flex-row md:gap-6  max-md:gap-0 max-md:hidden max-md:w-[1rem] ">
             <a href="#prepmaster-instagram">
               <img src={instagram} alt="instagram" className="login" />
             </a>

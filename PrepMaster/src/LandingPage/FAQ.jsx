@@ -45,8 +45,8 @@ export function FAQ() {
   };
 
   return (
-    <div className="flex flex-col justify-evenly items-center md:my-40 max-md:my-16 max-md:mx-8">
-      <div className="md:text-5xl max-md:text-3xl mb-10 font-semibold max-md:text-center">
+    <div className="flex flex-col justify-evenly items-center md:my-40 max-md:my-16 max-md:mx-8 ">
+      <div className="md:text-5xl max-md:text-3xl mb-10 font-semibold max-md:text-left">
         Got Any <span className="span">Questions</span>? We've Got The{" "}
         <span className="span">Answers</span>
       </div>
