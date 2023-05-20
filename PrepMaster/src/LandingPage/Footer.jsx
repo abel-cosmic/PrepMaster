@@ -1,5 +1,3 @@
-import BlackButton from "../Components/BlackButton";
-import CustomButton from "../Components/CustomButton";
 import prepmaster from "./../assets/WhiteLogo.svg";
 import instagram from "./../assets/instagram 1.svg";
 import twitter from "./../assets/twitter 1.svg";

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import Signup from "../Signup/Signup";
 import DemosContainer from "./DemoContainer";
 import { Companies } from "./Companies";
-import back from "./../assets/half-image.png";
 
 export default function Home() {
   return (

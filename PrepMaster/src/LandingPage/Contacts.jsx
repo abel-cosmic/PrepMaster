@@ -7,7 +7,7 @@ import facebook from "./../assets/facebook.svg";
 import message from "./../assets/memo.svg";
 import whatsup from "./../assets/whatsapp.svg";
 import maper from "./../assets/Mapsicle Map.svg";
-import CustomButton from "../Components/CustomButton";
+
 export function Contacts() {
   return (
     <div id="contacts">
