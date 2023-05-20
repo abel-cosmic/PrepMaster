@@ -7,7 +7,7 @@ import { Companies } from "./Companies";
 export default function Home() {
   return (
     <div id="home">
-      <div className="flex flex-col items-center max-md:w-full md:pt-36 max-md:pt-12 max-md:mt-12 gap-6 md:mt-32">
+      <div className="flex flex-col items-center max-md:w-full md:pt-36 max-md:pt-12 max-md:mt-20 gap-6 md:mt-32">
         <div class="gradient-text max-md:text-3xl max-md:w-3/4 text-center">
           Start Acing Your Exams Today
         </div>

@@ -9,10 +9,12 @@ import { Packages } from "./Packages";
 import { Footer } from "./Footer";
 import { FAQ } from "./FAQ";
 import { WhatMakes } from "./WhatMakes";
+import { MobileNavigation } from "./MobileNavigation";
 
 export default function LandingPage() {
   return (
     <div className="w-full">
+      <MobileNavigation/>
       <Navigation />
       <Home />
       <WhatMakes />

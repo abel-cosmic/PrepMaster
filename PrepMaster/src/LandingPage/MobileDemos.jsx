@@ -69,7 +69,7 @@ export function MobileDemos() {
                             <NavLink to="Signup" element={<Signup />}>
                                 <CustomButton
                                     text={"Try for free"}
-                                    padding={"0.5rem 2.5rem"} />
+                                    padding={"0.8rem 3.4rem"} />
                             </NavLink>
                         </div>
 

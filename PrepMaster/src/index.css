@@ -45,6 +45,20 @@
   padding: 2rem;
 }
 
+
+.fixed-mobile-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.288);
+  backdrop-filter: blur(2rem);
+  border: none;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 1rem;
+}
+
 .side-bar {
   display: flex;
   flex-direction: row;
