@@ -1,7 +1,7 @@
 import CustomButton from "../Components/CustomButton";
 import SampleQuestions from "./../assets/questions-sample.svg";
-import AnswerFeedBack from "./../assets/incorrect-answer-sample.svg";
-import Register from "./../assets/analytics-sample.svg";
+import AnswerFeedBack from "./../assets/FeedBack.svg";
+import Register from "./../assets/dashboard.svg";
 import { NavLink } from "react-router-dom";
 import Signup from "../Signup/Signup";
 import { MobileDemos } from "./MobileDemos";
