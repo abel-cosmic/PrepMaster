@@ -58,12 +58,7 @@ export default function Admin() {
               <p>Settings</p>
             </div>
           </NavLink>
-          <NavLink to="/Logout" element={<Logout />}>
-            <div className="side-bar text-md" id="Logout">
-              <img src={LogoutIcon} alt="Logout Icon" />
-              <p>Logout</p>
-            </div>
-          </NavLink>
+          <Logout />
         </div>
         <div className=" copyright">
           <p className="opacity-50 text-xs">© PrepMaster all rights reserved</p>

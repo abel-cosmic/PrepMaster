@@ -35,6 +35,7 @@ import Teacher from "./UserDashboard/Teacher/Teacher";
 import TeacherDashboard from "./UserDashboard/Teacher/TeacherDashboard";
 import CreateExam from "./UserDashboard/Teacher/CreateExam";
 import QuestionCreator from "./UserDashboard/Teacher/QuestionCreator";
+import ViewExams from "./UserDashboard/Teacher/ViewExams";
 
 function App() {
   const router = createBrowserRouter(
@@ -73,6 +74,7 @@ function App() {
         <Route path="TeacherDashboard" element={<Teacher />}>
           <Route index element={<TeacherDashboard />} />
           <Route path="CreateExam" element={<CreateExam />} />
+          <Route path="ViewExams" element={<ViewExams />} />
         </Route>
         <Route path="/QuestionCreator" element={<QuestionCreator />} />
       </Route>

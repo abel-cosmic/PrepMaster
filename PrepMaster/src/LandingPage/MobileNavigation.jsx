@@ -1,54 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import logo from "./../assets/logo.svg";
 import top from "./../assets/Top-Menu.svg";
 import active from "./../assets/active-Top-Menu.svg";
 import CustomButton from "../Components/CustomButton";
 import { NavLink } from "react-router-dom";
 import Signup from "../Signup/Signup";
+import { Button } from "@mui/material";
+import Signin from "../Signin/Signin";
+import SigninButton from "../Components/SigninButton";
 
 export function MobileNavigation() {
-    const [isActive, setIsActive] = useState(false); 
+  const [isActive, setIsActive] = useState(false);
 
-    const handleImageClick = () => {
-        setIsActive(!isActive);
-    };
+  const handleImageClick = () => {
+    setIsActive(!isActive);
+  };
 
-    return (
-        <div className="md:hidden max-md:flex max-md:flex-row fixed-mobile-nav max-md:justify-between max-md:items-center z-50">
-            <img src={logo} alt="prepmaster" className="w-1/2" />
-
-            <div className="max-md:flex max-md:flex-col max-md:justify-end max-md:items-center">
-                <img
-                    src={isActive ? active : top}
-                    alt="icon"
-                    onClick={handleImageClick}
-                />
-
-                {/* List of Navigation Items */}
-                {isActive && (
-                    <div className="max-md:fixed max-md:top-40 max-md:left-0 max-md:right-0 max-md:bottom-0 max-md:bg-white max-md:z-80 max-md:flex max-md:justify-start max-md:items-center">
-                        <nav className="navigation-items max-md:w-full max-md:h-full max-md:mt-20 max-md:bg-white max-md:items-start max-md:flex max-md:flex-col max-md:pl-12 max-md:pt-16 max-md:justify-evenly">
-                            <ul>
-                                <li className="max-md:z-50 max-md:py-2">Home</li>
-                                <li className="max-md:z-50 max-md:py-2">Services</li>
-                                <li className="max-md:z-50 max-md:py-2">Pricing</li>
-                                <li className="max-md:z-50 max-md:py-2">Contact</li>
-                                <li className="max-md:py-2">
-                                <NavLink to="Signup" element={<Signup />}>
-                                        <CustomButton text={"Sign up"} padding={"0.7rem 1.7rem"} />
-                                    </NavLink>
-                                </li>
-                                <li className="max-md:py-2">
-                                    <NavLink to="Signup" element={<Signup />}>
-                                        <CustomButton text={"Try for free"} padding={"0.7rem 1.7rem"} />
-                                    </NavLink>
-                                </li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                )}
-            </div>
-        </div>
-    );
+  return (
+    <div className="md:hidden flex flex-col fixed-mobile-nav justify-between items-center z-50 border-solid border-b-gray-700 ">
+      <div className="max-md:flex max-md:flex-row max-md:justify-between max-md:items-center">
+        <img src={logo} alt="prepmaster" className="w-3/4" />
+        <img
+          src={isActive ? active : top}
+          alt="icon"
+          onClick={handleImageClick}
+        />
+      </div>
+      <div className={`${isActive ? "visible" : "hidden"} `}>
+        <ul className="py-6 font-medium text-lg flex flex-col gap-2 justify-center self-center">
+          <li className="z-50 py-2 self-center">Home</li>
+          <li className="z-50 py-2 self-center">Services</li>
+          <li className="z-50 py-2 self-center">Pricing</li>
+          <li className="z-50 py-2 self-center">Contact</li>
+          <li className="py-2 self-center">
+            <NavLink to="Signin" element={<Signin />}>
+              <SigninButton text={"Sign in"} padding={"0.7rem 2.45rem"} />
+            </NavLink>
+          </li>
+          <li className="py-2">
+            <NavLink to="Signup" element={<Signup />}>
+              <CustomButton text={"Try for free"} padding={"0.7rem 1.7rem"} />
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
 }

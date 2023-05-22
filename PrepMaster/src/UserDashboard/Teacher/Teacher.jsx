@@ -3,7 +3,6 @@ import AnalyticsIcon from "../../assets/AnalyticsIcon.svg";
 import DashBoardIcon from "../../assets/DashboardIcon.svg";
 import SettingsIcon from "../../assets/SettingsIcon.svg";
 import SupportIcon from "../../assets/SupportIcon.svg";
-import LogoutIcon from "../../assets/LogoutIcon.svg";
 import ExamIcon from "../../assets/ExamIcon.svg";
 import ViewExams from "../../assets/ViewExams.svg";
 import SpreadLine from "../../assets/SpreadLine.png";
@@ -35,7 +34,7 @@ export default function Teacher() {
               <p>Create Exam</p>
             </div>
           </NavLink>
-          <NavLink to="ViewExam" className="w-72 flex justify-center">
+          <NavLink to="ViewExams" className="w-72 flex justify-center">
             <div className="side-bar  text-md " id="Exam">
               <img src={ViewExams} alt="View Exams Icon" />
               <p>View Exams</p>
@@ -58,12 +57,7 @@ export default function Teacher() {
               <p>Settings</p>
             </div>
           </NavLink>
-          <NavLink to="Logout" element={<Logout />}>
-            <div className="side-bar text-md" id="Logout">
-              <img src={LogoutIcon} alt="Logout Icon" />
-              <p>Logout</p>
-            </div>
-          </NavLink>
+          <Logout />
         </div>
         <div className=" copyright">
           <p className="opacity-50 text-xs">© PrepMaster all rights reserved</p>

@@ -33,7 +33,11 @@ export default function Signin() {
       <div className="flex flex-row h-screen w-full">
         <div className="flex flex-col p-10 gap-6 w-full">
           <NavLink to="/" element={<LandingPage />}>
-            <img class="w-1/4" src={logo} alt="logo" />
+            <img
+              class="md:w-1/4 max-md:w-5/6 max-md:m-auto"
+              src={logo}
+              alt="logo"
+            />
           </NavLink>
 
           <div className="signup-header flex flex-col self-center gap-2 mb-2 mt-14">
@@ -74,7 +78,7 @@ export default function Signin() {
           </div>
         </div>
       </div>
-      <div className="signin p-10 flex flex-col gap-6 justify-end pb-10">
+      <div className="max-md:hidden signin p-10 flex flex-col gap-6 justify-end pb-10">
         <p className="text-4xl font-bold w-3/4">
           Join 25,000+ students determined to ace their exit exams
         </p>

@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import LeaveExam from "../../assets/LeaveExam.svg";
 import ExamPaper from "../../assets/ExamPaper.svg";
 import RenderQuestions from "./RenderQuestions";
+import { NavLink } from "react-router-dom";
+import StudentExam from "./StudentExam";
 
 export default function ExamSheet({ CourseTitle, ExamTitle }) {
   const [SecondsLeft, setSecondsLeft] = useState(5);
@@ -30,10 +32,12 @@ export default function ExamSheet({ CourseTitle, ExamTitle }) {
     <div className="exam-sheet h-screen flex justify-center place-items-center">
       <div className="bg-white flex flex-col w-1/2 rounded-xl question gap-8 h-fit p-12">
         <div className="flex flex-row justify-between">
-          <div className="flex flex-row self-center gap-2">
-            <img src={LeaveExam} alt="Leave Exam" />
-            <p>Leave Exam</p>
-          </div>
+          <NavLink to="/StudentDashboard/StudentExam" element={<StudentExam />}>
+            <div className="flex flex-row self-center gap-2">
+              <img src={LeaveExam} alt="Leave Exam" />
+              <p>Leave Exam</p>
+            </div>
+          </NavLink>
           <div className="self-center">
             <p>
               Time left{" "}
