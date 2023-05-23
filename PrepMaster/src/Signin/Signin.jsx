@@ -48,7 +48,7 @@ export default function Signin() {
               Login to your account to start on today's tasks
             </p>
           </div>
-          <div className="signup-nav flex flex-row justify-center gap-16 ">
+          <div className="signup-nav flex flex-row justify-center md:gap-16 max-md:gap-6 ">
             <NavLink to="" end className="self-center">
               <p className="text-sm">Student</p>
             </NavLink>

@@ -149,7 +149,7 @@ input:focus {
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
 }
 
@@ -181,6 +181,12 @@ input:focus {
   display: flex;
   padding: 0.7rem 3rem;
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .signup-nav .active {
+    padding: 0.7rem 2rem;
+  }
 }
 
 .submit-btn {

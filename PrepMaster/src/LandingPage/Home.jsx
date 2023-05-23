@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div id="home">
       <div className="flex flex-col items-center max-md:w-full md:pt-36 max-md:pt-12 max-md:mt-20 gap-6 md:mt-32">
-        <div class="gradient-text max-md:text-3xl max-md:w-3/4 text-center">
+        <div class="gradient-text max-md:text-4xl max-md:font-extrabold max-md:w-3/4 text-center">
           Start Acing Your Exams Today
         </div>
         <div className="text-center md:text-base opacity-75 md:w-2/6 max-md:w-3/4 max-md:text-sm ">
