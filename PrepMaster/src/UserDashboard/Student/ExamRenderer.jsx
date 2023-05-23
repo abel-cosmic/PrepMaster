@@ -46,12 +46,12 @@ export default function ExamRenderer() {
   const CourseContainer = () => {
     return courses.map((course) => {
       return (
-        <div className="flex flex-col gap-6 w-fit">
-          <p className="text-xl font-medium w-fit">{course.CourseTitle}</p>
-          <div className="grid grid-cols-2 gap-6 w-fit">
+        <div className="flex flex-col gap-6 w-full pr-60 max-md:pr-4 max-md:pb-10">
+          <p className="text-xl font-medium w-full">{course.CourseTitle}</p>
+          <div className="grid grid-cols-2 gap-6 w-full max-md:flex max-md:flex-col">
             <ExamContainer />
           </div>
-          <div className="self-center">
+          <div className="self-center max-md:mt-6">
             <CustomButton text={"Load More"} padding={"0.5rem 2rem"} />
           </div>
         </div>
@@ -60,14 +60,15 @@ export default function ExamRenderer() {
   };
 
   const ExamContainer = () => {
-    return courses.map((exam) => {
+    return (courses.map((exam) => {
       return (
         <div
           key={exam.ExamTitle}
-          className="container w-fit pr-10 pl-4 py-4 flex flex-col gap-4"
+          className="container w-full pr-10 pl-4 py-4 flex flex-col gap-4"
         >
           <p className="text-lg font-medium">{exam.ExamTitle}</p>
-          <div className="exam-detail flex flex-row gap-2 ">
+          <div className="exam-detail flex flex-row justify-between ">
+            <div className="flex flex-row gap-2">
             <div className="flex flex-row gap-2">
               <img src={StopWatch} alt="Time" className="" />
               <p className="text-xs w-16 self-center">{exam.duration}</p>
@@ -75,6 +76,7 @@ export default function ExamRenderer() {
             <div className="flex flex-row gap-2">
               <img src={PencilPaper} alt="Question amount" className="" />
               <p className="text-xs w-32 self-center">{exam.amount}</p>
+            </div>
             </div>
             <NavLink
               to="/ExamSheet"
@@ -90,11 +92,11 @@ export default function ExamRenderer() {
           </div>
         </div>
       );
-    });
+    }));
   };
 
   return (
-    <div>
+    <div className="w-full">
       <CourseContainer />
     </div>
   );

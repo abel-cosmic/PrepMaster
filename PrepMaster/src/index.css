@@ -56,11 +56,14 @@
   justify-self: center;
   padding: 2rem;
 }
-
+.exam{
+  margin-left: -0.8.3rem;
+}
 .side-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin : 0 auto;
   gap: 2rem;
   cursor: pointer;
   width: fit-content;
