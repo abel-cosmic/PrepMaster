@@ -35,7 +35,8 @@ export default function DailyQuestions() {
         className="container w-full pr-10 pl-4 py-4 flex flex-col gap-4"
       >
         <p className="text-lg font-medium">{item.title}</p>
-        <div className="exam-detail flex flex-row gap-2 ">
+        <div className="exam-detail flex flex-row justify-between gap-2 ">
+          <div className="flex-row flex justify-between">
           <div className="flex flex-row gap-2">
             <img src={StopWatch} alt="Time" className="" />
             <p className="text-xs w-16 self-center">{item.duration}</p>
@@ -44,11 +45,13 @@ export default function DailyQuestions() {
             <img src={PencilPaper} alt="Question amount" className="" />
             <p className="text-xs w-32 self-center">{item.amount}</p>
           </div>
+          </div>
           <NavLink to="/ExamSheet" element={<ExamSheet />}>
             <CustomButton
               text={"Start"}
               padding={"0.5rem 1.5rem"}
               variant={"contained"}
+              className="self-end"
             />
           </NavLink>
         </div>
