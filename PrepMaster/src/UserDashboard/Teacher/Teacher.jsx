@@ -1,4 +1,4 @@
-import Logo from "../../assets/Logo.png";
+import Logo from "../../assets/logo.svg";
 import AnalyticsIcon from "../../assets/AnalyticsIcon.svg";
 import DashBoardIcon from "../../assets/DashboardIcon.svg";
 import SettingsIcon from "../../assets/SettingsIcon.svg";
@@ -10,8 +10,43 @@ import { NavLink, Outlet } from "react-router-dom";
 import HeaderDashboard from "../HeaderDashboard";
 import Logout from "../Logout";
 import LandingPage from "../../LandingPage/LandingPage";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import TeacherDashboard from "./TeacherDashboard";
+import AddTeacher from "./AddTeacher";
 
 export default function Teacher() {
+  const location = useLocation();
+  const { email } = location.state;
+  const [name, setName] = useState("");
+  const [department, setDepartment] = useState("");
+  const [isHead, setIsHead] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/teachers", {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((teachers) => {
+        teachers.some((teacher) => {
+          if (teacher.email === email) {
+            console.log(teacher.email);
+            setName(teacher.firstName);
+            setDepartment(teacher.department);
+            if (teacher.departmentHead) setIsHead(true);
+            else setIsHead(false);
+          }
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [email]);
+
   return (
     <div className="flex flex-row gap-6 m-6 ">
       <div className="flex  flex-col gap-6 w-fit " id="SideBar">
@@ -40,6 +75,16 @@ export default function Teacher() {
               <p>View Exams</p>
             </div>
           </NavLink>
+
+          {isHead && (
+            <NavLink to="AddTeacher">
+              <div className="side-bar text-md" id="AddTeacher">
+                <img src={AnalyticsIcon} alt="Analytics Icon" />
+                <p>Add Teacher</p>
+              </div>
+            </NavLink>
+          )}
+
           <div className="side-bar text-md " id="Analytics">
             <img src={AnalyticsIcon} alt="Analytics Icon" />
             <p>Analytics</p>

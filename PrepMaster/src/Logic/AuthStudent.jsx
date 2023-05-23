@@ -1,4 +1,4 @@
-export default function Auth({ email, password }) {
+export default function AuthStudent({ email, password }) {
   return new Promise((resolve, reject) => {
     fetch("http://localhost:8080/api/students", {
       method: "GET",

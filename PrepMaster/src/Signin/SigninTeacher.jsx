@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
+import AuthTeacher from "../Logic/AuthTeacher";
 
 export default function SigninTeacher() {
   const navigate = useNavigate();
@@ -10,8 +11,21 @@ export default function SigninTeacher() {
       password: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      navigate("/TeacherDashboard");
+      AuthTeacher(values)
+        .then((valid) => {
+          if (valid) {
+            navigate("/TeacherDashboard", {
+              state: {
+                email: values.email,
+              },
+            });
+          } else {
+            alert("Incorrect Password or Email");
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     },
   });
   const inputs = [

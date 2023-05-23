@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import Auth from "../Logic/Auth";
+import AuthStudent from "../Logic/AuthStudent";
 
 export default function SigninStudent() {
   const navigate = useNavigate();
@@ -11,8 +11,7 @@ export default function SigninStudent() {
       password: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      Auth(values)
+      AuthStudent(values)
         .then((valid) => {
           if (valid) {
             navigate("/StudentDashboard", {
