@@ -54,10 +54,12 @@ export default function StudentProfile() {
         <div key={item.title} className="flex flex-col gap-2">
           {item.placeHolder.length === 2 ? (
             <div className="flex flex-row gap-6 place-content-between">
-              <p className="w-fit self-center">{item.title}</p>
-              <div className="flex flex-row gap-2">
-                <input
-                  className="container flex justify-center pl-4 pr-10 py-2 w-fit"
+              <p className="w-fit self-center max-md:hidden">{item.title}</p>
+              <div className="flex flex-row gap-2 max-md:flex-col">
+                <div className="flex flex-col gap-4 ">
+                  <p className="w-fit md:hidden">{item.placeHolder[0]}</p>
+                  <input
+                  className="container flex justify-center pl-4 pr-10 py-2 w-96"
                   type={item.inputType}
                   name="firstname" // Update the name attribute
                   placeholder={item.placeHolder[0]}
@@ -66,8 +68,9 @@ export default function StudentProfile() {
                   onBlur={formik.handleChange}
                   defaultValue={formik.values.firstname}
                 />
+                  <p className="w-fit md:hidden">{item.placeHolder[1]}</p>
                 <input
-                  className="container flex justify-center pl-4 pr-10 py-2 w-fit"
+                  className="container flex justify-center pl-4 pr-10 py-2 w-96"
                   type={item.inputType}
                   name="lastname" // Update the name attribute
                   placeholder={item.placeHolder[1]}
@@ -76,13 +79,14 @@ export default function StudentProfile() {
                   onBlur={formik.handleChange}
                   defaultValue={formik.values.lastname}
                 />
+                  </div>
               </div>
             </div>
           ) : (
-            <div className="flex flex-row gap-6 justify-between w-max">
+            <div className="flex flex-row gap-4 justify-between w-max max-md:flex-col">
               <p className="w-96 self-center">{item.title}</p>
               <input
-                className="container flex justify-center pl-4 pr-10 py-2"
+                className="container flex justify-center pl-4 pr-10 py-2 w-fit"
                 type={item.inputType}
                 name={item.title.toLowerCase()} // Update the name attribute
                 placeholder={item.placeHolder}

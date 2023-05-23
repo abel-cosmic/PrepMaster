@@ -13,7 +13,7 @@ import LandingPage from "../../LandingPage/LandingPage";
 
 export default function Student() {
   return (
-    <div className="flex flex-row gap-6 m-6 max-md:ml-0">
+    <div className="flex flex-row gap-6 m-6 max-md:mx-0">
       <div className="flex  flex-col gap-6 w-fit max-md:hidden " id="SideBar">
         <NavLink to="/" element={<LandingPage />}>
           <div className=" Logo flex justify-center self-center w-5/6 ">
@@ -28,10 +28,10 @@ export default function Student() {
               <p>Dashboard</p>
             </div>
           </NavLink>
-          <NavLink to="StudentExam" className="w-72 flex justify-center">
-            <div className="side-bar  text-md " id="Exam">
-              <img src={ExamIcon} alt="Exam Icon" />
-              <p>Exam</p>
+          <NavLink to="StudentExam" className="w-72 flex justifullfy-center">
+            <div className="side-bar  text-md w-max" id="Exam">
+              <img src={ExamIcon} alt="Exam Icon" className="mr-10" />
+              <p className="exam">Exam</p>
             </div>
           </NavLink>
           <div className="side-bar text-md " id="Analytics">
@@ -57,9 +57,9 @@ export default function Student() {
           <p className="opacity-50 text-xs">© PrepMaster all rights reserved</p>
         </div>
       </div>
-      <div className="flex flex-col w-full px-4">
+      <div className="flex flex-col w-full px-4 max-md:mt-10">
         <HeaderDashboard />
-        <Outlet />
+        <Outlet/>
       </div>
     </div>
   );
