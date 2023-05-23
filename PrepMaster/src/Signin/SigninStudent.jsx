@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
+import Auth from "../Logic/Auth";
 
 export default function SigninStudent() {
   const navigate = useNavigate();
@@ -9,11 +10,26 @@ export default function SigninStudent() {
       email: "",
       password: "",
     },
-    onSubmit : values =>{
-      alert(JSON.stringify(values,null,2));
-      navigate("/StudentDashboard");
-    }
-  })
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+      Auth(values)
+        .then((valid) => {
+          if (valid) {
+            navigate("/StudentDashboard", {
+              state: {
+                email: values.email,
+              },
+            });
+          } else {
+            alert("Invalid email or password");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          // Handle error case
+        });
+    },
+  });
   const inputs = [
     {
       title: "Email",
