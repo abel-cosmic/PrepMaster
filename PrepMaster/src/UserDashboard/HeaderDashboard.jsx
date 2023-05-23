@@ -1,13 +1,17 @@
 import notification from "../assets/Notification.svg";
 import username from "../assets/Username.svg";
 import search from "../assets/search.svg";
+import menu from "./../assets/menu.svg";
 
 export default function HeaderDashboard() {
   return (
-    <div className="flex flex-row justify-between" id="HeaderDashboard">
-      <div className="search-bar container py-2 pr-16 pl-4 flex flex-row gap-2 w-fit">
+    <div className="flex flex-row justify-between max-md:border-b" id="HeaderDashboard">
+      <div className="search-bar container py-2 pr-16 pl-4 flex flex-row gap-2 w-fit max-md:hidden">
         <img src={search} alt="search" />
         <input type="search" name="search" id="search" placeholder="Search" />
+      </div>
+      <div className="md:hidden w-1/12 self-center my-6 ml-6">
+        <img src={menu} alt="menu" className="w-fit"/>
       </div>
       <div className="flex flex-row gap-4 justify-center" id="header-icons">
         <div className="notification flex justify-center">

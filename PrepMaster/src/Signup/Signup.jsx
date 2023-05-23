@@ -29,15 +29,15 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex flex-row h-screen">
+    <div className="flex flex-row md:h-screen  max-md:self-center">
       <div className="flex flex-col justify-between w-full ">
-        <div className="flex flex-col p-10 gap-6 w-full">
+        <div className="flex flex-col p-10 max-md:px-10 max-md:pt-10 max-md:pb-0 gap-4 w-full">
           <NavLink to="/" element={<LandingPage />}>
-            <img class="w-1/4" src={logo} alt="logo" />
+            <img class="md:w-1/4 max-md:w-5/6 max-md:m-auto" src={logo} alt="logo" />
           </NavLink>
 
           <div className="signup-header flex flex-col self-center gap-2 mb-2">
-            <p className="text-3xl flex justify-center font-semibold">
+            <p className="text-3xl flex justify-center font-semibold max-md:mt-4">
               Create an account
             </p>
             <p className="text-sm opacity-50">
@@ -57,13 +57,15 @@ export default function Signup() {
             </NavLink>
           </div>
           <Outlet />
+
+          <p className="text-xs opacity-50 px-6 md:my-16 max-md:my-6">
+            © PrepMaster all rights reserved
+          </p>
         </div>
 
-        <p className="text-xs opacity-50 px-6 my-16">
-          © PrepMaster all rights reserved
-        </p>
+
       </div>
-      <div className="signup p-10 flex flex-col gap-6 justify-end pb-10">
+      <div className="max-md:hidden signup p-10 flex flex-col gap-6 justify-end pb-10">
         <p className="text-4xl font-bold w-3/4">
           Join 25,000+ students determined to ace their exit exams
         </p>

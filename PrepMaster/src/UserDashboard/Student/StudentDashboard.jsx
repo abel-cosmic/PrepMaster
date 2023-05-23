@@ -36,17 +36,17 @@ export default function StudentDashboard() {
   return (
     <div className="flex flex-col gap-4 mt-10 w-fit" id="student-dashboard">
       <div>
-        <p className="text-xl font-medium">Dashboard</p>
+        <p className="text-xl font-medium max-md:text-2xl max-md:font-semibold">Dashboard</p>
       </div>
       <p>
         Hello, {name} -{" "}
         <span className="opacity-50">Let's get some work done</span>
       </p>
-      <div className="flex flex-row gap-6">
+      <div className="flex flex-row gap-6 justify-between w-full max-md:flex-col">
         <OverViewContainer />
       </div>
-      <p className="text-lg font-medium mt-6">Daily Questions</p>
-      <div className="flex flex-row gap-6">
+      <p className="text-lg font-medium mt-6 max-md:text-2xl max-md:font-semibold">Daily Questions</p>
+      <div className="flex flex-row gap-6 w-full justify-between max-md:flex-col">
         <DailyQuestions />
       </div>
       <ProgressReport />

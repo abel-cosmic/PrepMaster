@@ -15,6 +15,15 @@ export function MobileNavigation() {
   const handleImageClick = () => {
     setIsActive(!isActive);
   };
+  const handleScrollTo = (tag) => {
+    const element = document.getElementById(tag);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 195,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <div className="md:hidden flex flex-col fixed-mobile-nav justify-between items-center z-50 ">
@@ -28,10 +37,10 @@ export function MobileNavigation() {
       </div>
       <div className={`${isActive ? "visible" : "hidden"} `}>
         <ul className="py-6 font-medium text-lg flex flex-col gap-2 justify-center self-center">
-          <li className="z-50 py-2 self-center">Home</li>
-          <li className="z-50 py-2 self-center">Services</li>
-          <li className="z-50 py-2 self-center">Pricing</li>
-          <li className="z-50 py-2 self-center">Contact</li>
+          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("home")}>Home</li>
+          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("services")}>Services</li>
+          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("pricing")}>Pricing</li>
+          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("contact")}>Contact</li>
           <li className="py-2 self-center">
             <NavLink to="Signin" element={<Signin />}>
               <SigninButton text={"Sign in"} padding={"0.7rem 2.45rem"} />

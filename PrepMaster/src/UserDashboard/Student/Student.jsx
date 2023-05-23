@@ -13,8 +13,8 @@ import LandingPage from "../../LandingPage/LandingPage";
 
 export default function Student() {
   return (
-    <div className="flex flex-row gap-6 m-6 ">
-      <div className="flex  flex-col gap-6 w-fit " id="SideBar">
+    <div className="flex flex-row gap-6 m-6 max-md:ml-0">
+      <div className="flex  flex-col gap-6 w-fit max-md:hidden " id="SideBar">
         <NavLink to="/" element={<LandingPage />}>
           <div className=" Logo flex justify-center self-center w-5/6 ">
             <img src={Logo} alt="Logo" />

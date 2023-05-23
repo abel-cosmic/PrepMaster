@@ -34,7 +34,7 @@ export default function SignupOrganization() {
   return (
     <form
       action=""
-      className="w-fit flex flex-col gap-6 justify-center self-center"
+      className="w-fit flex flex-col gap-6 justify-center self-center max-md:mb-20"
     >
       <div className="flex flex-col gap-4 w-full">
         <RenderInputs />

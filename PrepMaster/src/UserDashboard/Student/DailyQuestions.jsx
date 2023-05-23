@@ -32,7 +32,7 @@ export default function DailyQuestions() {
     return (
       <div
         key={item.title}
-        className="container w-fit pr-10 pl-4 py-4 flex flex-col gap-4"
+        className="container w-full pr-10 pl-4 py-4 flex flex-col gap-4"
       >
         <p className="text-lg font-medium">{item.title}</p>
         <div className="exam-detail flex flex-row gap-2 ">
