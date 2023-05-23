@@ -4,16 +4,13 @@ import search from "../assets/search.svg";
 import menu from "./../assets/menu.svg";
 import active from "./../assets/ACTIVE-MENU.svg";
 import React, { useState } from "react";
-import Logo from "./../assets/Logo.png";
 import AnalyticsIcon from "./../assets/AnalyticsIcon.svg";
 import DashBoardIcon from "./../assets/DashboardIcon.svg";
 import SettingsIcon from "./../assets/SettingsIcon.svg";
 import SupportIcon from "./../assets/SupportIcon.svg";
 import ExamIcon from "./../assets/ExamIcon.svg";
-import SpreadLine from "./../assets/SpreadLine.png";
 import { NavLink, Outlet } from "react-router-dom";
 import Logout from "./Logout";
-import LandingPage from "./../LandingPage/LandingPage";
 
 export default function HeaderDashboard() {
   const [isActive, setIsActive] = useState(false);

@@ -69,6 +69,11 @@
   width: fit-content;
   padding: 1rem 2rem;
 }
+.side-bar:hover{
+  backdrop-filter: blur(2rem);
+  background-color: rgba(39, 39, 39, 0.055);
+  padding: 1rem 4rem;
+}
 
 .container {
   border: 1px solid rgba(46, 46, 46, 0.15);
