@@ -12,12 +12,12 @@ export default function AdminDashboard() {
         Hello, Dagim -{" "}
         <span className="opacity-50">here's what's going on today</span>
       </p>
-      <div className="flex flex-row gap-6">
+      <div className="flex flex-row gap-6 max-md:flex-col max-md:gap-4">
         <OverViewContainer />
       </div>
       <ProgressReport />
-      <div className="flex flex-row gap-4 justify-between">
-        <div className="flex flex-col gap-4 container px-6 py-4">
+      <div className="flex flex-row gap-4 justify-between max-md:flex-col">
+        <div className="flex flex-col gap-4 container px-6 py-4 ">
           <MostAchievingDepartment />
         </div>
         <div className="flex flex-col gap-4 container px-6 py-4">

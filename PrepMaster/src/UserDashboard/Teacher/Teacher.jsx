@@ -24,7 +24,7 @@ export default function Teacher() {
   console.log(email);
 
   return (
-    <div className="flex flex-row gap-6 m-6 max-md:mt-16">
+    <div className="flex flex-row gap-6 m-6 z">
       <div className="max-md:hidden flex flex-col gap-6 w-fit " id="SideBar">
         <NavLink to="/" element={<LandingPage />}>
           <div className=" Logo flex justify-center self-center w-5/6 ">
@@ -33,7 +33,11 @@ export default function Teacher() {
         </NavLink>
 
         <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
-          <NavLink to="" end className="w-72 flex justify-center">
+          <NavLink
+            to={{ path: "", state: { email: email } }}
+            end
+            className="w-72 flex justify-center"
+          >
             <div className="side-bar text-md w-max" id="Dashboard">
               <img src={DashBoardIcon} alt="Dashboard Icon" />
               <p>Dashboard</p>
@@ -75,7 +79,7 @@ export default function Teacher() {
             <img src={SupportIcon} alt="Support Icon" />
             <p>Support</p>
           </div>
-          <NavLink to="TeacherSetting" className="w-72 flex justify-center">
+          <NavLink to="StudentSetting" className="w-72 flex justify-center">
             <div className="side-bar text-md" id="Settings">
               <img src={SettingsIcon} alt="Settings Icon" />
               <p>Settings</p>
