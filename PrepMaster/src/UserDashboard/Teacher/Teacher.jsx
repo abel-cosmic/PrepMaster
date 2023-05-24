@@ -33,11 +33,7 @@ export default function Teacher() {
         </NavLink>
 
         <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
-          <NavLink
-            to={{ path: "", state: { email: email } }}
-            end
-            className="w-72 flex justify-center"
-          >
+          <NavLink to="" end className="w-72 flex justify-center">
             <div className="side-bar text-md w-max" id="Dashboard">
               <img src={DashBoardIcon} alt="Dashboard Icon" />
               <p>Dashboard</p>
@@ -79,7 +75,7 @@ export default function Teacher() {
             <img src={SupportIcon} alt="Support Icon" />
             <p>Support</p>
           </div>
-          <NavLink to="StudentSetting" className="w-72 flex justify-center">
+          <NavLink to="TeacherSetting" className="w-72 flex justify-center">
             <div className="side-bar text-md" id="Settings">
               <img src={SettingsIcon} alt="Settings Icon" />
               <p>Settings</p>
