@@ -35,7 +35,7 @@ export default function StudentSecurity() {
   const RenderPasswordInputs = () => {
     return passwordList.map((item) => {
       return (
-        <div key={item.title} className="flex flex-row gap-6">
+        <div key={item.title} className="flex flex-row gap-6 max-md:flex-col">
           <p className="w-44">{item.title}</p>
           <input
             type="password"

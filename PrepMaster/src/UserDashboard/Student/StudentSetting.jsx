@@ -4,7 +4,7 @@ import StudentSecurity from "./StudentSecurity";
 
 export default function StudentSetting() {
   return (
-    <div className="flex flex-col mt-10 gap-4 ">
+    <div className="flex flex-col mt-10 gap-4 max-md:mt-6 ">
       <p className="text-xl font-medium">Settings</p>
       <p>Let's get some things configured</p>
       <ul type="none" className="settings-nav flex flex-row gap-6 text-sm">

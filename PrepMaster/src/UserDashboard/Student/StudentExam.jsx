@@ -6,7 +6,7 @@ export default function StudentExam() {
     <div className="student-exam flex flex-col mt-10">
       <div className="flex flex-row justify-between">
         <p className="text-xl font-medium">Exams</p>
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 pr-20 max-md:pr-4">
           <p>Filter</p>
           <img src={Filter} alt="Filter" />
         </div>
