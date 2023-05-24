@@ -1,6 +1,6 @@
 export default function AuthAdmin({ email, password }) {
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:8080/api/teachers", {
+    fetch("http://localhost:8080/api/admins/1", {
       method: "GET",
       mode: "cors",
       headers: {
@@ -9,9 +9,8 @@ export default function AuthAdmin({ email, password }) {
     })
       .then((response) => response.json())
       .then((teachers) => {
-        const valid = teachers.some(
-          (teacher) => teacher.email === email && teacher.password === password
-        );
+        const valid =
+          teachers.email === email && teachers.password === password;
         resolve(valid); // Resolve the promise with the authentication result
       })
       .catch((err) => {

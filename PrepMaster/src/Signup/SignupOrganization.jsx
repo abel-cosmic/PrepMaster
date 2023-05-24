@@ -33,6 +33,8 @@ export default function SignupOrganization() {
             type={item.type}
             name={item.title}
             id={item.title}
+            value={formik.values[item.type.toLowerCase()]}
+            onChange={formik.handleChange}
             placeholder={item.placeholder}
             className="container pl-4 pr-16 py-2"
             size="52"
