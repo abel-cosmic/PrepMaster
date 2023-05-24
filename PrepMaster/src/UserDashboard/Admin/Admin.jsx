@@ -65,7 +65,7 @@ export default function Admin() {
           <p className="opacity-50 text-xs">© PrepMaster all rights reserved</p>
         </div>
       </div>
-      <div className="flex flex-col w-full px-4">
+      <div className="flex flex-col w-full px-4 max-md:px-[0.1rem]">
         <div className="max-md:hidden">
         <HeaderDashboard />
         </div>

@@ -48,7 +48,7 @@ export default function Logout() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} className="flex flex-col gap-6">
+        <Box sx={style} className="flex flex-col gap-6 ">
           <p className="text-2xl font-medium flex justify-center">
             Logging out?
           </p>

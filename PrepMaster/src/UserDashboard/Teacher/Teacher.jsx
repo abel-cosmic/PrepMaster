@@ -92,7 +92,10 @@ export default function Teacher() {
         </div>
       </div>
       <div className="flex flex-col w-full px-4">
-        <HeaderDashboard />
+        <div className="max-md:hidden">
+          <HeaderDashboard />
+        </div>
+
         <Outlet />
       </div>
     </div>
