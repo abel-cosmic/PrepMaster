@@ -4,7 +4,6 @@ import AnswerFeedBack from "./../assets/FeedBack.svg";
 import Register from "./../assets/dashboard.svg";
 import { NavLink } from "react-router-dom";
 import Signup from "../Signup/Signup";
-import { MobileDemos } from "./MobileDemos";
 
 const demos = [
   {
@@ -50,29 +49,33 @@ export default function DemosContainer() {
           <div
             key={demo.id || demos.indexOf(demo)}
             className={`flex ${index % 2 === 1
-                ? "md:flex-row max-md:hidden"
-                : "md:flex-row-reverse max-md:hidden"
+                ? "md:flex-row max-md:flex-col"
+                : "md:flex-row-reverse max-md:flex-col"
               } px-6 md:py-32 items-center `}
             style={{ backgroundColor: containerBgColor }}>
             <div className="flex-shrink-0 md:w-1/2">
               <img
                 src={demo.image}
                 alt={demo.title}
-                className="h-auto max-w-full"/>
+                className="h-auto max-w-full max-md:hidden"/>
             </div>
             <div className="pl-4 flex flex-col">
               <h2
-                className={`md:text-5xl  font-bold md:mb-16   ${isFirstTitleColorful ? "text-[#088395]" : "text-[#2e2e2e]"}`}>
+                className={`md:text-5xl  font-bold md:mb-16 max-md:text-2xl  max-md:self-center max-md:mt-10 max-md:mb-2   ${isFirstTitleColorful ? "text-[#088395]" : "text-[#2e2e2e]"}`}>
                 <span
                   style={{ color: isFirstTitleColorful ? "black" : "#088395", fontWeight: "600" }}>
                   {firstWord}
                 </span>{" "}
                 {restOfTitle} {lastWord}
               </h2>
-              <p className="md:mb-10  md:text-xl  font-light">
+              <img
+                src={demo.image}
+                alt={demo.title}
+                className="h-auto max-w-full max-md:visible"/>
+              <p className="md:mb-10  md:text-xl max-md:mb-4  max-md:text-xs max-md:text-center max-md:px-4  font-light">
                 {demo.description}
               </p>
-              <div className={`flex ${isButtonJustify}`}>
+              <div className={`flex  max-md:mb-10 ${isButtonJustify}`}>
                 <NavLink to="Signup" element={<Signup />}>
                   <CustomButton
                     text={"Try for free"}
@@ -83,7 +86,6 @@ export default function DemosContainer() {
           </div>
         );
       })}
-      <MobileDemos/>
-    </div>
+         </div>
   );
 }
