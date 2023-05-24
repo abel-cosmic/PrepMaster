@@ -10,8 +10,13 @@ import { NavLink, Outlet } from "react-router-dom";
 import HeaderDashboard from "../HeaderDashboard";
 import Logout from "../Logout";
 import LandingPage from "../../LandingPage/LandingPage";
+import { useContext } from "react";
+import StudentContext from "../../Logic/StudentContext";
 
 export default function Student() {
+  const user = useContext(StudentContext);
+  const email = user?.email;
+
   return (
     <div className="flex flex-row gap-6 m-6 max-md:ml-0">
       <div className="flex  flex-col gap-6 w-fit max-md:hidden " id="SideBar">

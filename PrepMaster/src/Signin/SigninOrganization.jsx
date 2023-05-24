@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
+import AuthAdmin from "../Logic/AuthAdmin";
 
 export default function SigninOrganization() {
   const navigate = useNavigate();
@@ -10,8 +11,22 @@ export default function SigninOrganization() {
       password: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      navigate("/AdminDashboard");
+      AuthAdmin(values)
+        .then((valid) => {
+          if (valid) {
+            navigate("/AdminDashboard", {
+              state: {
+                email: values.email,
+              },
+            });
+          } else {
+            alert("Invalid email or password");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          // Handle error case
+        });
     },
   });
   const inputs = [

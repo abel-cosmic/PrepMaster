@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import StudentDashboard from "./UserDashboard/Student/StudentDashboard";
+import { BrowserRouter as Router } from "react-router-dom";
 import {
   Route,
   RouterProvider,
@@ -36,53 +36,78 @@ import TeacherDashboard from "./UserDashboard/Teacher/TeacherDashboard";
 import CreateExam from "./UserDashboard/Teacher/CreateExam";
 import QuestionCreator from "./UserDashboard/Teacher/QuestionCreator";
 import ViewExams from "./UserDashboard/Teacher/ViewExams";
+import { TeacherProvider } from "./Logic/TeacherProvider";
+import StudentDashboard from "./UserDashboard/Student/StudentDashboard";
+import { StudentProvider } from "./Logic/StudentProvider";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
+        {/* Define your routes here */}
         <Route index element={<LandingPage />} />
-        <Route path="Signup" element={<Signup />}>
+        <Route element={<Signup />} path="Signup">
           <Route index element={<SignupStudent />} />
-          <Route path="SignupOrganization" element={<SignupOrganization />} />
+          <Route element={<SignupOrganization />} path="SignupOrganization" />
         </Route>
-        <Route path="Signin" element={<Signin />}>
+        <Route element={<Signin />} path="Signin">
           <Route index element={<SigninStudent />} />
-          <Route path="SigninTeacher" element={<SigninTeacher />} />
-          <Route path="SigninOrganization" element={<SigninOrganization />} />
+          <Route element={<SigninTeacher />} path="SigninTeacher" />
+          <Route element={<SigninOrganization />} path="SigninOrganization" />
         </Route>
-        <Route path="StudentDashboard" element={<Student />}>
+        <Route element={<Student />} path="StudentDashboard">
           <Route index element={<StudentDashboard />} />
-          <Route path="StudentExam" element={<StudentExam />} />
-          <Route path="StudentSetting" element={<StudentSetting />}>
+          <Route element={<StudentExam />} path="StudentExam" />
+          <Route element={<StudentSetting />} path="StudentSetting">
             <Route index element={<StudentProfile />} />
-            <Route path="StudentSecurity" element={<StudentSecurity />} />
+            <Route element={<StudentSecurity />} path="StudentSecurity" />
           </Route>
         </Route>
-        <Route path="AdminDashboard" element={<Admin />}>
+        <Route element={<Admin />} path="AdminDashboard">
           <Route index element={<AdminDashboard />} />
-          <Route path="AdminUsers" element={<AdminUsers />} />
-          <Route path="AdminDepartment" element={<AdminDepartment />} />
+          <Route element={<AdminUsers />} path="AdminUsers" />
+          <Route element={<AdminDepartment />} path="AdminDepartment" />
         </Route>
-        <Route path="ExamSheet" element={<ExamSheet />} />
-        <Route path="/displayScore" element={<DisplayScore />} />
-        <Route path="/addUser" element={<AddUser />} />
-        <Route path="/edituser" element={<EditUser />} />
-        <Route path="/addDepartment" element={<AddDepartment />} />
-        <Route path="/editDepartment" element={<EditDepartment />} />
-        <Route path="/Logout" element={<Logout />} />
-        <Route path="TeacherDashboard" element={<Teacher />}>
+        <Route element={<ExamSheet />} path="ExamSheet" />
+        <Route element={<DisplayScore />} path="displayScore" />
+        <Route element={<AddUser />} path="addUser" />
+        <Route element={<EditUser />} path="edituser" />
+        <Route element={<AddDepartment />} path="addDepartment" />
+        <Route element={<EditDepartment />} path="editDepartment" />
+        <Route element={<Logout />} path="Logout" />
+        <Route element={<Teacher />} path="TeacherDashboard">
           <Route index element={<TeacherDashboard />} />
-          <Route path="CreateExam" element={<CreateExam />} />
-          <Route path="ViewExams" element={<ViewExams />} />
+          <Route element={<CreateExam />} path="CreateExam" />
+          <Route element={<ViewExams />} path="ViewExams" />
         </Route>
-        <Route path="/QuestionCreator" element={<QuestionCreator />} />
+        <Route element={<QuestionCreator />} path="QuestionCreator" />
       </Route>
     )
   );
+
   return (
     <div>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}>
+        <Router>
+          <TeacherProvider>
+            <Route element={<Teacher />} path="TeacherDashboard">
+              <Route index element={<TeacherDashboard />} />
+              <Route element={<CreateExam />} path="CreateExam" />
+              <Route element={<ViewExams />} path="ViewExams" />
+            </Route>
+          </TeacherProvider>
+          <StudentProvider>
+            <Route element={<Student />} path="StudentDashboard">
+              <Route index element={<StudentDashboard />} />
+              <Route element={<StudentExam />} path="StudentExam" />
+              <Route element={<StudentSetting />} path="StudentSetting">
+                <Route index element={<StudentProfile />} />
+                <Route element={<StudentSecurity />} path="StudentSecurity" />
+              </Route>
+            </Route>
+          </StudentProvider>
+        </Router>
+      </RouterProvider>
     </div>
   );
 }

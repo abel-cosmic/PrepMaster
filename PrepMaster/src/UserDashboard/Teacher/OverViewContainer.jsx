@@ -16,7 +16,10 @@ export default function OverViewContainer() {
 
   return analytics.map((item) => {
     return (
-      <div key={item.title} className="py-4 pr-24 pl-4 container w-fit">
+      <div
+        key={item.title}
+        className="py-4 pr-24 pl-4 flex flex-col gap-2 container w-full"
+      >
         <p className="text-lg font-medium">{item.title}</p>
         <p className="text-3xl font-bold">{item.value}</p>
       </div>

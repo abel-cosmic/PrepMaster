@@ -1,7 +1,11 @@
 import { useFormik } from "formik";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import TeacherContext from "../../Logic/TeacherContext";
 
 export default function CreateExam() {
+  const user = useContext(TeacherContext);
+  const email = user?.email;
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {

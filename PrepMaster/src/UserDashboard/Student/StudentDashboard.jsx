@@ -1,12 +1,14 @@
 import OverViewContainer from "./OverViewContainer";
 import DailyQuestions from "./DailyQuestions";
 import ProgressReport from "./ProgressReport";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import StudentContext from "../../Logic/StudentContext";
 
 export default function StudentDashboard() {
-  const location = useLocation();
-  const { email } = location.state;
+  const user = useContext(StudentContext);
+  const email = user?.email;
+  console.log(email);
   const [name, setName] = useState("");
   const [department, setDepartment] = useState("");
 
@@ -36,7 +38,9 @@ export default function StudentDashboard() {
   return (
     <div className="flex flex-col gap-4 mt-10 w-fit" id="student-dashboard">
       <div>
-        <p className="text-xl font-medium max-md:text-2xl max-md:font-semibold">Dashboard</p>
+        <p className="text-xl font-medium max-md:text-2xl max-md:font-semibold">
+          Dashboard
+        </p>
       </div>
       <p>
         Hello, {name} -{" "}
@@ -45,7 +49,9 @@ export default function StudentDashboard() {
       <div className="flex flex-row gap-6 justify-between w-full max-md:flex-col">
         <OverViewContainer />
       </div>
-      <p className="text-lg font-medium mt-6 max-md:text-2xl max-md:font-semibold">Daily Questions</p>
+      <p className="text-lg font-medium mt-6 max-md:text-2xl max-md:font-semibold">
+        Daily Questions
+      </p>
       <div className="flex flex-row gap-6 w-full justify-between max-md:flex-col">
         <DailyQuestions />
       </div>

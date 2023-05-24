@@ -2,11 +2,12 @@ import { useLocation } from "react-router-dom";
 import MostAchievingDepartment from "./MostAchiebingDepartment";
 import OverViewContainer from "./OverViewContainer";
 import ProgressReport from "./ProgressReport";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import TeacherContext from "../../Logic/TeacherContext";
 
 export default function TeacherDashboard() {
-  const location = useLocation();
-  const { email } = location.state;
+  const user = useContext(TeacherContext);
+  const email = user?.email;
   const [name, setName] = useState("");
   const [departmentId, setDepartmentId] = useState("");
   useEffect(() => {
@@ -28,17 +29,17 @@ export default function TeacherDashboard() {
   return (
     <div className="flex flex-col gap-4 mt-10 w-fit" id="student-dashboard">
       <div>
-        <p className="text-xl font-medium">Dashboard</p>
+        <p className="md:text-xl max-md:text-2xl font-medium">Dashboard</p>
       </div>
       <p>
         Hello, {name} -{" "}
         <span className="opacity-50">Let's get some work done</span>
       </p>
-      <div className="flex flex-row gap-6">
+      <div className="flex md:flex-row max-md:flex-col gap-6">
         <OverViewContainer />
       </div>
       <ProgressReport />
-      <div className="flex flex-row gap-6">
+      <div className="flex md:flex-row max-md:flex-col gap-6">
         <MostAchievingDepartment />
         <MostAchievingDepartment />
       </div>

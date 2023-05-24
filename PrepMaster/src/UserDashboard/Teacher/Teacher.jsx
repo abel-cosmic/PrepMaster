@@ -11,45 +11,21 @@ import HeaderDashboard from "../HeaderDashboard";
 import Logout from "../Logout";
 import LandingPage from "../../LandingPage/LandingPage";
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TeacherDashboard from "./TeacherDashboard";
 import AddTeacher from "./AddTeacher";
+import TeacherContext from "../../Logic/TeacherContext";
 
 export default function Teacher() {
-  const location = useLocation();
-  const { email } = location.state;
-  const [name, setName] = useState("");
-  const [department, setDepartment] = useState("");
+  const user = useContext(TeacherContext);
+  const email = user?.email;
   const [isHead, setIsHead] = useState(false);
 
-  useEffect(() => {
-    fetch("http://localhost:8080/api/teachers", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((teachers) => {
-        teachers.some((teacher) => {
-          if (teacher.email === email) {
-            console.log(teacher.email);
-            setName(teacher.firstName);
-            setDepartment(teacher.department);
-            if (teacher.departmentHead) setIsHead(true);
-            else setIsHead(false);
-          }
-        });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [email]);
+  console.log(email);
 
   return (
     <div className="flex flex-row gap-6 m-6 ">
-      <div className="flex  flex-col gap-6 w-fit " id="SideBar">
+      <div className="max-md:hidden flex flex-col gap-6 w-fit " id="SideBar">
         <NavLink to="/" element={<LandingPage />}>
           <div className=" Logo flex justify-center self-center w-5/6 ">
             <img src={Logo} alt="Logo" />
@@ -57,13 +33,20 @@ export default function Teacher() {
         </NavLink>
 
         <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
-          <NavLink to="" end className="w-72 flex justify-center">
+          <NavLink
+            to={{ path: "", state: { email: email } }}
+            end
+            className="w-72 flex justify-center"
+          >
             <div className="side-bar text-md w-max" id="Dashboard">
               <img src={DashBoardIcon} alt="Dashboard Icon" />
               <p>Dashboard</p>
             </div>
           </NavLink>
-          <NavLink to="CreateExam" className="w-72 flex justify-center">
+          <NavLink
+            to={{ pathname: "CreateExam", state: { email: email } }}
+            className="w-72 flex justify-center"
+          >
             <div className="side-bar  text-md " id="Exam">
               <img src={ExamIcon} alt="Create Exam Icon" />
               <p>Create Exam</p>

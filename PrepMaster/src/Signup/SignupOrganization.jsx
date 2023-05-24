@@ -1,4 +1,6 @@
+import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
+import AuthAdmin from "../Logic/AuthAdmin";
 
 export default function SignupOrganization() {
   const navigate = useNavigate();
@@ -11,6 +13,16 @@ export default function SignupOrganization() {
     { title: "Work Email", type: "email", placeholder: "Eg:abc123@gmail.com" },
     { title: "Password", type: "password", placeholder: "Enter password" },
   ];
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+    },
+    onSubmit: (values) => {
+      AuthAdmin(values).then((valid) => {});
+    },
+  });
 
   const RenderInputs = () => {
     return inputs.map((item) => {
@@ -33,7 +45,7 @@ export default function SignupOrganization() {
 
   return (
     <form
-      action=""
+      onSubmit={formik.handleSubmit}
       className="w-fit flex flex-col gap-6 justify-center self-center max-md:mb-20"
     >
       <div className="flex flex-col gap-4 w-full">
