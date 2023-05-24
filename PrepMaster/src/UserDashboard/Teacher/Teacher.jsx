@@ -24,7 +24,7 @@ export default function Teacher() {
   console.log(email);
 
   return (
-    <div className="flex flex-row gap-6 m-6 ">
+    <div className="flex flex-row gap-6 m-6 max-md:mt-16">
       <div className="max-md:hidden flex flex-col gap-6 w-fit " id="SideBar">
         <NavLink to="/" element={<LandingPage />}>
           <div className=" Logo flex justify-center self-center w-5/6 ">
