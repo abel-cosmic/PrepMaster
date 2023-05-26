@@ -37,7 +37,7 @@ export default function AddDepartment() {
     <div className="exam-sheet h-screen flex justify-center place-items-center">
       <form
         onSubmit={formik.handleSubmit}
-        className="bg-white flex flex-col gap-6 w-fit rounded-xl p-12"
+        className="bg-white flex flex-col gap-6 w-fit rounded-xl p-12 max-md:p-8 max-md:mx-20"
       >
         <p className="text-3xl font-medium self-center mb-4">
           Enter Department Details
@@ -45,10 +45,10 @@ export default function AddDepartment() {
         {inputs.map((input) => {
           return (
             <div key={input.title} className="flex flex-row gap-6">
-              <p className="w-44">{input.title}</p>
+              <p className="w-40">{input.title}</p>
               {input.type === "select" ? (
                 <select
-                  className="container w-[24.5rem] flex pl-4 pr-10 py-2"
+                  className="container w-[24.5rem] flex pl-4 pr-10 py-2 max-md:w-[14rem]"
                   name={input.value}
                   id={input.title}
                   onBlur={formik.handleChange}
@@ -63,7 +63,7 @@ export default function AddDepartment() {
               ) : (
                 <input
                   type={input.type}
-                  className="container w-fit flex pl-4 pr-10 py-2"
+                  className="container w-full flex pl-4 pr-10 py-2"
                   name={input.value}
                   id={input.title}
                   onBlur={formik.handleChange}
@@ -88,6 +88,8 @@ export default function AddDepartment() {
                 textTransform: "none",
                 color: "#2e2e2e",
                 fontWeight: "400",
+                borderRadius: "0.3rem",
+                padding: "0.8rem 3rem"
               }}
             >
               Cancel

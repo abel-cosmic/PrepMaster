@@ -29,7 +29,7 @@ export default function TeacherDashboard() {
       });
   }, []);
   return (
-    <div className="flex flex-col gap-4 mt-10 w-fit" id="student-dashboard">
+    <div className="flex flex-col gap-4 mt-20 w-fit" id="student-dashboard">
       <div>
         <p className="md:text-xl max-md:text-2xl font-medium">Dashboard</p>
       </div>

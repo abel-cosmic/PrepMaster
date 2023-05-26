@@ -71,7 +71,7 @@ export default function DemosContainer() {
               <img
                 src={demo.image}
                 alt={demo.title}
-                className="h-auto max-w-full max-md:visible"/>
+                className="h-auto max-w-full max-md:visible md:hidden"/>
               <p className="md:mb-10  md:text-xl max-md:mb-4  max-md:text-xs max-md:text-center max-md:px-4  font-light">
                 {demo.description}
               </p>

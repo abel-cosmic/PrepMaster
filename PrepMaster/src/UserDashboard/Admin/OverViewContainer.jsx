@@ -20,7 +20,7 @@ export default function OverViewContainer() {
 
   return overviewData.map((data) => {
     return (
-      <div className="container flex flex-col gap-2 pl-4  py-4 self-center w-80">
+      <div className="container flex flex-col gap-2 pl-4  py-4 self-center w-full ">
         <p className="text-lg font-medium ">{data.title}</p>
         <p className="text-4xl font-bold">{data.value}</p>
       </div>

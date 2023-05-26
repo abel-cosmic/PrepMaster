@@ -12,6 +12,7 @@ import Logout from "../Logout";
 import LandingPage from "../../LandingPage/LandingPage";
 import { useContext } from "react";
 import StudentContext from "../../Logic/StudentContext";
+import StudentHeader from "./StudentHeader";
 
 export default function Student() {
   const user = useContext(StudentContext);
@@ -63,7 +64,10 @@ export default function Student() {
         </div>
       </div>
       <div className="flex flex-col w-full px-4 max-md:mt-10">
+        <div className="max-md:hidden">
         <HeaderDashboard />
+        </div>
+        <StudentHeader/>
         <Outlet/>
       </div>
     </div>
