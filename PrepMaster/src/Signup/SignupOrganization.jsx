@@ -1,28 +1,37 @@
-import { useFormik } from "formik";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AuthAdmin from "../Logic/AuthAdmin";
+import CreateAdmin from "../Logic/CreateAdmin";
+import { useFormik } from "formik";
 
 export default function SignupOrganization() {
   const navigate = useNavigate();
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      organization: "",
+      password: "",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+      CreateAdmin(values).then((valid) => {
+        if (valid) {
+          console.log("Data sent");
+          console.log(values);
+        } else {
+          alert("Something went wrong. Please try again");
+        }
+      });
+    },
+  });
   const inputs = [
     {
-      title: "Organization Name",
+      title: "Organization",
       type: "text",
       placeholder: "Eg: Hope Enterprise University College",
     },
-    { title: "Work Email", type: "email", placeholder: "Eg:abc123@gmail.com" },
+    { title: "Email", type: "email", placeholder: "Eg:abc123@gmail.com" },
     { title: "Password", type: "password", placeholder: "Enter password" },
   ];
-
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-    },
-    onSubmit: (values) => {
-      AuthAdmin(values).then((valid) => {});
-    },
-  });
 
   const RenderInputs = () => {
     return inputs.map((item) => {
@@ -31,13 +40,13 @@ export default function SignupOrganization() {
           <p className="text-sm">{item.title}</p>
           <input
             type={item.type}
-            name={item.title}
+            name={item.title.toLowerCase()}
             id={item.title}
-            value={formik.values[item.type.toLowerCase()]}
-            onChange={formik.handleChange}
             placeholder={item.placeholder}
             className="container pl-4 pr-16 py-2"
             size="52"
+            defaultValue={formik.values[item.title.toLowerCase()]}
+            onBlur={formik.handleChange}
             required
           />
         </div>

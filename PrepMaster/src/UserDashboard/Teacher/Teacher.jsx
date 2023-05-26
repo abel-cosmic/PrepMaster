@@ -14,7 +14,7 @@ import { useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import TeacherDashboard from "./TeacherDashboard";
 import AddTeacher from "./AddTeacher";
-import TeacherContext from "../../Logic/TeacherContext";
+import TeacherContext from "../../Logic/UserContext";
 
 export default function Teacher() {
   const user = useContext(TeacherContext);

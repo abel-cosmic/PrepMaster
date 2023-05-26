@@ -3,11 +3,13 @@ import MostAchievingDepartment from "./MostAchiebingDepartment";
 import OverViewContainer from "./OverViewContainer";
 import ProgressReport from "./ProgressReport";
 import { useContext, useEffect, useState } from "react";
-import TeacherContext from "../../Logic/TeacherContext";
+import TeacherContext from "../../Logic/UserContext";
+import UserContext from "../../Logic/UserContext";
 
 export default function TeacherDashboard() {
-  const user = useContext(TeacherContext);
+  const user = useContext(UserContext);
   const email = user?.email;
+  console.log(email);
   const [name, setName] = useState("");
   const [departmentId, setDepartmentId] = useState("");
   useEffect(() => {

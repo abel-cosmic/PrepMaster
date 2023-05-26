@@ -1,6 +1,6 @@
-export default function AuthTeacher({ email, password }) {
+export default function AuthUser({ email, password, usertype }) {
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:8080/api/teachers", {
+    fetch(`http://localhost:8080/api/${usertype}`, {
       method: "GET",
       mode: "cors",
       headers: {
@@ -8,9 +8,9 @@ export default function AuthTeacher({ email, password }) {
       },
     })
       .then((response) => response.json())
-      .then((teachers) => {
-        const valid = teachers.some(
-          (teacher) => teacher.email === email && teacher.password === password
+      .then((users) => {
+        const valid = users.some(
+          (user) => user.email === email && user.password === password
         );
         resolve(valid); // Resolve the promise with the authentication result
       })

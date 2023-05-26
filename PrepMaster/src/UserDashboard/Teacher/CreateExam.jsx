@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import TeacherContext from "../../Logic/TeacherContext";
+import TeacherContext from "../../Logic/UserContext";
 
 export default function CreateExam() {
   const user = useContext(TeacherContext);

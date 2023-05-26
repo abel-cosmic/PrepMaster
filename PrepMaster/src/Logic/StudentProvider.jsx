@@ -22,7 +22,5 @@ export function StudentProvider({ children }) {
       });
   }, []);
 
-  return (
-    <StudentContext.Provider value={user}>{children}</StudentContext.Provider>
-  );
+  return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
 }

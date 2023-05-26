@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TeacherContext from "./TeacherContext";
+import TeacherContext from "./UserContext";
 
 export function TeacherProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -16,13 +16,13 @@ export function TeacherProvider({ children }) {
       .then((teachers) => {
         const currentUser = teachers.find((teacher) => teacher.email === email);
         setUser(currentUser);
+        console.log(currentUser);
+        debugger;
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
-  return (
-    <TeacherContext.Provider value={user}>{children}</TeacherContext.Provider>
-  );
+  return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
 }

@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
-import AuthTeacher from "../Logic/AuthTeacher";
+import AuthTeacher from "../Logic/AuthUser";
 
 export default function SigninTeacher() {
   const navigate = useNavigate();
@@ -9,6 +9,7 @@ export default function SigninTeacher() {
     initialValues: {
       email: "",
       password: "",
+      usertype: "teachers",
     },
     onSubmit: (values) => {
       AuthTeacher(values)
