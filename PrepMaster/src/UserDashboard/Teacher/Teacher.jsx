@@ -25,7 +25,7 @@ export default function Teacher() {
   console.log(email);
 
   return (
-    <div className="flex flex-row gap-6 m-6 z">
+    <div className="flex flex-row gap-6 m-6 max-md:m-4">
       <div className="max-md:hidden flex flex-col gap-6 w-fit " id="SideBar">
         <NavLink to="/" element={<LandingPage />}>
           <div className=" Logo flex justify-center self-center w-5/6 ">
@@ -35,7 +35,7 @@ export default function Teacher() {
 
         <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
           <NavLink
-            to={{ path: "", state: { email: email } }}
+            to=""
             end
             className="w-72 flex justify-center"
           >
@@ -92,7 +92,7 @@ export default function Teacher() {
           <p className="opacity-50 text-xs">© PrepMaster all rights reserved</p>
         </div>
       </div>
-      <div className="flex flex-col w-full px-4">
+      <div className="flex flex-col w-full px-4 max-md:px-0">
         <div className="max-md:hidden">
           <HeaderDashboard />
         </div>

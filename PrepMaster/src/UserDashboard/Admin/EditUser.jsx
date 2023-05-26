@@ -68,18 +68,18 @@ export default function EditUser() {
     <div className="exam-sheet h-screen flex justify-center place-items-center">
       <form
         onSubmit={formik.handleSubmit}
-        className="bg-white flex flex-col gap-6 w-fit rounded-xl p-12"
+        className="bg-white flex flex-col gap-6 w-fit rounded-xl p-12 max-md:px-8"
       >
         <p className="text-3xl font-medium self-center mb-4">
           Edit User Details
         </p>
         {inputs.map((input) => {
           return (
-            <div key={input.title} className="flex flex-row gap-6">
-              <p className="w-44">{input.title}</p>
+            <div key={input.title} className="flex flex-row gap-6 max-md:gap-0">
+              <p className="w-40">{input.title}</p>
               {input.type === "select" ? (
                 <select
-                  className="container w-[24.5rem] flex pl-4 pr-10 py-2"
+                  className="container w-[24.5rem] flex pl-4 pr-10 py-2 max-md:pr-0 max-md:w-[16rem]"
                   name={input.value}
                   id={input.title}
                   onBlur={formik.handleChange}
@@ -94,7 +94,7 @@ export default function EditUser() {
               ) : (
                 <input
                   type={input.type}
-                  className="container w-fit flex pl-4 pr-10 py-2"
+                  className="container w-full flex pl-4 pr-10 py-2 max-md:w-[16rem]"
                   name={input.value}
                   id={input.title}
                   onBlur={formik.handleChange}
@@ -116,6 +116,8 @@ export default function EditUser() {
                 textTransform: "none",
                 color: "#2e2e2e",
                 fontWeight: "400",
+                borderRadius: "0.3rem",
+                padding: "0.8rem 3rem"
               }}
             >
               Cancel

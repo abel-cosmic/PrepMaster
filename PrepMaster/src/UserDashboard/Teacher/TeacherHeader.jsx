@@ -3,7 +3,7 @@ import username from "../../assets/Username.svg";
 import search from "../../assets/search.svg";
 import menu from "../../assets/menu.svg";
 import active from "../../assets/ACTIVE-MENU.svg";
-import React, { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AnalyticsIcon from "../../assets/AnalyticsIcon.svg";
 import DashBoardIcon from "../../assets/DashboardIcon.svg";
 import SettingsIcon from "../../assets/SettingsIcon.svg";
@@ -13,18 +13,24 @@ import { NavLink, Outlet } from "react-router-dom";
 import Logout from "../Logout";
 import ViewExams from "../../assets/ViewExams.svg";
 import SpreadLine from "../../assets/SpreadLine.png";
+import TeacherContext from "../../Logic/TeacherContext";
 
 
 
 
 export default function TeacherHeader() {
+  const user = useContext(TeacherContext);
+  const email = user?.email;
+  const [isHead, setIsHead] = useState(false);
+
+  console.log(email);
   const [isActive, setIsActive] = useState(false);
 
   const handleImageClick = () => {
     setIsActive(!isActive);
   };
   return (
-    <div className="max-md:visible">
+    <div className="max-md:visible md:hidden">
       <div className="flex flex-row justify-between max-md:border-b max-md:fixed top-0 left-0 right-0 max-md:bg-white z-50 pr-2 md:w-[90rem]" id="HeaderDashboard">
       <div className="search-bar container py-2 pr-16 pl-4 flex flex-row gap-2 w-fit max-md:hidden">
         <img src={search} alt="search" />
@@ -46,7 +52,7 @@ export default function TeacherHeader() {
 
     <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
           <NavLink
-            to={{ path: "", state: { email: email } }}
+            to=""
             end
             className="w-72 flex justify-center"
           >

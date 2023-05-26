@@ -3,7 +3,7 @@ import ExamRenderer from "./ExamsRenderer";
 
 export default function ViewExams() {
   return (
-    <div className="student-exam flex flex-col mt-10">
+    <div className="student-exam flex flex-col mt-10 max-md:mt-20">
       <div className="flex flex-row justify-between">
         <p className="text-xl font-medium">View Exams</p>
         <div className="flex flex-row gap-2">
