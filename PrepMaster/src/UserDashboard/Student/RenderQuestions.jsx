@@ -96,7 +96,13 @@ export default function RenderQuestions({ CourseTitle, ExamTitle }) {
         <div className="flex flex-row gap-6 justify-end">
           <Button
             variant="text"
-            sx={{ textTransform: "none", color: "#2e2e2e", fontWeight: "400" }}
+            sx={{
+              textTransform: "none",
+              color: "#2e2e2e",
+              fontWeight: "400",
+              borderRadius: "0.3rem",
+              padding: "0.8rem 3rem"
+            }}
           >
             Skip
           </Button>

@@ -98,7 +98,7 @@ export default function Student() {
         </div>
       </div> 
     </div>
-    <div className={`${isActive ? "visible" : "hidden"} max-md:fixed left-0 top-[4.22rem] bg-white z-50 border-t mt-2 w-full flex flex-col`}>
+    <div className={`${isActive ? "visible" : "hidden"} max-md:fixed left-0 top-[4.22rem] bg-white z-50 border-t mt-2 w-full flex flex-col max-md:pl-16`}>
         <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
           <NavLink to="" end className="w-72 flex  self-start">
             <div className="side-bar text-md w-max" id="Dashboard">
@@ -134,8 +134,8 @@ export default function Student() {
           <Logout />
           </div>
         </div>
-        <div className=" copyright">
-          <p className="opacity-50 text-xs">© PrepMaster all rights reserved</p>
+        <div className=" copyright max-md:pb-52">
+          <p className="opacity-50 text-xs max-md:ml-10 max-md:mt-40">© PrepMaster all rights reserved</p>
         </div>
       </div>
     </div>

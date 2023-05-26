@@ -185,8 +185,8 @@ export default function Teacher() {
           </NavLink>
           <Logout />
         </div>
-        <div className=" copyright">
-          <p className="opacity-50 text-xs">© PrepMaster all rights reserved</p>
+        <div className=" copyright max-md:pb-10">
+          <p className="opacity-50 text-xs max-md:ml-10 max-md:mt-10">© PrepMaster all rights reserved</p>
         </div>
       </div>
     </div>
