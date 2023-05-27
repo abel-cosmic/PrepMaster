@@ -17,6 +17,7 @@ export default function SignupOrganization() {
         if (valid) {
           console.log("Data sent");
           console.log(values);
+          navigate("/AdminDashboard");
         } else {
           alert("Something went wrong. Please try again");
         }

@@ -1,11 +1,10 @@
 import { useFormik } from "formik";
 import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import TeacherContext from "../../Logic/UserContext";
+import { useEmail } from "../../Logic/TeacherContext";
 
-export default function CreateExam(){
-  const user = useContext(TeacherContext);
-  const email = user?.email;
+export default function CreateExam() {
+  const email = useEmail();
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
@@ -27,7 +26,10 @@ export default function CreateExam(){
     },
   });
   return (
-    <div className="flex flex-col gap-4 mt-10 w-fit max-md:mt-20" id="student-dashboard">
+    <div
+      className="flex flex-col gap-4 mt-10 w-fit max-md:mt-20"
+      id="student-dashboard"
+    >
       <div>
         <p className="text-xl font-medium">Create Exams</p>
       </div>
@@ -65,7 +67,9 @@ export default function CreateExam(){
           />
         </div>
         <div className="flex flex-row gap-6 max-md:gap-0">
-          <p className="self-center w-[14rem] max-md:w-[8rem]">Number of Questions</p>
+          <p className="self-center w-[14rem] max-md:w-[8rem]">
+            Number of Questions
+          </p>
           <input
             type="number"
             name="noquestion"
@@ -77,7 +81,7 @@ export default function CreateExam(){
             required
           />
         </div>
-       <div className="flex flex-row gap-6 max-md:gap-0">
+        <div className="flex flex-row gap-6 max-md:gap-0">
           <p className="self-center w-[14rem] max-md:w-[8rem]">Allowed Time</p>
           <input
             type="number"

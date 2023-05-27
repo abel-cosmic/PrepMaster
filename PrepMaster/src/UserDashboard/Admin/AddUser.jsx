@@ -30,7 +30,7 @@ export default function AddUser() {
       title: "Role",
       placeholder: "Enter role",
       type: "select",
-      options: ["Student", "Teacher"],
+      options: ["Student", "Teacher", "Teacher(Department Head)"],
     },
     {
       value: "email",
@@ -78,7 +78,7 @@ export default function AddUser() {
               <p className="w-40">{input.title}</p>
               {input.type === "select" ? (
                 <select
-                  className="container w-[24.5rem] flex pl-4 pr-10 py-2 max-md:w-[14rem]"
+                  className="container bg-white flex pl-4 pr-10 py-2 max-md:w-[14rem]"
                   name={input.value}
                   id={input.title}
                   onBlur={formik.handleChange}
@@ -116,7 +116,7 @@ export default function AddUser() {
                 color: "#2e2e2e",
                 fontWeight: "400",
                 borderRadius: "0.3rem",
-                padding: "0.8rem 3rem"
+                padding: "0.8rem 3rem",
               }}
             >
               Cancel

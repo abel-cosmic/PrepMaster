@@ -42,40 +42,45 @@ export default function AddDepartment() {
         <p className="text-3xl font-medium self-center mb-4">
           Enter Department Details
         </p>
-        {inputs.map((input) => {
-          return (
-            <div key={input.title} className="flex flex-row gap-6">
-              <p className="w-40">{input.title}</p>
-              {input.type === "select" ? (
-                <select
-                  className="container w-[24.5rem] flex pl-4 pr-10 py-2 max-md:w-[14rem]"
-                  name={input.value}
-                  id={input.title}
-                  onBlur={formik.handleChange}
-                  required
-                >
-                  {input.options.map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <input
-                  type={input.type}
-                  className="container w-full flex pl-4 pr-10 py-2"
-                  name={input.value}
-                  id={input.title}
-                  onBlur={formik.handleChange}
-                  defaultValue={formik.values[input.value]}
-                  placeholder={input.placeholder}
-                  size="34"
-                  required
-                />
-              )}
-            </div>
-          );
-        })}
+        <div className="flex flex-col  gap-6 ">
+          {inputs.map((input) => {
+            return (
+              <div
+                key={input.title}
+                className="flex flex-row justify-between gap-6"
+              >
+                <p className="w-40 ">{input.title}</p>
+                {input.type === "select" ? (
+                  <select
+                    className="container bg-white w-[24.5rem] flex pl-4 pr-10 py-2 max-md:w-[14rem] "
+                    name={input.value}
+                    id={input.title}
+                    onBlur={formik.handleChange}
+                    required
+                  >
+                    {input.options.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={input.type}
+                    className="container w-[24.5rem] flex pl-4 pr-10 py-2 "
+                    name={input.value}
+                    id={input.title}
+                    onBlur={formik.handleChange}
+                    defaultValue={formik.values[input.value]}
+                    placeholder={input.placeholder}
+                    size="34"
+                    required
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
 
         <div className="flex flex-row gap-6 justify-end">
           <NavLink
@@ -89,7 +94,7 @@ export default function AddDepartment() {
                 color: "#2e2e2e",
                 fontWeight: "400",
                 borderRadius: "0.3rem",
-                padding: "0.8rem 3rem"
+                padding: "0.8rem 3rem",
               }}
             >
               Cancel

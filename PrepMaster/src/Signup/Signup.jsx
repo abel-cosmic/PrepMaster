@@ -31,9 +31,13 @@ export default function Signup() {
   return (
     <div className="flex flex-row md:h-screen  max-md:self-center">
       <div className="flex flex-col justify-between w-full ">
-        <div className="flex flex-col p-10 max-md:px-10 max-md:pt-10 max-md:pb-0 gap-4 w-full">
+        <div className="flex flex-col pt-10 px-10 max-md:px-10 max-md:pt-10 max-md:pb-0 gap-4 w-full">
           <NavLink to="/" element={<LandingPage />}>
-            <img class="md:w-1/4 max-md:w-5/6 max-md:m-auto" src={logo} alt="logo" />
+            <img
+              class="md:w-1/4 max-md:w-5/6 max-md:m-auto"
+              src={logo}
+              alt="logo"
+            />
           </NavLink>
 
           <div className="signup-header flex flex-col self-center gap-2 mb-2">
@@ -62,8 +66,6 @@ export default function Signup() {
             © PrepMaster all rights reserved
           </p>
         </div>
-
-
       </div>
       <div className="max-md:hidden signup p-10 flex flex-col gap-6 justify-end pb-10">
         <p className="text-4xl font-bold w-3/4">

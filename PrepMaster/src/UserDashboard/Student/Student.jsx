@@ -11,12 +11,11 @@ import HeaderDashboard from "../HeaderDashboard";
 import Logout from "../Logout";
 import LandingPage from "../../LandingPage/LandingPage";
 import { useContext } from "react";
-import StudentContext from "../../Logic/StudentContext";
 import StudentHeader from "./StudentHeader";
+import { useEmail } from "../../Logic/TeacherContext";
 
 export default function Student() {
-  const user = useContext(StudentContext);
-  const email = user?.email;
+  const email = useEmail();
 
   return (
     <div className="flex flex-row gap-6 m-6 max-md:mx-0">
@@ -65,10 +64,10 @@ export default function Student() {
       </div>
       <div className="flex flex-col w-full px-4 max-md:mt-10">
         <div className="max-md:hidden">
-        <HeaderDashboard />
+          <HeaderDashboard />
         </div>
-        <StudentHeader/>
-        <Outlet/>
+        <StudentHeader />
+        <Outlet />
       </div>
     </div>
   );

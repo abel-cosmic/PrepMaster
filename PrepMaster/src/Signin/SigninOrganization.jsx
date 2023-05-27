@@ -1,24 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import AuthAdmin from "../Logic/AuthAdmin";
+4;
+import { useEmail } from "../Logic/TeacherContext";
+import AuthUser from "../Logic/AuthUser";
 
 export default function SigninOrganization() {
   const navigate = useNavigate();
+  const { setEmail } = useEmail();
 
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
+      usertype: "admins/2",
     },
     onSubmit: (values) => {
-      AuthAdmin(values)
+      AuthUser(values)
         .then((valid) => {
           if (valid) {
-            navigate("/AdminDashboard", {
-              state: {
-                email: values.email,
-              },
-            });
+            setEmail(values.email);
+            navigate("/AdminDashboard");
           } else {
             alert("Invalid email or password");
           }

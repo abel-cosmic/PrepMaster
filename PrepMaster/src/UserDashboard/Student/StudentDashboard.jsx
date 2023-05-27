@@ -3,11 +3,10 @@ import DailyQuestions from "./DailyQuestions";
 import ProgressReport from "./ProgressReport";
 import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import StudentContext from "../../Logic/StudentContext";
+import { useEmail } from "../../Logic/TeacherContext";
 
 export default function StudentDashboard() {
-  const user = useContext(StudentContext);
-  const email = user?.email;
+  const { email } = useEmail();
   console.log(email);
   const [name, setName] = useState("");
   const [department, setDepartment] = useState("");

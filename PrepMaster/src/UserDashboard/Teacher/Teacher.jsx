@@ -14,16 +14,29 @@ import { useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import TeacherDashboard from "./TeacherDashboard";
 import AddTeacher from "./AddTeacher";
-import TeacherContext from "../../Logic/TeacherContext";
 import TeacherHeader from "./TeacherHeader";
-import TeacherContext from "../../Logic/UserContext";
+import { useEmail } from "../../Logic/TeacherContext";
+import addUser from "../../assets/addUser.svg";
 
 export default function Teacher() {
-  const user = useContext(TeacherContext);
-  const email = user?.email;
+  const { email } = useEmail();
   const [isHead, setIsHead] = useState(false);
 
-  console.log(email);
+  useEffect(() => {
+    fetch("http://localhost:8080/api/teachers")
+      .then((response) => response.json())
+      .then((teachers) => {
+        const isTeacherHead = teachers.some(
+          (teacher) => teacher.email === email
+        );
+        setIsHead(isTeacherHead);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [email]);
+
+  // console.log(email);
 
   return (
     <div className="flex flex-row gap-6 m-6 max-md:m-4">
@@ -41,10 +54,7 @@ export default function Teacher() {
               <p>Dashboard</p>
             </div>
           </NavLink>
-          <NavLink
-            to={{ pathname: "CreateExam", state: { email: email } }}
-            className="w-72 flex justify-center"
-          >
+          <NavLink to="CreateExam" className="w-72 flex justify-center">
             <div className="side-bar  text-md " id="Exam">
               <img src={ExamIcon} alt="Create Exam Icon" />
               <p>Create Exam</p>
@@ -58,9 +68,9 @@ export default function Teacher() {
           </NavLink>
 
           {isHead && (
-            <NavLink to="AddTeacher">
+            <NavLink to="/AddTeacher">
               <div className="side-bar text-md" id="AddTeacher">
-                <img src={AnalyticsIcon} alt="Analytics Icon" />
+                <img src={addUser} alt="Add Teacher Icon" />
                 <p>Add Teacher</p>
               </div>
             </NavLink>

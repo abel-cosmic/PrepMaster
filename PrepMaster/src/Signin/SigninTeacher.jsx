@@ -1,8 +1,12 @@
+import React, { createContext, useContext } from "react";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import AuthTeacher from "../Logic/AuthUser";
+import { TeacherContext, useEmail } from "../Logic/TeacherContext";
+import AuthUser from "../Logic/AuthUser";
 
 export default function SigninTeacher() {
+  const { setEmail } = useEmail();
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -12,14 +16,12 @@ export default function SigninTeacher() {
       usertype: "teachers",
     },
     onSubmit: (values) => {
-      AuthTeacher(values)
+      AuthUser(values)
         .then((valid) => {
           if (valid) {
-            navigate("/TeacherDashboard", {
-              state: {
-                email: values.email,
-              },
-            });
+            console.log("Setting email in context:", values.email);
+            setEmail(values.email); // Set the email value in TeacherContext
+            navigate("/TeacherDashboard");
           } else {
             alert("Incorrect Password or Email");
           }
@@ -29,6 +31,7 @@ export default function SigninTeacher() {
         });
     },
   });
+
   const inputs = [
     {
       title: "Email",

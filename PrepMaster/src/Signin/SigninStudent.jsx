@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import AuthStudent from "../Logic/AuthStudent";
 import AuthUser from "../Logic/AuthUser";
+import { useEmail } from "../Logic/TeacherContext";
 
 export default function SigninStudent() {
   const navigate = useNavigate();
+  const { setEmail } = useEmail();
 
   const formik = useFormik({
     initialValues: {
@@ -16,11 +17,8 @@ export default function SigninStudent() {
       AuthUser(values)
         .then((valid) => {
           if (valid) {
-            navigate("/StudentDashboard", {
-              state: {
-                email: values.email,
-              },
-            });
+            setEmail(values.email);
+            navigate("/StudentDashboard");
           } else {
             alert("Invalid email or password");
           }

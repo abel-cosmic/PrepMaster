@@ -36,9 +36,9 @@ import TeacherDashboard from "./UserDashboard/Teacher/TeacherDashboard";
 import CreateExam from "./UserDashboard/Teacher/CreateExam";
 import QuestionCreator from "./UserDashboard/Teacher/QuestionCreator";
 import ViewExams from "./UserDashboard/Teacher/ViewExams";
-import { TeacherProvider } from "./Logic/TeacherProvider";
+import { TeacherProvider } from "./Logic/TeacherContext";
 import StudentDashboard from "./UserDashboard/Student/StudentDashboard";
-import { StudentProvider } from "./Logic/StudentProvider";
+import AddTeacher from "./UserDashboard/Teacher/AddTeacher";
 
 function App() {
   const router = createBrowserRouter(
@@ -68,6 +68,12 @@ function App() {
           <Route element={<AdminUsers />} path="AdminUsers" />
           <Route element={<AdminDepartment />} path="AdminDepartment" />
         </Route>
+        <Route element={<Teacher />} path="TeacherDashboard">
+          <Route index element={<TeacherDashboard />} />
+          <Route element={<CreateExam />} path="CreateExam" />
+          <Route element={<ViewExams />} path="ViewExams" />
+        </Route>
+        <Route element={<AddTeacher />} path="AddTeacher" />
         <Route element={<ExamSheet />} path="ExamSheet" />
         <Route element={<DisplayScore />} path="displayScore" />
         <Route element={<AddUser />} path="addUser" />
@@ -75,11 +81,6 @@ function App() {
         <Route element={<AddDepartment />} path="addDepartment" />
         <Route element={<EditDepartment />} path="editDepartment" />
         <Route element={<Logout />} path="Logout" />
-        <Route element={<Teacher />} path="TeacherDashboard">
-          <Route index element={<TeacherDashboard />} />
-          <Route element={<CreateExam />} path="CreateExam" />
-          <Route element={<ViewExams />} path="ViewExams" />
-        </Route>
         <Route element={<QuestionCreator />} path="QuestionCreator" />
       </Route>
     )
@@ -87,16 +88,22 @@ function App() {
 
   return (
     <div>
-      <RouterProvider router={router}>
-        <Router>
-          <TeacherProvider>
+      <TeacherProvider>
+        <RouterProvider router={router}>
+          <Router>
+            <Route element={<Signin />} path="Signin">
+              <Route index element={<SigninStudent />} />
+              <Route element={<SigninTeacher />} path="SigninTeacher" />
+              <Route
+                element={<SigninOrganization />}
+                path="SigninOrganization"
+              />
+            </Route>
             <Route element={<Teacher />} path="TeacherDashboard">
               <Route index element={<TeacherDashboard />} />
               <Route element={<CreateExam />} path="CreateExam" />
               <Route element={<ViewExams />} path="ViewExams" />
             </Route>
-          </TeacherProvider>
-          <StudentProvider>
             <Route element={<Student />} path="StudentDashboard">
               <Route index element={<StudentDashboard />} />
               <Route element={<StudentExam />} path="StudentExam" />
@@ -105,9 +112,16 @@ function App() {
                 <Route element={<StudentSecurity />} path="StudentSecurity" />
               </Route>
             </Route>
-          </StudentProvider>
-        </Router>
-      </RouterProvider>
+            <Route element={<AddTeacher />} path="AddTeacher" />
+            <Route element={<ExamSheet />} path="ExamSheet" />
+            <Route element={<DisplayScore />} path="displayScore" />
+            <Route element={<AddUser />} path="addUser" />
+            <Route element={<EditUser />} path="edituser" />
+            <Route element={<AddDepartment />} path="addDepartment" />
+            <Route element={<EditDepartment />} path="editDepartment" />
+          </Router>
+        </RouterProvider>
+      </TeacherProvider>
     </div>
   );
 }

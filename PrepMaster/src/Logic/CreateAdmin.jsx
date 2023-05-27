@@ -9,7 +9,14 @@ export default function CreateAdmin({ email, organization, password }) {
       },
       body: JSON.stringify({ email, organization, password }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.headers.get("content-length") === "0") {
+          // Handle empty response
+          resolve();
+        } else {
+          return response.json();
+        }
+      })
       .then((resp) => {
         console.log(resp.errors);
         resolve(resp);
