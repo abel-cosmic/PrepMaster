@@ -1,11 +1,30 @@
 import { Button } from "@mui/material";
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import AdminUsers from "./AdminUsers";
+import { useUserData } from "../../Logic/UserDataContext";
+import UpdateStudent from "../../Logic/UpdateStudent";
+import UpdateTeacher from "../../Logic/UpdateTeacher";
 
 export default function EditUser() {
-  //take a prop that passes all the users info here
+  const { userData } = useUserData();
+  const [departments, setDepartments] = useState();
+  console.log(userData);
+
+  useEffect(() => {
+    const fetchDepartments = async () => {
+      const departmentResponse = await fetch(
+        "http://localhost:8080/api/departments"
+      );
+      const departmentData = await departmentResponse.json();
+      setDepartments(departmentData);
+    };
+    fetchDepartments();
+  }, []);
+
+  console.log(departments);
+
   const inputs = [
     {
       value: "firstname",
@@ -20,18 +39,26 @@ export default function EditUser() {
       type: "text",
     },
     {
-      value: "department",
+      value: "departmentId",
       title: "Department",
       placeholder: "Enter department",
       type: "select",
-      options: ["CS", "IT", "SE", "CE", "EE", "ME"],
+      options: departments
+        ? departments.map((department) => department.name)
+        : [],
     },
     {
-      value: "role",
-      title: "Role",
-      placeholder: "Enter role",
+      value: "gender",
+      title: "Gender",
+      placeholder: "Enter gender",
       type: "select",
-      options: ["Student", "Teacher"],
+      options: ["Male", "Female", "Retarded"],
+    },
+    {
+      value: "phoneNumber",
+      title: "Phone Number",
+      placeholder: "Enter phone number",
+      type: "text",
     },
     {
       value: "email",
@@ -43,7 +70,7 @@ export default function EditUser() {
       value: "password",
       title: "Password",
       placeholder: "Enter password",
-      type: "password",
+      type: "text",
     },
   ];
 
@@ -51,16 +78,41 @@ export default function EditUser() {
 
   const formik = useFormik({
     initialValues: {
-      firstname: "",
-      lastname: "",
-      department: "",
-      role: "",
-      email: "",
-      password: "",
+      id: userData.id,
+      firstname: userData.firstName,
+      lastname: userData.lastName,
+      departmentId: "",
+      email: userData.email,
+      password: userData.password,
+      gender: userData.gender,
+      phoneNumber: userData.phoneNumber,
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      navigate("/AdminUsers");
+      if (userData.departmentHead === undefined) {
+        UpdateStudent(values)
+          .then(() => {
+            alert("Student data successfully updated");
+            navigate("/AdminDashboard/AdminUsers");
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      } else {
+        const updatedValues = {
+          ...values,
+          departmentHead: userData.departmentHead,
+        };
+
+        UpdateTeacher(updatedValues)
+          .then(() => {
+            alert("Teacher data successfully updated");
+            navigate("/AdminDashboard/AdminUsers");
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
     },
   });
 
@@ -79,14 +131,14 @@ export default function EditUser() {
               <p className="w-40">{input.title}</p>
               {input.type === "select" ? (
                 <select
-                  className="container w-[24.5rem] flex pl-4 pr-10 py-2 max-md:pr-0 max-md:w-[16rem]"
+                  className="container  bg-white flex pl-4 pr-10 py-2 max-md:pr-0 max-md:w-[16rem]"
                   name={input.value}
                   id={input.title}
                   onBlur={formik.handleChange}
                   required
                 >
-                  {input.options.map((option) => (
-                    <option key={option} value={option}>
+                  {input.options.map((option, index) => (
+                    <option key={option} value={index + 1}>
                       {option}
                     </option>
                   ))}
@@ -117,7 +169,7 @@ export default function EditUser() {
                 color: "#2e2e2e",
                 fontWeight: "400",
                 borderRadius: "0.3rem",
-                padding: "0.8rem 3rem"
+                padding: "0.8rem 3rem",
               }}
             >
               Cancel

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function CreateTeacherHead({
+export default function CreateTeacher({
   firstName,
   lastName,
   departmentId,
@@ -24,7 +24,7 @@ export default function CreateTeacherHead({
           phoneNumber,
           gender,
           password,
-          departmentHead: true,
+          departmentHead: false,
         },
         departmentId,
       }),

@@ -8,10 +8,14 @@ export default function AdminDashboard() {
   const { email } = useEmail();
   const [name, setName] = useState("");
   useEffect(() => {
-    fetch("http://localhost:8080/api/admins/2")
+    fetch("http://localhost:8080/api/admins")
       .then((response) => response.json())
-      .then((admin) => {
-        setName(admin.firstName);
+      .then((admins) => {
+        admins.some((admin) => {
+          if (email === admin.email) {
+            setName(admin.organization);
+          }
+        });
       });
   }, []);
 

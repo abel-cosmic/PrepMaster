@@ -5,48 +5,47 @@ import Filter from "../../assets/Filter.svg";
 import search from "../../assets/search.svg";
 import EditUser from "./EditUser";
 import message from "../../assets/mail.svg";
+import { useEffect, useState } from "react";
+import { useEmail } from "../../Logic/TeacherContext";
+import { useUserData } from "../../Logic/UserDataContext";
+import { Box } from "@mui/material";
+import { DeleteUser } from "../../Logic/DeleteUser";
 export default function RenderUsers() {
-  const users = [
-    {
-      name: "Abel Shibabaw",
-      type: "Student",
-      email: "abel@gmail.com",
-    },
-    {
-      name: "Abel Shibabaw",
-      type: "Student",
-      email: "abel@gmail.com",
-    },
-    {
-      name: "Abel Shibabaw",
-      type: "Student",
-      email: "abel@gmail.com",
-    },
-    {
-      name: "Mohammed Ibrahim",
-      type: "Teacher",
-      email: "mohammed@gmail.com",
-    },
-    {
-      name: "Mohammed Ibrahim",
-      type: "Teacher",
-      email: "mohammed@gmail.com",
-    },
-    {
-      name: "Mohammed Ibrahim",
-      type: "Teacher",
-      email: "mohammedibrahim4641@gmail.com",
-    },
-  ];
+  const [students, setStudents] = useState([]);
+  const [teachers, setTeachers] = useState([]);
+  const { setUserData } = useUserData();
+
+  const [deletionStatus, setDeletionStatus] = useState(false);
+
+  useEffect(() => {
+    const fetchStudents = async () => {
+      const studentResponse = await fetch("http://localhost:8080/api/students");
+      const studentData = await studentResponse.json();
+      setStudents(studentData);
+    };
+    fetchStudents();
+
+    const fetchTeachers = async () => {
+      const teacherResponse = await fetch("http://localhost:8080/api/teachers");
+      const teacherData = await teacherResponse.json();
+      setTeachers(teacherData);
+    };
+    fetchTeachers();
+  }, [deletionStatus]);
+
+  const handleDeleteUser = async (id, type) => {
+    await DeleteUser({ id, type });
+    setDeletionStatus((prevStatus) => !prevStatus);
+  };
 
   return (
     <div className="flex flex-col gap-6 max-md:gap-4">
-      <div className="flex flex-row gap-24">
-        <div className="search-bar container py-2 pr-16 pl-4 flex flex-row gap-2 w-full max-md:visible md:hidden">
+      <div className="flex md:flex-row max-md:flex-col md:gap-24 max-md:gap-6">
+        <div className="search-bar container py-2 pr-16 pl-4 flex flex-row gap-2 w-full md:hidden">
           <img src={search} alt="search" />
           <input type="search" name="search" id="search" placeholder="Search" />
         </div>
-        <div className="flex flex-row gap-4 max-md:visible md:hidden">
+        <div className="flex flex-row gap-4 md:hidden">
           <p className="self-center opacity-50">Filter</p>
           <img src={Filter} alt="Filter" />
         </div>
@@ -64,42 +63,74 @@ export default function RenderUsers() {
           <img src={Filter} alt="Filter" />
         </div>
       </div>
-      {users.map((user) => {
+      {students.map((student) => {
         return (
           <div
-            key={user.email}
+            key={student.email}
             className="flex flex-row gap-20 pb-4 bottom-styled max-md:hidden"
           >
-            <p className="md:w-44 self-center text-sm flex flex-row gap-20"><span className="md:hidden">Name</span>{user.name}</p>
-            <p className="md:w-64 self-center text-sm flex flex-row gap-20"><span className="md:hidden mr-4">Email</span>{user.email}</p>
-            <p className="md:w-52 self-center text-sm flex flex-row gap-20"><span className="md:hidden">User Type</span>{user.type}</p>
+            <p className="md:w-44 self-center text-sm flex flex-row gap-20">
+              <span className="md:hidden">Name</span>
+              {student.firstName + " " + student.lastName}
+            </p>
+            <p className="md:w-64 self-center text-sm flex flex-row gap-20">
+              <span className="md:hidden mr-4">Email</span>
+              {student.email}
+            </p>
+            <p className="md:w-52 self-center text-sm flex flex-row gap-20">
+              <span className="md:hidden">User Type</span>
+              Student
+            </p>
             <div className="flex-row flex gap-10 max-md:hidden">
-              <NavLink to="/edituser" element={<EditUser />}>
+              <NavLink
+                to="/edituser"
+                element={<EditUser />}
+                onClick={() => {
+                  setUserData(student);
+                }}
+              >
                 <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
               </NavLink>
-              <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />
+              <Box onClick={() => handleDeleteUser(student.id, "students")}>
+                <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />
+              </Box>
             </div>
           </div>
         );
       })}
-      {users.map((user) => {
+      {teachers.map((teacher) => {
         return (
           <div
-            key={user.email}
-            className="max-md:visible md:hidden px-6  border border-gray-200 p-8">
-            <div className="flex flex-row w-full justify-between">
-              <div className="font-medium text-lg"><span className="text-base font-normal">Name: </span>{user.name}</div>
-              <div className="font-medium text-lg">{user.type}</div>
-            </div>
-            <div className="font-light text-sm flex flex-row gap-4 my-2">
-              <span className="text-base font-normal">
-                <img src={message} alt="message" className="login" />
-                </span>{user.email}</div>
-            <div className="flex-row flex justify-between max-md:visible my-2">
-              <NavLink to="/edituser" element={<EditUser />}>
-                <CustomButton text={"Edit"} padding={"0.8rem 3.5rem"} />
+            key={teacher.email}
+            className="flex flex-row gap-20 pb-4 bottom-styled max-md:hidden"
+          >
+            <p className="md:w-44 self-center text-sm flex flex-row gap-20">
+              <span className="md:hidden">Name</span>
+              {teacher.firstName + " " + teacher.lastName}
+            </p>
+            <p className="md:w-64 self-center text-sm flex flex-row gap-20">
+              <span className="md:hidden mr-4">Email</span>
+              {teacher.email}
+            </p>
+            <p className="md:w-52 self-center text-sm flex flex-row gap-20">
+              <span className="md:hidden">User Type</span>
+              {teacher.departmentHead === true
+                ? "Teacher (Department Head)"
+                : "Teacher"}
+            </p>
+            <div className="flex flex-row gap-10 max-md:hidden">
+              <NavLink
+                to="/edituser"
+                element={<EditUser />}
+                onClick={() => {
+                  setUserData(teacher);
+                }}
+              >
+                <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
               </NavLink>
-              <DeleteButton text={"Delete"} padding={"0.8rem 3.4rem"} />
+              <Box onClick={() => handleDeleteUser(teacher.id, "teachers")}>
+                <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />
+              </Box>
             </div>
           </div>
         );

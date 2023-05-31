@@ -3,8 +3,10 @@ import { useState } from "react";
 import { MuiTelInput } from "mui-tel-input";
 import { useFormik } from "formik";
 import CreateStudent from "../Logic/CreateStudent";
+import { useEmail } from "../Logic/TeacherContext";
 
 export default function SignupStudent() {
+  const { setEmail } = useEmail();
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
@@ -17,29 +19,11 @@ export default function SignupStudent() {
       gender: "",
     },
     onSubmit: (values) => {
-      const {
-        firstName,
-        lastName,
-        departmentId,
-        email,
-        password,
-        phoneNumber,
-        gender,
-      } = values;
-      CreateStudent({
-        firstName,
-        lastName,
-        departmentId: parseInt(departmentId), // Convert to integer if necessary
-        email,
-        password,
-        phoneNumber,
-        gender,
-      }).then((valid) => {
-        if (valid) {
-          console.log("Data Successfully sent" + JSON.stringify(values));
-          alert("Data Successfully sent" + JSON.stringify(values));
-          navigate("/StudentDashboard");
-        }
+      CreateStudent(values).then(() => {
+        setEmail(values.email);
+        console.log("Data Successfully sent" + JSON.stringify(values));
+        alert("Data Successfully sent" + JSON.stringify(values));
+        navigate("/StudentDashboard");
       });
     },
   });
@@ -130,8 +114,8 @@ export default function SignupStudent() {
             <option value="2">Female</option>
             <option value="3">Retarded</option>
           </select>
-          {formik.touched.departmentId && formik.errors.departmentId && (
-            <div className="error">{formik.errors.departmentId}</div>
+          {formik.touched.gender && formik.errors.gender && (
+            <div className="error">{formik.errors.gender}</div>
           )}
         </div>
         <div className="flex flex-col gap-2">

@@ -2,8 +2,25 @@ import { Button } from "@mui/material";
 import { useFormik } from "formik";
 import { NavLink, useNavigate } from "react-router-dom";
 import AdminDepartment from "./AdminDepartment";
+import { useEffect, useState } from "react";
 
 export default function AddDepartment() {
+  const [teachers, setTeachers] = useState([{}]);
+
+  useEffect(() => {
+    const fetchTeachers = async () => {
+      const teacherResponse = await fetch("http://localhost:8080/api/teachers");
+      const teacherData = await teacherResponse.json();
+      const departmentHeadTeachers = teacherData.filter(
+        (teacher) => teacher.departmentHead === true
+      );
+      setTeachers(departmentHeadTeachers);
+    };
+    fetchTeachers();
+  }, []);
+
+  console.log(teachers);
+
   const inputs = [
     {
       value: "name",
@@ -14,9 +31,9 @@ export default function AddDepartment() {
     {
       value: "dean",
       title: "Department Dean",
-      placeholder: "Enter last name",
+      placeholder: "Select Dean",
       type: "select",
-      options: ["Shewatatek", "Abraham", "Eshetu", "Belilign", "Faris"],
+      options: teachers ? teachers.map((teacher) => teacher.firstName) : [],
     },
   ];
 

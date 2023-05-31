@@ -5,9 +5,9 @@ import RenderQuestions from "./RenderQuestions";
 import { NavLink } from "react-router-dom";
 import StudentExam from "./StudentExam";
 
-export default function ExamSheet({ CourseTitle, ExamTitle }) {
-  const [SecondsLeft, setSecondsLeft] = useState(5);
-  const [MinutesLeft, setMinutesLeft] = useState(1);
+export default function ExamSheet() {
+  const [SecondsLeft, setSecondsLeft] = useState(59);
+  const [MinutesLeft, setMinutesLeft] = useState(59);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -46,12 +46,12 @@ export default function ExamSheet({ CourseTitle, ExamTitle }) {
               </span>
             </p>
           </div>
-          <div className="px-4 py-2 exam-sheet rounded-lg flex flex-row gap-2">
+          <div className="px-4 py-2 w-44 exam-sheet rounded-lg flex flex-row gap-4">
             <img src={ExamPaper} alt="Exam Paper" />
             <p className="opacity-50">Question List</p>
           </div>
         </div>
-        <RenderQuestions CourseTitle={CourseTitle} ExamTitle={ExamTitle} />
+        <RenderQuestions />
       </div>
     </div>
   );

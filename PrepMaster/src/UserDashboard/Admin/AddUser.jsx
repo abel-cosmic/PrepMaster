@@ -3,6 +3,9 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import AdminUsers from "./AdminUsers";
+import CreateStudent from "../../Logic/CreateStudent";
+import CreateTeacherHead from "../../Logic/CreateTeacherHead";
+import CreateTeacher from "../../Logic/CreateTeacher";
 
 export default function AddUser() {
   const inputs = [
@@ -17,6 +20,19 @@ export default function AddUser() {
       title: "Last Name",
       placeholder: "Enter last name",
       type: "text",
+    },
+    {
+      value: "phoneNumber",
+      title: "Phone Number",
+      placeholder: "Enter Phone Number",
+      type: "number",
+    },
+    {
+      value: "gender",
+      title: "Gender",
+      placeholder: "Enter Gender",
+      type: "select",
+      options: ["Male", "Female", "Retarded"],
     },
     {
       value: "department",
@@ -56,8 +72,41 @@ export default function AddUser() {
       role: "",
       email: "",
       password: "",
+      gender: "",
+      phoneNumber: "",
     },
     onSubmit: (values) => {
+      if (values.role === "1") {
+        CreateStudent({
+          firstName: values.firstname,
+          lastName: values.lastname,
+          departmentId: values.department,
+          email: values.email,
+          password: values.password,
+          gender: values.gender,
+          phoneNumber: values.phoneNumber,
+        });
+      } else if (values.role === "2") {
+        CreateTeacher({
+          firstName: values.firstname,
+          lastName: values.lastname,
+          departmentId: values.department,
+          email: values.email,
+          password: values.password,
+          gender: values.gender,
+          phoneNumber: values.phoneNumber,
+        });
+      } else {
+        CreateTeacherHead({
+          firstName: values.firstname,
+          lastName: values.lastname,
+          departmentId: values.department,
+          email: values.email,
+          password: values.password,
+          gender: values.gender,
+          phoneNumber: values.phoneNumber,
+        });
+      }
       alert(JSON.stringify(values, null, 2));
       navigate("/AdminDashboard/AdminUsers");
     },
@@ -84,8 +133,8 @@ export default function AddUser() {
                   onBlur={formik.handleChange}
                   required
                 >
-                  {input.options.map((option) => (
-                    <option key={option} value={option}>
+                  {input.options.map((option, index) => (
+                    <option key={option} value={index + 1}>
                       {option}
                     </option>
                   ))}

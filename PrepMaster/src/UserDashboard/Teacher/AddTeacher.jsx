@@ -16,12 +16,14 @@ export default function AddTeacher() {
       departmentId: "",
       email: "",
       password: "",
+      phoneNumber: "",
+      gender: "",
     },
     onSubmit: (values) => {
       CreateTeacherHead(values)
-        .then((valid) => {
+        .then(() => {
           alert("User Created" + JSON.stringify(values, null, 2));
-          //   navigate("/AdminDashboard");
+          navigate("/TeacherDashboard");
         })
         .catch((err) => {
           console.error("Something went wrong" + err);
@@ -41,7 +43,7 @@ export default function AddTeacher() {
       .catch((error) => {
         console.error("Error fetching departments:", error);
       });
-  }, []);
+  }, [options]);
 
   const inputs = [
     {
@@ -55,6 +57,19 @@ export default function AddTeacher() {
       title: "Last Name",
       placeholder: "Enter last name",
       type: "text",
+    },
+    {
+      value: "gender",
+      title: "Gender",
+      placeHolder: "Choose your Gender",
+      type: "select",
+      options: ["Male", "Female", "Retarded"],
+    },
+    {
+      value: "phoneNumber",
+      title: "Phone Number",
+      placeholder: "Enter phone number",
+      type: "number",
     },
     {
       value: "departmentId",
@@ -90,7 +105,7 @@ export default function AddTeacher() {
           return (
             <div key={input.title} className="flex flex-row gap-6 max-md:gap-0">
               <p className="w-40">{input.title}</p>
-              {input.type === "select" ? (
+              {input.type === "select" && options.length > 0 ? (
                 <select
                   className="container bg-white flex pl-4 pr-10 py-2 max-md:w-[14rem]"
                   name={input.value}
@@ -98,8 +113,8 @@ export default function AddTeacher() {
                   onBlur={formik.handleChange}
                   required
                 >
-                  {input.options.map((option) => (
-                    <option key={option} value={option}>
+                  {input.options.map((option, index) => (
+                    <option key={option} value={index + 1}>
                       {option}
                     </option>
                   ))}

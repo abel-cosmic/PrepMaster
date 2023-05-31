@@ -1,33 +1,11 @@
-import { useEffect } from "react";
-
-export default function CreateTeacherHead({
-  firstName,
-  lastName,
-  departmentId,
-  email,
-  password,
-  phoneNumber,
-  gender,
-}) {
+export function DeleteUser({ id, type }) {
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:8080/api/teachers", {
-      method: "POST",
+    fetch(`http://localhost:8080/api/${type}/${id}`, {
+      method: "DELETE",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        teacher: {
-          firstName,
-          lastName,
-          email,
-          phoneNumber,
-          gender,
-          password,
-          departmentHead: true,
-        },
-        departmentId,
-      }),
     })
       .then((response) => {
         if (response.headers.get("content-length") === "0") {

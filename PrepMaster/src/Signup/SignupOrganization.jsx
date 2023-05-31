@@ -2,9 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CreateAdmin from "../Logic/CreateAdmin";
 import { useFormik } from "formik";
+import { useEmail } from "../Logic/TeacherContext";
 
 export default function SignupOrganization() {
   const navigate = useNavigate();
+  const { setEmail } = useEmail();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -14,13 +16,10 @@ export default function SignupOrganization() {
     onSubmit: (values) => {
       console.log(values);
       CreateAdmin(values).then((valid) => {
-        if (valid) {
-          console.log("Data sent");
-          console.log(values);
-          navigate("/AdminDashboard");
-        } else {
-          alert("Something went wrong. Please try again");
-        }
+        console.log("Data sent");
+        console.log(values);
+        setEmail(values.email);
+        navigate("/AdminDashboard");
       });
     },
   });

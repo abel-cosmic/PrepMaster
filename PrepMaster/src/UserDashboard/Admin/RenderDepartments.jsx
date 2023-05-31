@@ -5,34 +5,34 @@ import Filter from "../../assets/Filter.svg";
 import search from "../../assets/search.svg";
 import EditUser from "./EditUser";
 import EditDepartment from "./EditDepartment";
+import { useEffect, useState } from "react";
 
 export default function RenderDepartments() {
-  const departments = [
-    {
-      name: "Computer Science",
-      dean: "Shewatatek Lema",
-    },
-    {
-      name: "Computer Science",
-      dean: "Shewatatek Lema",
-    },
-    {
-      name: "Computer Science",
-      dean: "Shewatatek Lema",
-    },
-    {
-      name: "Computer Science",
-      dean: "Shewatatek Lema",
-    },
-    {
-      name: "Computer Science",
-      dean: "Shewatatek Lema",
-    },
-    {
-      name: "Computer Science",
-      dean: "Shewatatek Lema",
-    },
-  ];
+  const [departments, setDepartments] = useState([]);
+  const [teachers, setTeachers] = useState([]);
+
+  useEffect(() => {
+    const fetchDepartments = async () => {
+      const departmentResponse = await fetch(
+        "http://localhost:8080/api/departments"
+      );
+      const departmentData = await departmentResponse.json();
+      setDepartments(departmentData);
+    };
+    fetchDepartments();
+    const fetchTeachers = async () => {
+      const teacherResponse = await fetch("http://localhost:8080/api/teachers");
+      const teacherData = await teacherResponse.json();
+      const departmentHeadTeachers = teacherData.filter(
+        (teacher) => teacher.departmentHead === true
+      );
+      setTeachers(departmentHeadTeachers);
+    };
+    fetchTeachers();
+  }, []);
+
+  console.log(departments);
+  console.log(teachers);
 
   return (
     <div className="flex flex-col gap-6">
@@ -55,7 +55,11 @@ export default function RenderDepartments() {
             className="flex flex-row gap-24 bottom-styled pb-6 max-md:hidden"
           >
             <p className="w-64 self-center">{department.name}</p>
-            <p className="w-64 self-center">{department.dean}</p>
+            {teachers.map((teacher) => {
+              if (teacher.departmentId === department.id) {
+                return <p className="w-64 self-center">{teacher.firstName}</p>;
+              }
+            })}
             <NavLink to="/editDepartment" element={<EditDepartment />}>
               <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
             </NavLink>
@@ -63,13 +67,18 @@ export default function RenderDepartments() {
           </div>
         );
       })}
-     {departments.map((department) => {
+      {departments.map((department) => {
         return (
           <div
-          key={department.name}
-            className="max-md:visible md:hidden px-6  border border-gray-200 p-8">
-            <div className="text-xl  font-semibold flex flex-row gap-4 my-2">{department.name}</div>
-            <div className="text-base font-medium flex flex-row gap-4 my-2">{department.dean}</div>
+            key={department.name}
+            className="max-md:visible md:hidden px-6  border border-gray-200 p-8"
+          >
+            <div className="text-xl  font-semibold flex flex-row gap-4 my-2">
+              {department.name}
+            </div>
+            <div className="text-base font-medium flex flex-row gap-4 my-2">
+              {department.dean}
+            </div>
             <div className="flex-row flex justify-between max-md:visible my-2">
               <NavLink to="/edituser" element={<EditUser />}>
                 <CustomButton text={"Edit"} padding={"0.8rem 3.5rem"} />

@@ -1,31 +1,28 @@
-import { useEffect } from "react";
-
-export default function CreateTeacherHead({
+export default function UpdateTeacher({
   firstName,
   lastName,
-  departmentId,
   email,
   password,
-  phoneNumber,
   gender,
+  phoneNumber,
+  departmentId,
+  departmentHead,
 }) {
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:8080/api/teachers", {
-      method: "POST",
+    fetch("http://localhost:8080/api/Teachers", {
+      method: "PUT",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        teacher: {
-          firstName,
-          lastName,
-          email,
-          phoneNumber,
-          gender,
-          password,
-          departmentHead: true,
-        },
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        gender,
+        password,
+        departmentHead,
         departmentId,
       }),
     })
