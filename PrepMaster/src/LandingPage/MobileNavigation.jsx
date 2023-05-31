@@ -37,10 +37,42 @@ export function MobileNavigation() {
       </div>
       <div className={`${isActive ? "visible" : "hidden"} `}>
         <ul className="py-6 font-medium text-lg flex flex-col gap-2 justify-center self-center">
-          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("home")}>Home</li>
-          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("services")}>Services</li>
-          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("pricing")}>Pricing</li>
-          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("contact")}>Contact</li>
+          <li
+            className="z-50 py-2 self-center cursor-pointer"
+            onClick={() => {
+              setIsActive(false);
+              handleScrollTo("home");
+            }}
+          >
+            Home
+          </li>
+          <li
+            className="z-50 py-2 self-center cursor-pointer"
+            onClick={() => {
+              setIsActive(false);
+              handleScrollTo("services");
+            }}
+          >
+            Services
+          </li>
+          <li
+            className="z-50 py-2 self-center cursor-pointer"
+            onClick={() => {
+              setIsActive(false);
+              handleScrollTo("pricing");
+            }}
+          >
+            Pricing
+          </li>
+          <li
+            className="z-50 py-2 self-center cursor-pointer"
+            onClick={() => {
+              setIsActive(false);
+              handleScrollTo("contact");
+            }}
+          >
+            Contact
+          </li>
           <li className="py-2 self-center">
             <NavLink to="Signin" element={<Signin />}>
               <SigninButton text={"Sign in"} padding={"0.7rem 2.45rem"} />

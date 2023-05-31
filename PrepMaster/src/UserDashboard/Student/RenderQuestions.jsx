@@ -27,19 +27,19 @@ export default function RenderQuestions() {
     onSubmit: (values) => {
       console.log(questionNumber);
       console.log(
-        questions[questionNumber - 2].choices[answers[questionNumber - 1]]
+        questions[questionNumber - 1].choices[answers[questionNumber - 1]]
           .choiceText.choiceText
       );
       if (
         selectedChoice ===
-        questions[questionNumber - 2].choices[answers[questionNumber - 1]]
+        questions[questionNumber - 1].choices[answers[questionNumber - 1]]
           .choiceText.choiceText
       ) {
         console.log("hello");
         setCurrentScore((prevScore) => prevScore + 1);
         console.log(currentScore);
       } else {
-        console.log("Sorry Bruh");
+        setShowIncorrectAnswer(true);
       }
       setScore(currentScore);
     },
@@ -79,12 +79,9 @@ export default function RenderQuestions() {
     console.log(e.target.value);
     setSelectedChoice(e.target.value);
   };
-
-  // console.log(questions);
-  // console.log(questions[questionNumber]);
-  // console.log(questionNumber);
-  // console.log(answers[questionNumber]);
-  // console.log(choice[questionNumber]);
+  const handleCloseModal = () => {
+    setShowIncorrectAnswer(false); // Hide the incorrect answer modal
+  };
 
   return (
     <div>
@@ -136,6 +133,18 @@ export default function RenderQuestions() {
               />
             </div>
           </form>
+          <Modal open={showIncorrectAnswer} onClose={handleCloseModal}>
+            <IncorrectAnswer
+              open={showIncorrectAnswer}
+              onClose={() => setShowIncorrectAnswer(false)}
+              answer={
+                questions[questionNumber - 1].choices[
+                  answers[questionNumber - 1]
+                ].choiceText.choiceText
+              }
+              description={questions[questionNumber - 1].explanation}
+            />
+          </Modal>
         </div>
       ) : (
         navigate("/displayScore")

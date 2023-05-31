@@ -38,6 +38,155 @@ export default function RenderUsers() {
     setDeletionStatus((prevStatus) => !prevStatus);
   };
 
+  const DesktopView = () => {
+    return (
+      <div className="max-md:hidden">
+        {" "}
+        {students.map((student) => {
+          return (
+            <div
+              key={student.email}
+              className="flex flex-row gap-20 pb-4 bottom-styled max-md:hidden"
+            >
+              <p className="md:w-44 self-center text-sm flex flex-row gap-20">
+                {student.firstName + " " + student.lastName}
+              </p>
+              <p className="md:w-64 self-center text-sm flex flex-row gap-20">
+                {student.email}
+              </p>
+              <p className="md:w-52 self-center text-sm flex flex-row gap-20">
+                Student
+              </p>
+              <div className="flex-row flex gap-10 max-md:hidden">
+                <NavLink
+                  to="/edituser"
+                  element={<EditUser />}
+                  onClick={() => {
+                    setUserData(student);
+                  }}
+                >
+                  <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
+                </NavLink>
+                <Box onClick={() => handleDeleteUser(student.id, "students")}>
+                  <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />
+                </Box>
+              </div>
+            </div>
+          );
+        })}
+        {teachers.map((teacher) => {
+          return (
+            <div
+              key={teacher.email}
+              className="flex flex-row gap-20 pb-4 bottom-styled max-md:hidden"
+            >
+              <p className="md:w-44 self-center text-sm flex flex-row gap-20">
+                {teacher.firstName + " " + teacher.lastName}
+              </p>
+              <p className="md:w-64 self-center text-sm flex flex-row gap-20">
+                {teacher.email}
+              </p>
+              <p className="md:w-52 self-center text-sm flex flex-row gap-20">
+                {teacher.departmentHead === true
+                  ? "Teacher (Department Head)"
+                  : "Teacher"}
+              </p>
+              <div className="flex flex-row gap-10 max-md:hidden">
+                <NavLink
+                  to="/edituser"
+                  element={<EditUser />}
+                  onClick={() => {
+                    setUserData(teacher);
+                  }}
+                >
+                  <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
+                </NavLink>
+                <Box onClick={() => handleDeleteUser(teacher.id, "teachers")}>
+                  <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />
+                </Box>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
+  const MobileVersion = () => {
+    return (
+      <div className="flex flex-col gap-6 md:hidden">
+        {students.map((student) => {
+          return (
+            <div className="container px-6 py-4 flex flex-col gap-2">
+              <div className="flex flex-col ">
+                <p className="text-xs opacity-50">Name</p>
+                <p>{student.firstName + " " + student.lastName}</p>
+              </div>
+              <div className="flex flex-col ">
+                <p className="text-xs opacity-50">Role</p>
+                <p>Student</p>
+              </div>
+              <div className="flex flex-row gap-4">
+                <img src={message} alt="email" />
+                <p>{student.email}</p>
+              </div>
+              <div className="flex flex-row justify-center gap-6 mt-4">
+                <NavLink
+                  to="/edituser"
+                  element={<EditUser />}
+                  onClick={() => {
+                    setUserData(teacher);
+                  }}
+                >
+                  <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
+                </NavLink>
+                <Box onClick={() => handleDeleteUser(teacher.id, "teachers")}>
+                  <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />
+                </Box>
+              </div>
+            </div>
+          );
+        })}
+        {teachers.map((teacher) => {
+          return (
+            <div className="container px-6 py-4 flex flex-col gap-2">
+              <div className="flex flex-col ">
+                <p className="text-xs opacity-50">Name</p>
+                <p>{teacher.firstName + " " + teacher.lastName}</p>
+              </div>
+              <div className="flex flex-col ">
+                <p className="text-xs opacity-50">Role</p>
+                <p>
+                  {teacher.departmentHead === false
+                    ? "Teacher"
+                    : "Teacher(Department Head)"}
+                </p>
+              </div>
+              <div className="flex flex-row gap-4">
+                <img src={message} alt="email" />
+                <p>{teacher.email}</p>
+              </div>
+              <div className="flex flex-row justify-center gap-6 mt-4">
+                <NavLink
+                  to="/edituser"
+                  element={<EditUser />}
+                  onClick={() => {
+                    setUserData(teacher);
+                  }}
+                >
+                  <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
+                </NavLink>
+                <Box onClick={() => handleDeleteUser(teacher.id, "teachers")}>
+                  <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />
+                </Box>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <div className="flex flex-col gap-6 max-md:gap-4">
       <div className="flex md:flex-row max-md:flex-col md:gap-24 max-md:gap-6">
@@ -63,78 +212,8 @@ export default function RenderUsers() {
           <img src={Filter} alt="Filter" />
         </div>
       </div>
-      {students.map((student) => {
-        return (
-          <div
-            key={student.email}
-            className="flex flex-row gap-20 pb-4 bottom-styled max-md:hidden"
-          >
-            <p className="md:w-44 self-center text-sm flex flex-row gap-20">
-              <span className="md:hidden">Name</span>
-              {student.firstName + " " + student.lastName}
-            </p>
-            <p className="md:w-64 self-center text-sm flex flex-row gap-20">
-              <span className="md:hidden mr-4">Email</span>
-              {student.email}
-            </p>
-            <p className="md:w-52 self-center text-sm flex flex-row gap-20">
-              <span className="md:hidden">User Type</span>
-              Student
-            </p>
-            <div className="flex-row flex gap-10 max-md:hidden">
-              <NavLink
-                to="/edituser"
-                element={<EditUser />}
-                onClick={() => {
-                  setUserData(student);
-                }}
-              >
-                <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
-              </NavLink>
-              <Box onClick={() => handleDeleteUser(student.id, "students")}>
-                <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />
-              </Box>
-            </div>
-          </div>
-        );
-      })}
-      {teachers.map((teacher) => {
-        return (
-          <div
-            key={teacher.email}
-            className="flex flex-row gap-20 pb-4 bottom-styled max-md:hidden"
-          >
-            <p className="md:w-44 self-center text-sm flex flex-row gap-20">
-              <span className="md:hidden">Name</span>
-              {teacher.firstName + " " + teacher.lastName}
-            </p>
-            <p className="md:w-64 self-center text-sm flex flex-row gap-20">
-              <span className="md:hidden mr-4">Email</span>
-              {teacher.email}
-            </p>
-            <p className="md:w-52 self-center text-sm flex flex-row gap-20">
-              <span className="md:hidden">User Type</span>
-              {teacher.departmentHead === true
-                ? "Teacher (Department Head)"
-                : "Teacher"}
-            </p>
-            <div className="flex flex-row gap-10 max-md:hidden">
-              <NavLink
-                to="/edituser"
-                element={<EditUser />}
-                onClick={() => {
-                  setUserData(teacher);
-                }}
-              >
-                <CustomButton text={"Edit"} padding={"0.5rem 2rem"} />
-              </NavLink>
-              <Box onClick={() => handleDeleteUser(teacher.id, "teachers")}>
-                <DeleteButton text={"Delete"} padding={"0.5rem 1.5rem"} />
-              </Box>
-            </div>
-          </div>
-        );
-      })}
+      <DesktopView />
+      <MobileVersion />
     </div>
   );
 }

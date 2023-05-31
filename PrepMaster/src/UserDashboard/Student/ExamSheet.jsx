@@ -4,6 +4,7 @@ import ExamPaper from "../../assets/ExamPaper.svg";
 import RenderQuestions from "./RenderQuestions";
 import { NavLink } from "react-router-dom";
 import StudentExam from "./StudentExam";
+import QuestionList from "./QuestionList";
 
 export default function ExamSheet() {
   const [SecondsLeft, setSecondsLeft] = useState(59);
@@ -46,10 +47,12 @@ export default function ExamSheet() {
               </span>
             </p>
           </div>
-          <div className="px-4 py-2 w-44 exam-sheet rounded-lg flex flex-row gap-4">
-            <img src={ExamPaper} alt="Exam Paper" />
-            <p className="opacity-50">Question List</p>
-          </div>
+          <NavLink to="/QuestionList" element={<QuestionList />}>
+            <div className="px-4 py-2 w-44 exam-sheet rounded-lg flex flex-row gap-4">
+              <img src={ExamPaper} alt="Exam Paper" />
+              <p className="opacity-50">Question List</p>
+            </div>
+          </NavLink>
         </div>
         <RenderQuestions />
       </div>
