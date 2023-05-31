@@ -27,13 +27,13 @@ export default function RenderQuestions() {
     onSubmit: (values) => {
       console.log(questionNumber);
       console.log(
-        questions[questionNumber - 2].choices.at(answers[questionNumber - 1])
-          .choiceText
+        questions[questionNumber - 2].choices[answers[questionNumber - 1]]
+          .choiceText.choiceText
       );
       if (
         selectedChoice ===
-        questions[questionNumber - 2].choices.at(answers[questionNumber - 1])
-          .choiceText
+        questions[questionNumber - 2].choices[answers[questionNumber - 1]]
+          .choiceText.choiceText
       ) {
         console.log("hello");
         setCurrentScore((prevScore) => prevScore + 1);
