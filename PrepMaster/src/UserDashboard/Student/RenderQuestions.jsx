@@ -93,8 +93,8 @@ export default function RenderQuestions() {
           <p>{questions[questionNumber - 1].question}</p>
           <form onSubmit={formik.handleSubmit}>
             {choice[questionNumber - 1].map((choice) => (
-              <div
                 key={choice.id}
+              <div
                 className="flex flex-row gap-4 px-4 py-2 rounded-md my-4"
                 style={{
                   backgroundColor:
