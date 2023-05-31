@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import AdminDepartment from "./AdminDepartment";
+import AdminUsers from "./AdminUsers";
 
 export default function EditDepartment() {
   //take a prop that passes all the users info here
@@ -79,15 +79,13 @@ export default function EditDepartment() {
         })}
 
         <div className="flex flex-row gap-6 justify-end">
-          <NavLink to={"/AdminDashboard/AdminDepartment"} element={<AdminDepartment />}>
+          <NavLink to={"/AdminDashboard/AdminUsers"} element={<AdminUsers />}>
             <Button
               variant="text"
               sx={{
                 textTransform: "none",
                 color: "#2e2e2e",
                 fontWeight: "400",
-                borderRadius: "0.3rem",
-                padding: "0.8rem 3rem"
               }}
             >
               Cancel
