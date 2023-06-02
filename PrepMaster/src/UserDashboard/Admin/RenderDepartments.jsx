@@ -6,10 +6,18 @@ import search from "../../assets/search.svg";
 import EditUser from "./EditUser";
 import EditDepartment from "./EditDepartment";
 import { useEffect, useState } from "react";
+import { Box } from "@mui/material";
+import { DeleteUser } from "../../Logic/DeleteUser";
 
 export default function RenderDepartments() {
   const [departments, setDepartments] = useState([]);
   const [teachers, setTeachers] = useState([]);
+  const [deletionStatus, setDeletionStatus] = useState(false);
+
+  const handleDeleteUser = async (id, type) => {
+    await DeleteUser({ id, type });
+    setDeletionStatus((prevStatus) => !prevStatus);
+  };
 
   useEffect(() => {
     const fetchDepartments = async () => {
@@ -29,14 +37,14 @@ export default function RenderDepartments() {
       setTeachers(departmentHeadTeachers);
     };
     fetchTeachers();
-  }, []);
+  }, [deletionStatus]);
 
-  console.log(departments);
-  console.log(teachers);
+  // console.log(departments);
+  // console.log(teachers);
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex flex-row justify-between pb-4 bottom-styled">
+      <div className="flex md:flex-row max-md:flex-col justify-between pb-4 max-md:gap-4 md:bottom-styled">
         <p className="self-center opacity-50 max-md:hidden">Name</p>
         <p className="self-center opacity-50 max-md:hidden">Dean</p>
         <div className="search-bar container py-2 pr-16 pl-4 flex flex-row gap-2 w-fit">
@@ -83,7 +91,11 @@ export default function RenderDepartments() {
               <NavLink to="/edituser" element={<EditUser />}>
                 <CustomButton text={"Edit"} padding={"0.8rem 3.5rem"} />
               </NavLink>
-              <DeleteButton text={"Delete"} padding={"0.8rem 3.4rem"} />
+              <Box
+                onClick={() => handleDeleteUser(department.id, "departments")}
+              >
+                <DeleteButton text={"Delete"} padding={"0.8rem 3.4rem"} />
+              </Box>
             </div>
           </div>
         );

@@ -25,38 +25,62 @@ export default function AdminHeader() {
   };
   return (
     <div className="max-md:visible max-md:mt-10 md:hidden">
-      <div className="flex flex-row justify-between max-md:border-b max-md:fixed top-0 left-0 right-0 max-md:bg-white z-50 pr-2 md:w-[90rem]" id="HeaderDashboard">
-      <div className="search-bar container py-2 pr-16 pl-4 flex flex-row gap-2 w-fit max-md:hidden">
-        <img src={search} alt="search" />
-        <input type="search" name="search" id="search" placeholder="Search" />
-      </div>
-      <div className="md:hidden  self-center my-6 ml-6">
-        <img src={isActive ? active : menu} alt="menu" onClick={handleImageClick}/>
-      </div>
-      <div className="flex flex-row gap-4 justify-center" id="header-icons">
-        <div className="notification flex justify-center">
-          <img src={notification} alt="notification" className="w-5/6" />
+      <div
+        className="flex flex-row justify-between max-md:border-b max-md:fixed top-0 left-0 right-0 max-md:bg-white z-50 pr-2 md:w-[90rem]"
+        id="HeaderDashboard"
+      >
+        <div className="search-bar container py-2 pr-16 pl-4 flex flex-row gap-2 w-fit max-md:hidden">
+          <img src={search} alt="search" />
+          <input type="search" name="search" id="search" placeholder="Search" />
         </div>
-        <div className="username flex justify-center">
-          <img src={username} alt="username" className="w-5/6" />
+        <div className="md:hidden  self-center my-6 ml-6">
+          <img
+            src={isActive ? active : menu}
+            alt="menu"
+            onClick={handleImageClick}
+          />
         </div>
-      </div> 
-    </div>
-    <div className={`${isActive ? "visible" : "hidden"} max-md:fixed left-0 top-[4.22rem] bg-white z-50 border-t mt-2 w-full flex flex-col`}>
-    <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
-          <NavLink to="" end className="w-72 flex justify-center">
+        <div className="flex flex-row gap-4 justify-center" id="header-icons">
+          <div className="notification flex justify-center">
+            <img src={notification} alt="notification" className="w-5/6" />
+          </div>
+          <div className="username flex justify-center">
+            <img src={username} alt="username" className="w-5/6" />
+          </div>
+        </div>
+      </div>
+      <div
+        className={`${
+          isActive ? "visible" : "hidden"
+        } max-md:fixed left-0 top-[4.22rem] bg-white z-50 border-t mt-2 w-full flex flex-col`}
+      >
+        <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
+          <NavLink
+            to=""
+            end
+            className="w-72 flex justify-center"
+            onClick={handleImageClick}
+          >
             <div className="side-bar text-md w-max" id="Dashboard">
               <img src={DashBoardIcon} alt="Dashboard Icon" />
               <p>Dashboard</p>
             </div>
           </NavLink>
-          <NavLink to="AdminUsers" className="w-72 flex justify-center">
+          <NavLink
+            to="AdminUsers"
+            className="w-72 flex justify-center"
+            onClick={handleImageClick}
+          >
             <div className="side-bar  text-md " id="Users">
               <img src={UsersIcon} alt="Users Icon" />
               <p>Users</p>
             </div>
           </NavLink>
-          <NavLink to="AdminDepartment" className="w-72 flex justify-center">
+          <NavLink
+            to="AdminDepartment"
+            className="w-72 flex justify-center"
+            onClick={handleImageClick}
+          >
             <div className="side-bar  text-md " id="Users">
               <img src={DepartmentIcon} alt="Department Icon" />
               <p>Department</p>
@@ -73,7 +97,11 @@ export default function AdminHeader() {
             <img src={SupportIcon} alt="Support Icon" />
             <p>Support</p>
           </div>
-          <NavLink to="AdminSetting" className="w-72 flex justify-center">
+          <NavLink
+            to="AdminSetting"
+            className="w-72 flex justify-center"
+            onClick={handleImageClick}
+          >
             <div className="side-bar text-md" id="Settings">
               <img src={SettingsIcon} alt="Settings Icon" />
               <p>Settings</p>
@@ -88,4 +116,3 @@ export default function AdminHeader() {
     </div>
   );
 }
- 

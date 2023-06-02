@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 4;
 import { useEmail } from "../Logic/TeacherContext";
 import AuthUser from "../Logic/AuthUser";
+import { useUserData } from "../Logic/UserDataContext";
 
 export default function SigninOrganization() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function SigninOrganization() {
     initialValues: {
       email: "",
       password: "",
-      usertype: "admins/2",
+      usertype: "admins",
     },
     onSubmit: (values) => {
       AuthUser(values)
