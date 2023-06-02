@@ -4,12 +4,15 @@ import OverViewContainer from "./OverViewContainer";
 import ProgressReport from "./ProgressReport";
 import { useContext, useEffect, useState } from "react";
 import { useEmail } from "../../Logic/TeacherContext";
+import { useUserData } from "../../Logic/UserDataContext";
 
 export default function TeacherDashboard() {
   const { email } = useEmail();
   console.log(email);
   const [name, setName] = useState("");
-  const [departmentId, setDepartmentId] = useState("");
+  const { userData } = useUserData();
+
+  const [stats, setStats] = useState({});
   useEffect(() => {
     fetch("http://localhost:8080/api/teachers")
       .then((response) => response.json())
@@ -18,7 +21,7 @@ export default function TeacherDashboard() {
           if (teacher.email === email) {
             console.log("This is the email" + teacher.email);
             setName(teacher.firstName);
-            setDepartmentId(teacher.departmentId);
+            userData(teacher);
           }
         });
       })

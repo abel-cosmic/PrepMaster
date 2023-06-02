@@ -3,9 +3,15 @@ import { useFormik } from "formik";
 import { NavLink, useNavigate } from "react-router-dom";
 import AdminDepartment from "./AdminDepartment";
 import { useEffect, useState } from "react";
+import CreateDepartment from "../../Logic/CreateDepartment";
+import { useEmail } from "../../Logic/TeacherContext";
 
 export default function AddDepartment() {
   const [teachers, setTeachers] = useState([{}]);
+  const [selectedTeacher, setSelectedTeacher] = useState("");
+  const { email } = useEmail();
+
+  console.log(email);
 
   useEffect(() => {
     const fetchTeachers = async () => {
@@ -19,7 +25,7 @@ export default function AddDepartment() {
     fetchTeachers();
   }, []);
 
-  console.log(teachers);
+  // console.log(teachers);
 
   const inputs = [
     {
@@ -35,6 +41,12 @@ export default function AddDepartment() {
       type: "select",
       options: teachers ? teachers.map((teacher) => teacher.firstName) : [],
     },
+    {
+      value: "description",
+      title: "Description",
+      placeholder: "Enter department description",
+      type: "text",
+    },
   ];
 
   const navigate = useNavigate();
@@ -43,10 +55,17 @@ export default function AddDepartment() {
     initialValues: {
       name: "",
       dean: "",
+      description: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      navigate("/AdminDashboard/AdminDepartment");
+      CreateDepartment(values)
+        .then(() => {
+          alert(JSON.stringify(values, null, 2));
+          navigate("/AdminDashboard/AdminDepartment");
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     },
   });
 
@@ -75,8 +94,11 @@ export default function AddDepartment() {
                     onBlur={formik.handleChange}
                     required
                   >
-                    {input.options.map((option) => (
-                      <option key={option} value={option}>
+                    {input.options.map((option, index) => (
+                      <option
+                        key={option}
+                        value={setSelectedTeacher(teachers[index].departmentId)}
+                      >
                         {option}
                       </option>
                     ))}
