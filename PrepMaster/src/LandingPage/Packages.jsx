@@ -3,6 +3,9 @@ import unfilledStar from "./../assets/unfilled-star.svg";
 import filledStar from "./../assets/fill-star.svg";
 import { NavLink } from "react-router-dom";
 import Signup from "../Signup/Signup";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const packages = [
   {
     id: 1,
@@ -39,8 +42,12 @@ const packages = [
 export function Packages() {
   return (
     <div className="flex md:flex-row max-md:flex-col justify-evenly md:mt-20 max-md:mt-4 mx-10 md:mb-32 max-md:gap-6">
-      {packages.map((pkg) => (
+      {packages.map((pkg, index) => (
         <div
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+          data-aos-duration={`500` * `${index + 2}`}
+          data-aos-delay="1000"
           className={`flex flex-col items-center justify-evenly ${
             pkg.id === 1
               ? "bg-gradient-to-r from-[#FFFFFF] via-[#FFFFFF] to-[#FFFFFF]"
