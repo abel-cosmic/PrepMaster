@@ -4,6 +4,9 @@ import AnswerFeedBack from "./../assets/FeedBack.svg";
 import Register from "./../assets/dashboard.svg";
 import { NavLink } from "react-router-dom";
 import Signup from "../Signup/Signup";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const demos = [
   {
@@ -48,44 +51,82 @@ export default function DemosContainer() {
         return (
           <div
             key={demo.id || demos.indexOf(demo)}
-            className={`flex ${index % 2 === 1
+            className={`flex ${
+              index % 2 === 1
                 ? "md:flex-row max-md:flex-col"
                 : "md:flex-row-reverse max-md:flex-col"
-              } px-6 md:py-32 items-center `}
-            style={{ backgroundColor: containerBgColor }}>
-            <div className="flex-shrink-0 md:w-1/2">
+            } px-6 md:py-32 items-center `}
+            style={{ backgroundColor: containerBgColor }}
+          >
+            <div
+              data-aos="fade-left"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              className="flex-shrink-0 md:w-1/2"
+            >
               <img
                 src={demo.image}
                 alt={demo.title}
-                className="h-auto max-w-full max-md:hidden"/>
+                className="h-auto max-w-full max-md:hidden"
+              />
             </div>
             <div className="pl-4 flex flex-col">
               <h2
-                className={`md:text-5xl  font-bold md:mb-16 max-md:text-2xl  max-md:self-center max-md:mt-10 max-md:mb-2   ${isFirstTitleColorful ? "text-[#088395]" : "text-[#2e2e2e]"}`}>
+                data-aos="fade-right"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="1000"
+                data-aos-delay="250"
+                className={`md:text-5xl  font-bold md:mb-16 max-md:text-2xl  max-md:self-center max-md:mt-10 max-md:mb-2   ${
+                  isFirstTitleColorful ? "text-[#088395]" : "text-[#2e2e2e]"
+                }`}
+              >
                 <span
-                  style={{ color: isFirstTitleColorful ? "black" : "#088395", fontWeight: "600" }}>
+                  style={{
+                    color: isFirstTitleColorful ? "black" : "#088395",
+                    fontWeight: "600",
+                  }}
+                >
                   {firstWord}
                 </span>{" "}
                 {restOfTitle} {lastWord}
               </h2>
               <img
                 src={demo.image}
+                data-aos="fade-left"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="1000"
+                data-aos-delay="350"
                 alt={demo.title}
-                className="h-auto max-w-full max-md:visible md:hidden"/>
-              <p className="md:mb-10  md:text-xl max-md:mb-4  max-md:text-xs max-md:text-center max-md:px-4  font-light">
+                className="h-auto max-w-full max-md:visible md:hidden"
+              />
+              <p
+                data-aos="fade-right"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="1000"
+                data-aos-delay="450"
+                className="md:mb-10  md:text-xl max-md:mb-4  max-md:text-xs max-md:text-center max-md:px-4  font-light"
+              >
                 {demo.description}
               </p>
-              <div className={`flex  max-md:mb-10 ${isButtonJustify}`}>
+              <div
+                data-aos="fade-right"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="1000"
+                data-aos-delay="650"
+                className={`flex  max-md:mb-10 ${isButtonJustify}`}
+              >
                 <NavLink to="Signup" element={<Signup />}>
                   <CustomButton
                     text={"Try for free"}
-                    padding={"0.8rem 3.4rem"} />
+                    padding={"0.8rem 3.4rem"}
+                  />
                 </NavLink>
               </div>
             </div>
           </div>
         );
       })}
-         </div>
+    </div>
   );
 }

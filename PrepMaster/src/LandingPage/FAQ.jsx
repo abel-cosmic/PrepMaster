@@ -1,6 +1,9 @@
 import { useState } from "react";
 import minus from "./../assets/minus.png";
 import plus from "./../assets/plus.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 export function FAQ() {
   const [activeAnswer, setActiveAnswer] = useState();
@@ -46,11 +49,23 @@ export function FAQ() {
 
   return (
     <div className="flex flex-col justify-evenly items-center md:my-40 max-md:my-16 max-md:mx-8 ">
-      <div className="md:text-5xl max-md:text-2xl mb-10 font-semibold max-md:text-center">
+      <div
+        data-aos="fade-up"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="1000"
+        data-aos-delay="500"
+        className="md:text-5xl max-md:text-2xl mb-10 font-semibold max-md:text-center"
+      >
         Got Any <span className="span">Questions</span>? We've Got The{" "}
         <span className="span">Answers</span>
       </div>
-      <div className=" flex flex-col justify-between gap-10 mt-10 md:w-[80rem]">
+      <div
+        data-aos="fade-up"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="1000"
+        data-aos-delay="600"
+        className=" flex flex-col justify-between gap-10 mt-10 md:w-[80rem]"
+      >
         {faqs.map((faq, index) => (
           <div
             className={`flex flex-col border-b border-gray-400 pb-4 ${

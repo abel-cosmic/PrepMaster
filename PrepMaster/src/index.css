@@ -1,12 +1,21 @@
+/*tailwind*/
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/*fonts*/
+
 @import "@fontsource/roboto/300.css";
 @import "@fontsource/roboto/400.css";
 @import "@fontsource/roboto/500.css";
 @import "@fontsource/roboto/700.css";
 @import "@fontsource/roboto/900.css";
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+/*Splide dependencies*/
+
+@import "@splidejs/react-splide/css";
 
 /*Write your custom CSS here*/
 
@@ -92,6 +101,15 @@
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   margin-right: -1rem;
+}
+
+.card {
+  background: linear-gradient(
+    45deg,
+    rgba(8, 131, 149, 0.03),
+    rgba(8, 131, 149, 0.02)
+  );
+  filter: drop-shadow(0 10px 40px rgba(46, 46, 46, 0.1));
 }
 
 .last:focus::placeholder {

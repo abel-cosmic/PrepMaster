@@ -8,6 +8,9 @@ import Signup from "../Signup/Signup";
 import { Button } from "@mui/material";
 import Signin from "../Signin/Signin";
 import SigninButton from "../Components/SigninButton";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 export function MobileNavigation() {
   const [isActive, setIsActive] = useState(false);
@@ -27,7 +30,13 @@ export function MobileNavigation() {
 
   return (
     <div className="md:hidden flex flex-col fixed-mobile-nav justify-between items-center z-50 ">
-      <div className="max-md:flex max-md:flex-row max-md:justify-between max-md:items-center">
+      <div
+        data-aos="fade-up"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+        className="max-md:flex max-md:flex-row max-md:justify-between max-md:items-center"
+      >
         <img src={logo} alt="prepmaster" className="w-3/4" />
         <img
           src={isActive ? active : top}
