@@ -8,6 +8,9 @@ import Signup from "../Signup/Signup";
 import { Button } from "@mui/material";
 import Signin from "../Signin/Signin";
 import SigninButton from "../Components/SigninButton";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 export function MobileNavigation() {
   const [isActive, setIsActive] = useState(false);
@@ -27,7 +30,13 @@ export function MobileNavigation() {
 
   return (
     <div className="md:hidden flex flex-col fixed-mobile-nav justify-between items-center z-50 ">
-      <div className="max-md:flex max-md:flex-row max-md:justify-between max-md:items-center">
+      <div
+        data-aos="fade-up"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+        className="max-md:flex max-md:flex-row max-md:justify-between max-md:items-center"
+      >
         <img src={logo} alt="prepmaster" className="w-3/4" />
         <img
           src={isActive ? active : top}
@@ -37,10 +46,42 @@ export function MobileNavigation() {
       </div>
       <div className={`${isActive ? "visible" : "hidden"} `}>
         <ul className="py-6 font-medium text-lg flex flex-col gap-2 justify-center self-center">
-          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("home")}>Home</li>
-          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("services")}>Services</li>
-          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("pricing")}>Pricing</li>
-          <li className="z-50 py-2 self-center"onClick={() => handleScrollTo("contact")}>Contact</li>
+          <li
+            className="z-50 py-2 self-center cursor-pointer"
+            onClick={() => {
+              setIsActive(false);
+              handleScrollTo("home");
+            }}
+          >
+            Home
+          </li>
+          <li
+            className="z-50 py-2 self-center cursor-pointer"
+            onClick={() => {
+              setIsActive(false);
+              handleScrollTo("services");
+            }}
+          >
+            Services
+          </li>
+          <li
+            className="z-50 py-2 self-center cursor-pointer"
+            onClick={() => {
+              setIsActive(false);
+              handleScrollTo("pricing");
+            }}
+          >
+            Pricing
+          </li>
+          <li
+            className="z-50 py-2 self-center cursor-pointer"
+            onClick={() => {
+              setIsActive(false);
+              handleScrollTo("contact");
+            }}
+          >
+            Contact
+          </li>
           <li className="py-2 self-center">
             <NavLink to="Signin" element={<Signin />}>
               <SigninButton text={"Sign in"} padding={"0.7rem 2.45rem"} />

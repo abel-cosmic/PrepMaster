@@ -45,6 +45,8 @@ import { UserDataProvider } from "./Logic/UserDataContext";
 import AdminSetting from "./UserDashboard/Admin/AdminSetting";
 import AdminProfile from "./UserDashboard/Admin/AdmiinProfile";
 import AdminSecurity from "./UserDashboard/Admin/AdminSecurity";
+import EditExam from "./UserDashboard/Teacher/EditExam";
+import QuestionList from "./UserDashboard/Student/QuestionList";
 
 function App() {
   const router = createBrowserRouter(
@@ -85,6 +87,8 @@ function App() {
         </Route>
         <Route element={<AddTeacher />} path="AddTeacher" />
         <Route element={<ExamSheet />} path="ExamSheet" />
+        <Route element={<EditExam />} path={"EditExam"} />
+        <Route element={<QuestionList />} path={"QuestionList"} />
         <Route element={<DisplayScore />} path="displayScore" />
         <Route element={<AddUser />} path="addUser" />
         <Route element={<EditUser />} path="edituser" />
@@ -143,6 +147,8 @@ function App() {
                   <Route element={<AddTeacher />} path="AddTeacher" />
                   <Route element={<ExamSheet />} path="ExamSheet" />
                   <Route element={<DisplayScore />} path="displayScore" />
+                  <Route element={<EditExam />} path={"EditExam"} />
+                  <Route element={<QuestionList />} path={"QuestionList"} />
                   <Route element={<AddUser />} path="addUser" />
                   <Route element={<EditUser />} path="edituser" />
                   <Route element={<AddDepartment />} path="addDepartment" />

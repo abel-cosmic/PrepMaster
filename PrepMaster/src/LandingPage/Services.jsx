@@ -1,6 +1,9 @@
 import paper from "./../assets/papers-lines 1.svg";
 import brain from "./../assets/brain 1.svg";
 import key from "./../assets/key-monitor 1.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const services = [
   {
@@ -29,12 +32,19 @@ export default function Services() {
   return (
     <div>
       <div
-        className="flex md:flex-row max-md:flex-col justify-center md:my-72 md:mx-32 max-md:my-16 max-md:gap-6 max-md:mx-6"
+        className="flex md:flex-row max-md:flex-col justify-center md:my-64 md:mx-32 max-md:my-16 max-md:gap-6 max-md:mx-6"
         id="services"
       >
         {services.map((service, index) => {
           return (
-            <div key={service.id} className="flex items-start mx-2">
+            <div
+              key={service.id}
+              data-aos="fade-right"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+              data-aos-delay={`200` * `${index + 2}`}
+              className="flex items-start mx-2"
+            >
               <img
                 src={service.image}
                 alt="icon"

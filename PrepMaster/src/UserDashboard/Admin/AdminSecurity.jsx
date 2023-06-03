@@ -34,10 +34,10 @@ export default function AdminSecurity() {
     return passwordList.map((item) => {
       return (
         <div key={item.title} className="flex flex-row gap-6 max-md:flex-col">
-          <p className="w-44">{item.title}</p>
+          <p className="md:w-52 max-md:w-fit">{item.title}</p>
           <input
             type="password"
-            className="container w-fit flex pl-4 pr-10 py-2"
+            className="container max-md:w-[23rem] flex pl-4 pr-10 py-2"
             name={item.value}
             id={item.title}
             onBlur={formik.handleChange}
