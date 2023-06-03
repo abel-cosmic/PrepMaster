@@ -12,7 +12,7 @@ export function Companies() {
     <div
       data-aos="fade-up"
       data-aos-easing="ease-in-out"
-      data-aos-duration="1000"
+      data-aos-duration="1500"
       data-aos-delay="1000"
       className="flex flex-row md:justify-evenly max-md:gap-6  items-center md:mt-20 max-md:mt-6 max-md:px-6 max-md:w-2/3 "
     >
@@ -21,14 +21,14 @@ export function Companies() {
         className=" max-md:w-1/4 "
         data-aos="fade-right"
         data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
+        data-aos-duration="1500"
         data-aos-delay="1550"
       />
       <img
         src={AAU}
         data-aos="fade-right"
         data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
+        data-aos-duration="1500"
         data-aos-delay="1650"
         className=" max-md:w-1/4 "
       />
@@ -36,7 +36,7 @@ export function Companies() {
         src={BDU}
         data-aos="fade-right"
         data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
+        data-aos-duration="1500"
         data-aos-delay="1750"
         className=" max-md:w-1/4 "
       />
@@ -44,7 +44,7 @@ export function Companies() {
         src={HEUC}
         data-aos="fade-right"
         data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
+        data-aos-duration="1500"
         data-aos-delay="1850"
         className=" max-md:w-1/4 "
       />
@@ -52,7 +52,7 @@ export function Companies() {
         src={ASTU}
         data-aos="fade-right"
         data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
+        data-aos-duration="1500"
         data-aos-delay="1950"
         className=" max-md:w-1/4 "
       />

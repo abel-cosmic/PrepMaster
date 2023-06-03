@@ -17,7 +17,7 @@ export function Contacts() {
       <p
         data-aos="fade-up"
         data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
+        data-aos-duration="1500"
         data-aos-delay="500"
         className="md:text-5xl max-md:text-2xl md:mt-44 flex font-semibold justify-center md:justify-start md:pl-16"
       >
@@ -32,7 +32,7 @@ export function Contacts() {
           <div
             data-aos="fade-up"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="1500"
             data-aos-delay="700"
             className="text-sm"
           >
@@ -42,7 +42,7 @@ export function Contacts() {
             <div
               data-aos="fade-up"
               data-aos-easing="ease-in-out"
-              data-aos-duration="1000"
+              data-aos-duration="1500"
               data-aos-delay="900"
               className="flex flex-row gap-4"
             >
@@ -52,7 +52,7 @@ export function Contacts() {
             <div
               data-aos="fade-up"
               data-aos-easing="ease-in-out"
-              data-aos-duration="1000"
+              data-aos-duration="1500"
               data-aos-delay="1100"
               className="flex flex-row gap-4"
             >
@@ -67,7 +67,7 @@ export function Contacts() {
                 src={instagram}
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="1500"
                 data-aos-delay="1200"
                 alt="instagram"
                 className="login"
@@ -78,7 +78,7 @@ export function Contacts() {
                 src={twitter}
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="1500"
                 data-aos-delay="1300"
                 alt="twitter"
                 className="login"
@@ -89,7 +89,7 @@ export function Contacts() {
                 src={linkedin}
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="1500"
                 data-aos-delay="1400"
                 alt="linkedin"
                 className="login"
@@ -100,7 +100,7 @@ export function Contacts() {
                 src={facebook}
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="1500"
                 data-aos-delay="1500"
                 alt="facebook"
                 className="login"
@@ -111,7 +111,7 @@ export function Contacts() {
                 src={message}
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="1500"
                 data-aos-delay="1600"
                 alt="message"
                 className="login"
@@ -122,7 +122,7 @@ export function Contacts() {
                 src={whatsup}
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="1500"
                 data-aos-delay="1700"
                 alt="whatsup"
                 className="login"
@@ -133,7 +133,7 @@ export function Contacts() {
             src={maper}
             data-aos="fade-up"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="1500"
             data-aos-delay="1900"
             alt="map"
             className="max-md:w-11/12"
@@ -144,7 +144,7 @@ export function Contacts() {
             <input
               data-aos="fade-up"
               data-aos-easing="ease-in-out"
-              data-aos-duration="1000"
+              data-aos-duration="1500"
               data-aos-delay="1000"
               type="text"
               placeholder="Full Name"
@@ -153,7 +153,7 @@ export function Contacts() {
             <input
               data-aos="fade-up"
               data-aos-easing="ease-in-out"
-              data-aos-duration="1000"
+              data-aos-duration="1500"
               data-aos-delay="1200"
               type="text"
               placeholder="Email"
@@ -163,7 +163,7 @@ export function Contacts() {
           <input
             data-aos="fade-up"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="1500"
             data-aos-delay="1400"
             type="text"
             placeholder="Subject"
@@ -172,7 +172,7 @@ export function Contacts() {
           <input
             data-aos="fade-up"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="1500"
             data-aos-delay="1600"
             type="text"
             placeholder="Message"
