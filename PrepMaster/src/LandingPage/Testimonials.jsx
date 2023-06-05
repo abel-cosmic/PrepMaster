@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 
-export function Testimonials() {
+export  function Testimonials() {
   const testimonials = [
     {
       name: "Abebech Kebede",
@@ -98,3 +98,5 @@ export function Testimonials() {
     </div>
   );
 }
+export default Testimonials;
+

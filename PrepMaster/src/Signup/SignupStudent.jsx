@@ -112,7 +112,6 @@ export default function SignupStudent() {
             <option value="">Select Gender</option>
             <option value="1">Male</option>
             <option value="2">Female</option>
-            <option value="3">Retarded</option>
           </select>
           {formik.touched.gender && formik.errors.gender && (
             <div className="error">{formik.errors.gender}</div>
