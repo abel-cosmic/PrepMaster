@@ -60,7 +60,14 @@ export function Contacts() {
               <div className="text-sm">+contact@prepmasters.com</div>
             </div>
           </div>
-          <div className="text-sm">Follow us on</div>
+          <div 
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1000"
+          data-aos-delay="1000"
+          className="text-sm">
+            Follow us on
+            </div>
           <div className="flex flex-row gap-6">
             <a href="#prepmaster-instagram">
               <img
@@ -178,7 +185,14 @@ export function Contacts() {
             placeholder="Message"
             className=" container pt-6 md:pl-6  max-md:pl-4 md:pb-72 max-md:pb-44 md:w-full max-md:w-[23rem] input-field"
           />
-          <input type="submit" value="Send" className="submit-btn self-end" />
+          <input 
+          type="submit" 
+          value="Send" 
+          data-aos="fade-in"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1000"
+          data-aos-delay="600"
+          className="submit-btn self-end" />
         </form>
       </div>
     </div>

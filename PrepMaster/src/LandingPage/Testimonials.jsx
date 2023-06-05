@@ -34,14 +34,14 @@ export  function Testimonials() {
         data-aos-duration="800"
         data-aos-easing="ease-in-out"
         className="w-full flex felx-col md:justify-center md:mt-52 max-md:mt-16 md:text-5xl 
-        max-md:text-xl max-md:w-3/4 max-md:text-center font-semibold max-md:mx-auto"
+        max-md:text-xl max-md:w-3/4 max-md:text-center font-semibold max-md:mx-auto "
       >
         <p>
           Dont Just
           <span className="span"> Believe What We Say </span>
         </p>
       </div>
-      <div className="max-md:hidden flex flex-row justify-evenly gap-10 px-10 my-10">
+      <div className="max-md:hidden flex flex-row justify-evenly gap-10 px-10 my-10 ">
         {testimonials.map((testimonial, index) => {
           return (
             <div

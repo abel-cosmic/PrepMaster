@@ -14,7 +14,7 @@ export function Companies() {
       data-aos-easing="ease-in-out"
       data-aos-duration="800"
       data-aos-delay="1000"
-      className="flex flex-row md:justify-evenly max-md:gap-6  items-center md:mt-20 max-md:mt-6 max-md:px-6 max-md:w-2/3 "
+      className="flex flex-row md:justify-evenly max-md:gap-6  items-center md:mt-20 max-md:mt-6 max-md:px-6 max-md:w-2/3"
     >
       <img
         src={Chapa}
