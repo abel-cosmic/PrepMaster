@@ -74,7 +74,7 @@ export default function RenderUsers() {
             </div>
           );
         })}
-        {/* {teachers.map((teacher) => {
+        {teachers.map((teacher) => {
           return (
             <div
               key={teacher.email}
@@ -107,7 +107,7 @@ export default function RenderUsers() {
               </div>
             </div>
           );
-        })} */}
+        })}
       </div>
     );
   };
@@ -147,7 +147,7 @@ export default function RenderUsers() {
             </div>
           );
         })}
-        {/* {teachers.map((teacher) => {
+        {teachers.map((teacher) => {
           return (
             <div className="container px-6 py-4 flex flex-col gap-2">
               <div className="flex flex-col ">
@@ -182,7 +182,7 @@ export default function RenderUsers() {
               </div>
             </div>
           );
-        })} */}
+        })}
       </div>
     );
   };

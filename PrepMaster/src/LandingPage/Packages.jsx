@@ -46,8 +46,8 @@ export function Packages() {
         <div
           data-aos="fade-up"
           data-aos-easing="ease-in-out"
-          data-aos-duration={`500` * `${index + 2}`}
-          data-aos-delay="1000"
+          data-aos-duration="800"
+          data-aos-delay={`500` * `${index + 2}`}
           className={`flex flex-col items-center justify-evenly ${
             pkg.id === 1
               ? "bg-gradient-to-r from-[#FFFFFF] via-[#FFFFFF] to-[#FFFFFF]"

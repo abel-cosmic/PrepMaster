@@ -26,7 +26,7 @@ export default function Navigation() {
           src={Logo}
           data-aos="fade-down"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           alt="logo"
         />
         <ul
@@ -36,7 +36,7 @@ export default function Navigation() {
           <li
             data-aos="fade-down"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="50"
           >
             <button onClick={() => handleScrollTo("home")} className="links">
@@ -46,7 +46,7 @@ export default function Navigation() {
           <li
             data-aos="fade-down"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="100"
           >
             <button
@@ -60,7 +60,7 @@ export default function Navigation() {
           <li
             data-aos="fade-down"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="150"
           >
             <button onClick={() => handleScrollTo("pricing")} className="links">
@@ -70,7 +70,7 @@ export default function Navigation() {
           <li
             data-aos="fade-down"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="200"
           >
             <button onClick={() => handleScrollTo("contact")} className="links">
@@ -84,7 +84,7 @@ export default function Navigation() {
             element={<Signin />}
             data-aos="fade-down"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="250"
           >
             <div className="sign-in text-sm px-4 py-2">Sign in</div>
@@ -94,7 +94,7 @@ export default function Navigation() {
             element={<Signup />}
             data-aos="fade-down"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="350"
           >
             <CustomButton text={"Try for free"} padding={"0.7rem 1.7rem"} />

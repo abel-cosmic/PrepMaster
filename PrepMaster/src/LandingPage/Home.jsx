@@ -15,7 +15,7 @@ export default function Home() {
           class="gradient-text max-md:font-extrabold max-md:w-3/4 text-center"
           data-aos="fade-down"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="500"
         >
           Start Acing Your Exams Today
@@ -24,7 +24,7 @@ export default function Home() {
           className="text-center md:text-base opacity-75 md:w-2/6 max-md:w-3/4 max-md:text-sm "
           data-aos="fade-down"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="700"
         >
           Join 10,000+ students in securing your top spot in the exit exam in
@@ -35,7 +35,7 @@ export default function Home() {
           element={<Signup />}
           data-aos="fade-down"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="800"
         >
           <CustomButton text={"Try for free"} padding={"0.8rem 3.4rem"} />
@@ -44,7 +44,7 @@ export default function Home() {
       <div
         data-aos="fade-up"
         data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
+        data-aos-duration="800"
         data-aos-delay="1000"
         className="flex flex-row  justify-center md:pt-36 max-md:pt-14 "
       >

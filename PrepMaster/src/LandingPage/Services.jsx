@@ -41,7 +41,7 @@ export default function Services() {
               key={service.id}
               data-aos="fade-right"
               data-aos-easing="ease-in-out"
-              data-aos-duration="1000"
+              data-aos-duration="800"
               data-aos-delay={`200` * `${index + 2}`}
               className="flex items-start mx-2"
             >

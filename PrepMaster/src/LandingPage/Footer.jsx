@@ -33,7 +33,7 @@ export function Footer() {
         <img
           data-aos="fade-up"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="1000"
           src={prepmaster}
           alt="prepmaster"
@@ -45,7 +45,7 @@ export function Footer() {
               <div
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="800"
                 data-aos-delay="1200"
                 className="font-medium text-white md:text-lg max-md:text-base login linked"
               >
@@ -54,7 +54,7 @@ export function Footer() {
               <div
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="800"
                 data-aos-delay="1400"
                 className="text-white md:text-base max-md:text-sm login linked"
               >
@@ -63,7 +63,7 @@ export function Footer() {
               <div
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="800"
                 data-aos-delay="1600"
                 className="text-white md:text-base max-md:text-sm login linked"
               >
@@ -72,7 +72,7 @@ export function Footer() {
               <div
                 data-aos="fade-up"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="800"
                 data-aos-delay="1800"
                 className="text-white md:text-base max-md:text-sm login linked"
               >
@@ -85,7 +85,7 @@ export function Footer() {
           <div
             data-aos="fade-up"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="2000"
             className="text-white text-lg font-medium"
           >
@@ -94,7 +94,7 @@ export function Footer() {
           <div
             data-aos="fade-up"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="2200"
             className="text-white md:text-base max-md:text-sm max-md:text-justify w-5/6 "
           >
@@ -104,7 +104,7 @@ export function Footer() {
           <form
             data-aos="fade-up"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="2400"
             className="flex flex-row w-full md:justify-end max-md:my-6 "
           >
@@ -125,7 +125,7 @@ export function Footer() {
         <div
           data-aos="fade-right"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="2200"
           className="text-white text-base max-md:text-sm"
         >
@@ -134,7 +134,7 @@ export function Footer() {
         <div
           data-aos="fade-right"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="2400"
           className="text-white text-lg max-md:text-sm"
         >
@@ -145,7 +145,7 @@ export function Footer() {
             href="#prepmaster-instagram"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="2500"
           >
             <img src={instagram} alt="instagram" className="login" />
@@ -154,7 +154,7 @@ export function Footer() {
             href="#prepmaster-twitter"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="2600"
           >
             <img src={twitter} alt="twitter" className="login" />
@@ -163,7 +163,7 @@ export function Footer() {
             href="#prepmaster-linkedin"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="2700"
           >
             <img src={linkedin} alt="linkedin" className="login" />
@@ -172,7 +172,7 @@ export function Footer() {
             href="#prepmaster-facebook"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="2800"
           >
             <img src={facebook} alt="facebook" className="login" />
@@ -181,7 +181,7 @@ export function Footer() {
             href="#prepmaster-message"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="2900"
           >
             <img src={message} alt="message" className="login" />
@@ -190,7 +190,7 @@ export function Footer() {
             href="#prepmaster-whatsup"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-delay="3000"
           >
             <img src={whatsup} alt="whatsup" className="login" />

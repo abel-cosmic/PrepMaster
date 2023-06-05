@@ -5,7 +5,7 @@ export function ExploreOurOptions() {
         <div
           data-aos="fade-up"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="1000"
           className="md:text-5xl max-md:text-2xl font-semibold"
         >

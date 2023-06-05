@@ -30,7 +30,7 @@ export function Payments() {
           className="w-1/2"
           data-aos="fade-right"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="200"
         />
         <img
@@ -38,7 +38,7 @@ export function Payments() {
           className="w-1/4"
           data-aos="fade-right"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="300"
         />
         <img
@@ -46,7 +46,7 @@ export function Payments() {
           className="w-1/4"
           data-aos="fade-right"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="400"
         />
         <img
@@ -54,7 +54,7 @@ export function Payments() {
           className="w-1/4"
           data-aos="fade-right"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="500"
         />
         <img
@@ -62,7 +62,7 @@ export function Payments() {
           className="w-1/4"
           data-aos="fade-right"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="600"
         />
         <img
@@ -70,7 +70,7 @@ export function Payments() {
           className="w-1/4"
           data-aos="fade-right"
           data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-delay="700"
         />
       </div>

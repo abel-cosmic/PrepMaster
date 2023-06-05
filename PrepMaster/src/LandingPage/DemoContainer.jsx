@@ -61,7 +61,7 @@ export default function DemosContainer() {
             <div
               data-aos="fade-left"
               data-aos-easing="ease-in-out"
-              data-aos-duration="1000"
+              data-aos-duration="800"
               data-aos-delay="100"
               className="flex-shrink-0 md:w-1/2"
             >
@@ -75,7 +75,7 @@ export default function DemosContainer() {
               <h2
                 data-aos="fade-right"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="800"
                 data-aos-delay="250"
                 className={`md:text-5xl  font-bold md:mb-16 max-md:text-2xl  max-md:self-center max-md:mt-10 max-md:mb-2   ${
                   isFirstTitleColorful ? "text-[#088395]" : "text-[#2e2e2e]"
@@ -95,7 +95,7 @@ export default function DemosContainer() {
                 src={demo.image}
                 data-aos="fade-left"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="800"
                 data-aos-delay="350"
                 alt={demo.title}
                 className="h-auto max-w-full max-md:visible md:hidden"
@@ -103,7 +103,7 @@ export default function DemosContainer() {
               <p
                 data-aos="fade-right"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="800"
                 data-aos-delay="450"
                 className="md:mb-10  md:text-xl max-md:mb-4  max-md:text-xs max-md:text-center max-md:px-4  font-light"
               >
@@ -112,8 +112,8 @@ export default function DemosContainer() {
               <div
                 data-aos="fade-right"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
-                data-aos-delay="650"
+                data-aos-duration="800"
+                data-aos-delay="550"
                 className={`flex  max-md:mb-10 ${isButtonJustify}`}
               >
                 <NavLink to="Signup" element={<Signup />}>

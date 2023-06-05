@@ -31,7 +31,7 @@ export function Testimonials() {
       <div
         data-aos="fade-up"
         data-aos-delay="650"
-        data-aos-duration="1000"
+        data-aos-duration="800"
         data-aos-easing="ease-in-out"
         className="w-full flex felx-col md:justify-center md:mt-52 max-md:mt-16 md:text-5xl 
         max-md:text-xl max-md:w-3/4 max-md:text-center font-semibold max-md:mx-auto"
@@ -47,7 +47,7 @@ export function Testimonials() {
             <div
               data-aos="fade-up"
               data-aos-delay={`900` * `${index + 1}`}
-              data-aos-duration="1500"
+              data-aos-duration="800"
               data-aos-easing="ease-in-out"
               className="card flex flex-col gap-6 w-full p-10 text-justify rounded-xl"
             >
@@ -71,7 +71,7 @@ export function Testimonials() {
                 <div
                   data-aos="fade-up"
                   data-aos-delay="850"
-                  data-aos-duration="1000"
+                  data-aos-duration="800"
                   data-aos-easing="ease-in-out"
                   className="flex flex-col card w-full p-6 my-10 gap-6 text-justify rounded-md"
                 >

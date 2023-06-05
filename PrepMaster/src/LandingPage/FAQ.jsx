@@ -52,7 +52,7 @@ export function FAQ() {
       <div
         data-aos="fade-up"
         data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
+        data-aos-duration="800"
         data-aos-delay="500"
         className="md:text-5xl max-md:text-2xl mb-10 font-semibold max-md:text-center"
       >
@@ -62,7 +62,7 @@ export function FAQ() {
       <div
         data-aos="fade-up"
         data-aos-easing="ease-in-out"
-        data-aos-duration="1000"
+        data-aos-duration="800"
         data-aos-delay="600"
         className=" flex flex-col justify-between gap-10 mt-10 md:w-[80rem]"
       >
