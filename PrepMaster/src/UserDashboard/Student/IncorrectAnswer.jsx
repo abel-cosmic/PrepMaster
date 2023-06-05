@@ -9,7 +9,6 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 700,
   bgcolor: "background.paper",
   borderRadius: "0.5rem",
   filter: "drop-shadow(10px 0px 40px rgba(46, 46, 46, 0.1))",
@@ -24,6 +23,7 @@ export default function IncorrectAnswer({
   const handleClose = () => {
     onClose();
   };
+  console.log(answer);
 
   return (
     <Modal
@@ -32,7 +32,7 @@ export default function IncorrectAnswer({
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={style} className="flex flex-col gap-4">
+      <Box sx={style} className="flex flex-col gap-4 max-md:w-96">
         <div className="exam-sheet flex flex-row justify-between px-6 py-4">
           <p className="text-lg font-semibold">Incorrect Answer</p>
           <Button onClick={handleClose}>

@@ -30,17 +30,21 @@ export default function ExamSheet() {
   }, []);
 
   return (
-    <div className="exam-sheet h-screen flex justify-center place-items-center">
-      <div className="bg-white flex flex-col w-1/2 rounded-xl question gap-8 h-fit p-12">
+    <div className="exam-sheet h-screen flex justify-center place-items-center max-md:py-10">
+      <div className="bg-white flex flex-col md:w-1/2 max-md:w-5/6 max-md:justify-between rounded-xl question gap-8 md:h-fit md:p-12 max-md:px-6 max-md:py-12 ">
         <div className="flex flex-row justify-between">
-          <NavLink to="/StudentDashboard/StudentExam" element={<StudentExam />}>
+          <NavLink
+            to="/StudentDashboard/StudentExam"
+            element={<StudentExam />}
+            className="self-center"
+          >
             <div className="flex flex-row self-center gap-2">
               <img src={LeaveExam} alt="Leave Exam" />
-              <p>Leave Exam</p>
+              <p className="max-md:text-sm">Leave Exam</p>
             </div>
           </NavLink>
-          <div className="self-center">
-            <p>
+          <div className="max-md:hidden self-center">
+            <p className="max-md:text-sm">
               Time left{" "}
               <span className="colored-mini-text">
                 {MinutesLeft}:{SecondsLeft}
@@ -48,11 +52,19 @@ export default function ExamSheet() {
             </p>
           </div>
           <NavLink to="/QuestionList" element={<QuestionList />}>
-            <div className="px-4 py-2 w-44 exam-sheet rounded-lg flex flex-row gap-4">
-              <img src={ExamPaper} alt="Exam Paper" />
-              <p className="opacity-50">Question List</p>
+            <div className="px-4 py-2 md:w-44 exam-sheet rounded-lg flex flex-row gap-4">
+              <img src={ExamPaper} alt="Exam Paper" className="" />
+              <p className="opacity-50 max-md:text-sm">Question List</p>
             </div>
           </NavLink>
+        </div>
+        <div className="md:hidden self-center">
+          <p className="max-md:text-sm">
+            Time left{" "}
+            <span className="colored-mini-text">
+              {MinutesLeft}:{SecondsLeft}
+            </span>
+          </p>
         </div>
         <RenderQuestions />
       </div>

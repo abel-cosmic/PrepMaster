@@ -47,6 +47,7 @@ import AdminProfile from "./UserDashboard/Admin/AdmiinProfile";
 import AdminSecurity from "./UserDashboard/Admin/AdminSecurity";
 import EditExam from "./UserDashboard/Teacher/EditExam";
 import QuestionList from "./UserDashboard/Student/QuestionList";
+import Error404 from "./UserDashboard/Error404";
 
 function App() {
   const router = createBrowserRouter(
@@ -96,6 +97,7 @@ function App() {
         <Route element={<EditDepartment />} path="editDepartment" />
         <Route element={<Logout />} path="Logout" />
         <Route element={<QuestionCreator />} path="QuestionCreator" />
+        <Route element={<Error404 />} path="Error404" />
       </Route>
     )
   );

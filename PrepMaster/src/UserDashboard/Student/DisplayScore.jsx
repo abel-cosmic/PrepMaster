@@ -52,10 +52,14 @@ export default function DisplayScore() {
 
   return (
     <div className="h-screen flex justify-center">
-      <Confetti></Confetti>
+      <Confetti width={width} height={height}></Confetti>
       <div className="flex flex-col gap-6 justify-center place-items-center">
-        <p className="text-5xl">Congratulations {user.firstName} 🥳🥳🥳 </p>
-        <p className="text-2xl">You have successfully finished {exam.name}</p>
+        <p className="md:text-5xl max-md:text-3xl max-md:text-center max-md:px-2">
+          Congratulations {user.firstName} 🥳🥳🥳{" "}
+        </p>
+        <p className="md:text-2xl max-md:text-xl max-md:text-center">
+          You have successfully finished {exam.name}
+        </p>
         <p>Your Score is : {score}</p>
         <NavLink to="/StudentDashboard">
           <CustomButton text="Go Back To My Dashboard" padding={"1rem 3rem"} />

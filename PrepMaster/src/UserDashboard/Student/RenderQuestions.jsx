@@ -35,9 +35,7 @@ export default function RenderQuestions() {
         questions[questionNumber - 1].choices[answers[questionNumber - 1]]
           .choiceText.choiceText
       ) {
-        console.log("hello");
         setCurrentScore((prevScore) => prevScore + 1);
-        console.log(currentScore);
       } else {
         setShowIncorrectAnswer(true);
       }
@@ -81,6 +79,7 @@ export default function RenderQuestions() {
   };
   const handleCloseModal = () => {
     setShowIncorrectAnswer(false); // Hide the incorrect answer modal
+    setQuestionNumber((prevQuestionNumber) => prevQuestionNumber + 1);
   };
 
   return (
@@ -92,7 +91,7 @@ export default function RenderQuestions() {
             {choice[questionNumber - 1].map((choice) => (
               <div
                 // key={choice.id}
-                className="flex flex-row gap-4 px-4 py-2 rounded-md my-4"
+                className="flex flex-row gap-4 md:px-4 py-2 rounded-md my-4 max-md:text-sm max-md:text-justify"
                 style={{
                   backgroundColor:
                     selectedChoice === choice.choiceText
@@ -140,7 +139,7 @@ export default function RenderQuestions() {
               answer={
                 questions[questionNumber - 1].choices[
                   answers[questionNumber - 1]
-                ].choiceText.choiceText
+                ].choiceText
               }
               description={questions[questionNumber - 1].explanation}
             />

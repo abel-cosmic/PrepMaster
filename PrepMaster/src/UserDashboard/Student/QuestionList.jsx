@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useCourse } from "../../Logic/CourseContext";
 import CustomButton from "../../Components/CustomButton";
+import LeaveExam from "../../assets/LeaveExam.svg";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function QuestionList() {
   const { course } = useCourse();
   const [questions, setQuestions] = useState([]);
+  const navigate = useNavigate();
   console.log(questions.questions);
 
   useEffect(() => {
@@ -19,13 +22,23 @@ export default function QuestionList() {
     fetchQuestions();
   }, []);
   console.log(questions);
+  const back = () => navigate(-1);
   return (
-    <div className="exam-sheet h-screen flex justify-center place-items-center">
-      <div className="bg-white flex flex-col w-1/2 rounded-xl question gap-8 h-fit p-12">
-        <p className="text-2xl font-medium flex justify-center">
-          {" "}
-          Here are all the questions{" "}
-        </p>
+    <div className="exam-sheet h-screen flex justify-center place-items-center max-md:px-4">
+      <div className="bg-white flex flex-col md:w-1/2 rounded-xl question gap-8 h-fit p-12 max-md:px-4">
+        <div className="flex flex-row max-md:justify-evenly">
+          <div
+            onClick={back}
+            className="flex flex-row self-center gap-2 cursor-pointer"
+          >
+            <img src={LeaveExam} alt="Leave Exam" />
+          </div>
+          <p className="text-2xl font-medium flex m-auto">
+            {" "}
+            Here are all the questions{" "}
+          </p>
+        </div>
+
         {questions.questions === undefined ? (
           <div>Loading...</div>
         ) : (
@@ -40,10 +53,12 @@ export default function QuestionList() {
                   <p className="font-medium">
                     Difficulty: {question.difficulty}
                   </p>
-                  <CustomButton
-                    text={"Go to question"}
-                    padding={"0.5rem 1.2rem"}
-                  />
+                  <NavLink to="/Error404">
+                    <CustomButton
+                      text={"Go to question"}
+                      padding={"0.5rem 1.2rem"}
+                    />
+                  </NavLink>
                 </div>
               </div>
             );
