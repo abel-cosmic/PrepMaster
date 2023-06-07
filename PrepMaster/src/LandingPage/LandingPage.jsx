@@ -13,8 +13,8 @@ import { MobileNavigation } from "./MobileNavigation";
 
 export default function LandingPage() {
   return (
-    <div className="w-full">
-      <MobileNavigation/>
+    <div>
+      <MobileNavigation />
       <Navigation />
       <Home />
       <WhatMakes />

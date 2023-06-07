@@ -59,16 +59,16 @@ export default function QuestionCreator() {
 
   return (
     <div className="exam-sheet h-screen flex justify-center place-items-center">
-      <div className="bg-white flex flex-col w-1/2 rounded-xl question gap-8 h-fit p-12">
+      <div className="bg-white flex flex-col md:w-1/2 rounded-xl question gap-8 h-fit p-12 max-md:px-6">
         <div className="flex flex-row">
           <NavLink to="/TeacherDashboard/CreateExam" element={<CreateExam />}>
-            <div className="flex flex-row gap-4 ">
+            <div className="flex flex-row gap-4">
               <img src={Back} alt="back" />
               <p className="self-center">Back</p>
             </div>
           </NavLink>
-          <p className="text-2xl font-medium m-auto">
-            Enter Questions {values.allowedtime}
+          <p className="md:text-2xl max-md:text-xl self-center font-medium m-auto">
+            Enter {values.noquestion} Questions
           </p>
         </div>
         <form onSubmit={formik.handleSubmit}>

@@ -14,14 +14,29 @@ import Logout from "../Logout";
 import ViewExams from "../../assets/ViewExams.svg";
 import SpreadLine from "../../assets/SpreadLine.png";
 import { useEmail } from "../../Logic/TeacherContext";
+import addUser from "../../assets/addUser.svg";
 
 export default function TeacherHeader() {
   // const user = useContext(TeacherContext);
-  const email = useEmail();
+  const { email } = useEmail();
   const [isHead, setIsHead] = useState(false);
 
   console.log(email);
   const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/teachers")
+      .then((response) => response.json())
+      .then((teachers) => {
+        const isTeacherHead = teachers.some(
+          (teacher) => teacher.email === email
+        );
+        setIsHead(isTeacherHead);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [email]);
 
   const handleImageClick = () => {
     setIsActive(!isActive);
@@ -81,9 +96,9 @@ export default function TeacherHeader() {
           </NavLink>
 
           {isHead && (
-            <NavLink to="AddTeacher">
+            <NavLink to="/AddTeacher">
               <div className="side-bar text-md" id="AddTeacher">
-                <img src={AnalyticsIcon} alt="Analytics Icon" />
+                <img src={addUser} alt="Add Teacher Icon" />
                 <p>Add Teacher</p>
               </div>
             </NavLink>

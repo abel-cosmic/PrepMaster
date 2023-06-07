@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-4;
 import { useEmail } from "../Logic/TeacherContext";
 import AuthUser from "../Logic/AuthUser";
 import { useUserData } from "../Logic/UserDataContext";

@@ -1,4 +1,5 @@
 export default function UpdateTeacher({
+  id,
   firstName,
   lastName,
   email,
@@ -9,13 +10,14 @@ export default function UpdateTeacher({
   departmentHead,
 }) {
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:8080/api/Teachers", {
+    fetch(`http://localhost:8080/api/teachers/${id}`, {
       method: "PUT",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        id,
         firstName,
         lastName,
         email,

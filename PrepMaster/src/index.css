@@ -188,7 +188,7 @@ input:focus {
 }
 
 .signup {
-  background-image: url("assets/SignupPhoto.svg");
+  background-image: url("assets/SignupPhoto.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -236,7 +236,7 @@ input:focus {
 }
 
 .signin {
-  background-image: url("assets/LoginPhoto.svg");
+  background-image: url("assets/LoginPhoto.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }

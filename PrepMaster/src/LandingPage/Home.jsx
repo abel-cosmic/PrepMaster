@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Signup from "../Signup/Signup";
 import DemosContainer from "./DemoContainer";
 import { Companies } from "./Companies";
+import oval from "../assets/Oval.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -11,6 +12,9 @@ export default function Home() {
   return (
     <div id="home">
       <div className="flex flex-col items-center max-md:w-full md:pt-36 max-md:pt-12 max-md:mt-20 gap-6 md:mt-28">
+        <div className="absolute md:top-[-3rem] max-md:hidden">
+          <img src={oval} alt="oval blur" />
+        </div>
         <div
           class="gradient-text max-md:font-extrabold max-md:w-3/4 text-center"
           data-aos="fade-down"

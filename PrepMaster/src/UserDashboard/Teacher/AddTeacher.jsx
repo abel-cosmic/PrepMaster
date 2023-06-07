@@ -96,15 +96,20 @@ export default function AddTeacher() {
     <div className="exam-sheet h-screen flex justify-center place-items-center">
       <form
         onSubmit={formik.handleSubmit}
-        className="bg-white flex flex-col gap-6 w-fit rounded-xl p-12 max-md:p-8"
+        className="bg-white flex flex-col gap-6 w-fit rounded-xl p-12 max-md:px-6"
       >
-        <p className="text-3xl font-medium self-center mb-4">
+        <p className="md:text-3xl max-md:text-2xl font-medium self-center mb-4">
           Enter Teacher Details
         </p>
         {inputs.map((input) => {
           return (
-            <div key={input.title} className="flex flex-row gap-6 max-md:gap-0">
-              <p className="w-40">{input.title}</p>
+            <div
+              key={input.title}
+              className="flex flex-row gap-6 max-md:justify-between"
+            >
+              <p className="md:w-40 max-md:text-sm max-md:self-center">
+                {input.title}
+              </p>
               {input.type === "select" && options.length > 0 ? (
                 <select
                   className="container bg-white flex pl-4 pr-10 py-2 max-md:w-[14rem]"

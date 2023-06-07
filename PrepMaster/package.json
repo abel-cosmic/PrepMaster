@@ -28,7 +28,8 @@
     "react-router-dom": "^6.11.1",
     "react-use": "^17.4.0",
     "sort-by": "^0.0.2",
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.10",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

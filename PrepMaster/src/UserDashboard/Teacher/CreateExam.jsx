@@ -36,10 +36,12 @@ export default function CreateExam() {
       <p>Let's make some exams shall we</p>
       <form
         onSubmit={formik.handleSubmit}
-        className="mt-10 flex flex-col gap-6"
+        className="md:mt-10 max-md:mt-6 flex flex-col gap-6"
       >
-        <div className="flex flex-row gap-6 max-md:gap-0">
-          <p className="self-center w-[14rem] max-md:w-[8rem]">Course Name</p>
+        <div className="flex md:flex-row max-md:flex-col gap-6 max-md:gap-4">
+          <p className="md:self-center w-[14rem] max-md:w-[8rem]">
+            Course Name
+          </p>
           <input
             type="text"
             name="coursename"
@@ -47,13 +49,12 @@ export default function CreateExam() {
             onChange={formik.handleChange}
             value={formik.coursename}
             placeholder="Eg: Object Oriented Programming"
-            className="container w-fit flex pl-4 pr-10 py-2 max-md:pr-0"
-            size="33"
+            className="container max-md:w-96 md:w-[30rem] flex pl-4 pr-10 py-2 max-md:pr-0"
             required
           />
         </div>
-        <div className="flex flex-row gap-6 max-md:gap-0">
-          <p className="self-center w-[14rem] max-md:w-[8rem]">Exam Name</p>
+        <div className="flex md:flex-row max-md:flex-col gap-6 max-md:gap-4">
+          <p className="md:self-center w-[14rem] max-md:w-[8rem]">Exam Name</p>
           <input
             type="text"
             name="examname"
@@ -61,13 +62,12 @@ export default function CreateExam() {
             onChange={formik.handleChange}
             value={formik.examname}
             placeholder="Eg: Object Oriented Programming Mockup Exam I"
-            className="container w-fit flex pl-4 pr-10 py-2 max-md:pr-0"
-            size="33"
+            className="container max-md:w-96 md:w-[30rem] flex pl-4 pr-10 py-2 max-md:pr-0"
             required
           />
         </div>
-        <div className="flex flex-row gap-6 max-md:gap-0">
-          <p className="self-center w-[14rem] max-md:w-[8rem]">
+        <div className="flex md:flex-row max-md:flex-col gap-6 max-md:gap-4">
+          <p className="md:self-center w-[14rem] max-md:w-full">
             Number of Questions
           </p>
           <input
@@ -77,12 +77,14 @@ export default function CreateExam() {
             onChange={formik.handleChange}
             value={formik.noquestion}
             placeholder="Eg: 50"
-            className="container w-96 flex pl-4 pr-10 py-2 max-md:pr-0 max-md:w-[21.5rem]"
+            className="container w-96 flex pl-4 pr-10 py-2 max-md:pr-0 max-md:w-full"
             required
           />
         </div>
-        <div className="flex flex-row gap-6 max-md:gap-0">
-          <p className="self-center w-[14rem] max-md:w-[8rem]">Allowed Time</p>
+        <div className="flex md:flex-row max-md:flex-col gap-6 max-md:gap-4">
+          <p className="md:self-center w-[14rem] max-md:w-[8rem]">
+            Allowed Time
+          </p>
           <input
             type="number"
             name="allowedtime"
@@ -90,7 +92,7 @@ export default function CreateExam() {
             onChange={formik.handleChange}
             value={formik.allowedtime}
             placeholder="Eg:50 mins"
-            className="container flex pl-4 pr-10 py-2 w-96 max-md:pr-0 max-md:w-[21.5rem]"
+            className="container flex pl-4 pr-10 py-2 w-96 max-md:pr-0 max-md:w-full"
             required
           />
         </div>

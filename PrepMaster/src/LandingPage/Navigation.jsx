@@ -29,10 +29,7 @@ export default function Navigation() {
           data-aos-duration="800"
           alt="logo"
         />
-        <ul
-          className="flex felx-row gap-10 self-center text-sm"
-          style={{ fontWeight: "500" }}
-        >
+        <ul className="flex flex-row gap-10 self-center text-sm font-medium">
           <li
             data-aos="fade-down"
             data-aos-easing="ease-in-out"
