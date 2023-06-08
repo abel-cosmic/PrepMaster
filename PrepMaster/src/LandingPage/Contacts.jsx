@@ -60,14 +60,15 @@ export function Contacts() {
               <div className="text-sm">+contact@prepmasters.com</div>
             </div>
           </div>
-          <div 
-          data-aos="fade-up"
-          data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
-          data-aos-delay="1000"
-          className="text-sm">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="1000"
+            data-aos-delay="1000"
+            className="text-sm"
+          >
             Follow us on
-            </div>
+          </div>
           <div className="flex flex-row gap-6">
             <a href="#prepmaster-instagram">
               <img
@@ -137,7 +138,7 @@ export function Contacts() {
             </a>
           </div>
           <iframe
-            className="rounded-xl"
+            className="rounded-xl w-full"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6256.250506600523!2d38.71797160763153!3d8.9545593713985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b813e5ca20165%3A0x23b28360006aa821!2sHope%20University%20College%20hall!5e0!3m2!1sen!2set!4v1686243415813!5m2!1sen!2set"
             width="600"
             height="450"
@@ -185,14 +186,15 @@ export function Contacts() {
             placeholder="Message"
             className=" container pt-6 md:pl-6  max-md:pl-4 md:pb-72 max-md:pb-44 md:w-full max-md:w-[23rem] input-field"
           />
-          <input 
-          type="submit" 
-          value="Send" 
-          data-aos="fade-in"
-          data-aos-easing="ease-in-out"
-          data-aos-duration="1000"
-          data-aos-delay="600"
-          className="submit-btn self-end" />
+          <input
+            type="submit"
+            value="Send"
+            data-aos="fade-in"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+            className="submit-btn self-end"
+          />
         </form>
       </div>
     </div>

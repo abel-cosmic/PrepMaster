@@ -91,7 +91,7 @@ export default function RenderQuestions() {
             {choice[questionNumber - 1].map((choice) => (
               <div
                 // key={choice.id}
-                className="flex flex-row gap-4 md:px-4 py-2 rounded-md my-4 max-md:text-sm max-md:text-justify"
+                className="flex flex-row gap-4 px-4 py-2 rounded-md my-4 max-md:text-sm max-md:text-justify"
                 style={{
                   backgroundColor:
                     selectedChoice === choice.choiceText

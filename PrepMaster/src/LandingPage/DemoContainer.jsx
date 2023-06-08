@@ -59,7 +59,7 @@ export default function DemosContainer() {
             style={{ backgroundColor: containerBgColor }}
           >
             <div
-              data-aos="fade-left"
+              data-aos="fade-right"
               data-aos-easing="ease-in-out"
               data-aos-duration="800"
               data-aos-delay="100"
@@ -68,9 +68,9 @@ export default function DemosContainer() {
               <img
                 src={demo.image}
                 alt={demo.title}
-                data-aos="fade-left"
+                data-aos="fade-right"
                 data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
+                data-aos-duration="800"
                 data-aos-delay="250"
                 className="h-auto max-w-full max-md:hidden"
               />
@@ -81,7 +81,7 @@ export default function DemosContainer() {
                 data-aos-easing="ease-in-out"
                 data-aos-duration="800"
                 data-aos-delay="250"
-                className={`md:text-5xl  font-bold md:mb-16 max-md:text-2xl  max-md:self-center max-md:mt-10 max-md:mb-2   ${
+                className={`md:text-5xl font-bold md:mb-16 max-md:text-2xl  max-md:self-center max-md:mt-10 max-md:mb-2   ${
                   isFirstTitleColorful ? "text-[#088395]" : "text-[#2e2e2e]"
                 }`}
               >
@@ -97,7 +97,7 @@ export default function DemosContainer() {
               </h2>
               <img
                 src={demo.image}
-                data-aos="fade-left"
+                data-aos="fade-right"
                 data-aos-easing="ease-in-out"
                 data-aos-duration="800"
                 data-aos-delay="350"
