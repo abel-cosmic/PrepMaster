@@ -13,10 +13,13 @@ export default function QuestionCreator() {
       option3: "",
       option4: "",
       answer: "",
+      description: "",
+      difficulty: "",
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      if (questionNumber === questionLength) {
+      if (questionNumber > questionLength - 1) {
+        setQuestions((prevQuestions) => [...prevQuestions, values]);
         navigate("/TeacherDashboard/CreateExam");
       } else {
         setQuestions((prevQuestions) => [...prevQuestions, values]);
@@ -37,7 +40,8 @@ export default function QuestionCreator() {
   const questionLength = values.noquestion;
   const [questionNumber, setQuestionNumber] = useState(0);
   const [questions, setQuestions] = useState([]);
-
+  console.log(questionNumber);
+  console.log(questionLength);
   const questionInputs = [
     {
       name: "option1",
@@ -56,6 +60,7 @@ export default function QuestionCreator() {
       placeholder: "Enter Option 4",
     },
   ];
+  console.log(questions);
 
   return (
     <div className="exam-sheet h-screen flex justify-center place-items-center">
@@ -102,6 +107,24 @@ export default function QuestionCreator() {
                 </div>
               );
             })}
+          </div>
+          <div className="flex flex-col gap-6 mb-6">
+            <input
+              type="text"
+              className="container w-full flex pl-4 pr-10 py-2"
+              placeholder="Enter Answer Description"
+              value={formik.values.description}
+              onChange={formik.handleChange}
+              name="description"
+            />
+            <input
+              type="text"
+              className="container w-full flex pl-4 pr-10 py-2"
+              placeholder="Enter Difficulty"
+              value={formik.values.difficulty}
+              onChange={formik.handleChange}
+              name="difficulty"
+            />
           </div>
           <div className="w-full flex justify-end">
             <input

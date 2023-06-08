@@ -129,15 +129,15 @@ export function Contacts() {
               />
             </a>
           </div>
-          <img
-            src={maper}
-            data-aos="fade-up"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="800"
-            data-aos-delay="1900"
-            alt="map"
-            className="max-md:w-11/12"
-          />
+          <iframe
+            className="rounded-xl"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6256.250506600523!2d38.71797160763153!3d8.9545593713985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b813e5ca20165%3A0x23b28360006aa821!2sHope%20University%20College%20hall!5e0!3m2!1sen!2set!4v1686243415813!5m2!1sen!2set"
+            width="600"
+            height="450"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
         <form className="flex flex-col justify-between mt-12 w-max max-md:mx-6 md:gap-6 max-md:gap-4">
           <div className="flex md:flex-row max-md:flex-col max-md:gap-4 md:gap-6 w-fit justify-between ">
