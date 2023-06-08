@@ -122,77 +122,29 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t md:mt-8 py-4 px-12 flex flex-row max-md:flex-col justify-between items-center md:w-full  flex-shrink-0">
-        <div
-          data-aos="fade-right"
-          data-aos-easing="ease-in-out"
-          data-aos-duration="800"
-          data-aos-delay="2200"
-          className="text-white text-base max-md:text-sm"
-        >
+        <div className="text-white text-base max-md:text-sm">
           PrepMasters © 2023 All rights reserved
         </div>
-        <div
-          data-aos="fade-right"
-          data-aos-easing="ease-in-out"
-          data-aos-duration="800"
-          data-aos-delay="2400"
-          className="text-white text-lg max-md:text-sm"
-        >
+        <div className="text-white text-lg max-md:text-sm cursor-pointer">
           Made by Trident Technologies
         </div>
         <div className="md:flex md:flex-row md:gap-6  max-md:gap-0 max-md:hidden max-md:w-[1rem] ">
-          <a
-            href="#prepmaster-instagram"
-            data-aos="fade-right"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
-            data-aos-delay="2500"
-          >
+          <a href="#prepmaster-instagram">
             <img src={instagram} alt="instagram" className="login" />
           </a>
-          <a
-            href="#prepmaster-twitter"
-            data-aos="fade-right"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
-            data-aos-delay="2600"
-          >
+          <a href="#prepmaster-twitter">
             <img src={twitter} alt="twitter" className="login" />
           </a>
-          <a
-            href="#prepmaster-linkedin"
-            data-aos="fade-right"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
-            data-aos-delay="2700"
-          >
+          <a href="#prepmaster-linkedin">
             <img src={linkedin} alt="linkedin" className="login" />
           </a>
-          <a
-            href="#prepmaster-facebook"
-            data-aos="fade-right"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
-            data-aos-delay="2800"
-          >
+          <a href="#prepmaster-facebook">
             <img src={facebook} alt="facebook" className="login" />
           </a>
-          <a
-            href="#prepmaster-message"
-            data-aos="fade-right"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
-            data-aos-delay="2900"
-          >
+          <a href="#prepmaster-message">
             <img src={message} alt="message" className="login" />
           </a>
-          <a
-            href="#prepmaster-whatsup"
-            data-aos="fade-right"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="1000"
-            data-aos-delay="3000"
-          >
+          <a href="#prepmaster-whatsup">
             <img src={whatsup} alt="whatsup" className="login" />
           </a>
         </div>
