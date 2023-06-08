@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MuiTelInput } from "mui-tel-input";
 import { useFormik } from "formik";
 import CreateStudent from "../Logic/CreateStudent";
@@ -8,6 +8,7 @@ import { useEmail } from "../Logic/TeacherContext";
 export default function SignupStudent() {
   const { setEmail } = useEmail();
   const navigate = useNavigate();
+  const [departments, setDepartments] = useState([]);
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -27,6 +28,17 @@ export default function SignupStudent() {
       });
     },
   });
+
+  useEffect(() => {
+    const fetchDepartments = async () => {
+      const departmentResponse = await fetch(
+        "http://localhost:8080/api/departments"
+      );
+      const departmentData = await departmentResponse.json();
+      setDepartments(departmentData);
+    };
+    fetchDepartments();
+  }, []);
 
   const inputs = [
     { title: "Email", type: "email", placeholder: "Eg:abc123@gmail.com" },
@@ -99,46 +111,50 @@ export default function SignupStudent() {
             value={formik.values.phoneNumber}
           />
         </div>
-        <div className="flex flex-col gap-2">
-          <p className="text-sm">Gender</p>
-          <select
-            name="gender"
-            id="gender"
-            className="container pl-4 max-md:pr-16 md:pr-20 py-2 bg-white"
-            value={formik.values.gender}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          >
-            <option value="">Select Gender</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
-          </select>
-          {formik.touched.gender && formik.errors.gender && (
-            <div className="error">{formik.errors.gender}</div>
-          )}
+        <div className="flex md:flex-row max-md:flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <p className="text-sm">Gender</p>
+            <select
+              name="gender"
+              id="gender"
+              className="container pl-4 max-md:pr-16 md:pr-20 py-2 bg-white"
+              value={formik.values.gender}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            >
+              <option value="">Select Gender</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+            </select>
+            {formik.touched.gender && formik.errors.gender && (
+              <div className="error">{formik.errors.gender}</div>
+            )}
+          </div>
+          <div className="flex flex-col gap-2">
+            <p className="text-sm">Department</p>
+            <select
+              name="departmentId"
+              id="departmentId"
+              className="container pl-4 max-md:pr-16 md:pr-20 py-2 bg-white"
+              value={formik.values.departmentId}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            >
+              {departments.map((department) => {
+                return (
+                  <>
+                    <option value="">Please Choose a Department</option>
+                    <option value={department.name}>{department.name}</option>
+                  </>
+                );
+              })}
+            </select>
+            {formik.touched.departmentId && formik.errors.departmentId && (
+              <div className="error">{formik.errors.departmentId}</div>
+            )}
+          </div>
         </div>
-        <div className="flex flex-col gap-2">
-          <p className="text-sm">Department</p>
-          <select
-            name="departmentId"
-            id="departmentId"
-            className="container pl-4 max-md:pr-16 md:pr-20 py-2 bg-white"
-            value={formik.values.departmentId}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          >
-            <option value="">Select Department</option>
-            <option value="1">Computer Science</option>
-            <option value="2">Marketing</option>
-            <option value="3">Software Engineering</option>
-            <option value="4">Accounting</option>
-            <option value="5">Management</option>
-            <option value="6">Architecture</option>
-          </select>
-          {formik.touched.departmentId && formik.errors.departmentId && (
-            <div className="error">{formik.errors.departmentId}</div>
-          )}
-        </div>
+
         <RenderInputs />
       </div>
       <div className="flex flex-row gap-2 justify-start">

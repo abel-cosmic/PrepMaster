@@ -79,12 +79,14 @@
   cursor: pointer;
   width: fit-content;
   padding: 1rem 2rem;
+  transition: 0.3s ease-in-out;
 }
 
 .side-bar:hover {
-  backdrop-filter: blur(2rem);
+  border-radius: 0.5rem;
   background-color: rgba(39, 39, 39, 0.055);
   padding: 1rem 4rem;
+  transition: 0.3s ease-in-out;
 }
 
 .container {

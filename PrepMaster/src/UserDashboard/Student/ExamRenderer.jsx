@@ -6,6 +6,9 @@ import CustomButton from "../../Components/CustomButton";
 import { NavLink } from "react-router-dom";
 import ExamSheet from "./ExamSheet";
 import { useCourse } from "../../Logic/CourseContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 export default function ExamRenderer() {
   const [exams, setExams] = useState([]);
@@ -47,6 +50,10 @@ export default function ExamRenderer() {
 
         return (
           <div
+            data-aos="fade-right"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+            data-aos-delay="100"
             key={course.id}
             className="flex flex-col gap-6 w-full pr-60 max-md:pr-4 max-md:pb-10"
           >

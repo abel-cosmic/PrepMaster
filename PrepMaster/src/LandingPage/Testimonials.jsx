@@ -1,10 +1,12 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import hana from "../assets/hana.svg";
+import poster from "../assets/poster.webp";
+import rick from "../assets/rick.mp4";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 
-export  function Testimonials() {
+export function Testimonials() {
   const testimonials = [
     {
       name: "Abebech Kebede",
@@ -95,8 +97,10 @@ export  function Testimonials() {
           })}
         </Splide>
       </div>
+      <video poster={poster} controls className="p-10 w-3/4 m-auto">
+        <source src={rick} type="video/mp4" />
+      </video>
     </div>
   );
 }
 export default Testimonials;
-

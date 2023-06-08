@@ -35,7 +35,7 @@ export default function AddDepartment() {
       type: "text",
     },
     {
-      value: "dean",
+      value: "departmentHeadId",
       title: "Department Dean",
       placeholder: "Select Dean",
       type: "select",
@@ -54,7 +54,7 @@ export default function AddDepartment() {
   const formik = useFormik({
     initialValues: {
       name: "",
-      dean: "",
+      departmentHeadId: "",
       description: "",
     },
     onSubmit: (values) => {
@@ -97,7 +97,8 @@ export default function AddDepartment() {
                     {input.options.map((option, index) => (
                       <option
                         key={option}
-                        value={setSelectedTeacher(teachers[index].departmentId)}
+                        name="departmentId"
+                        value={teachers[index].id}
                       >
                         {option}
                       </option>

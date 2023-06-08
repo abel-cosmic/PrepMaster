@@ -59,6 +59,7 @@ export default function Logout() {
             <Button
               variant="text"
               sx={{ textTransform: "none", fontWeight: "500" }}
+              onClick={handleClose}
             >
               <p>Cancel</p>
             </Button>

@@ -6,6 +6,9 @@ import CustomButton from "../../Components/CustomButton";
 import { NavLink } from "react-router-dom";
 import ExamSheet from "./ExamSheet";
 import { useCourse } from "../../Logic/CourseContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 export default function DailyQuestions() {
   const url = "http://localhost:8080/api/bundles";
@@ -24,7 +27,13 @@ export default function DailyQuestions() {
 
   return exams.map((exam) => {
     return (
-      <div className="container md:w-5/12 pr-10 pl-4 py-4 flex flex-col gap-4">
+      <div
+        data-aos="fade-right"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="800"
+        data-aos-delay="100"
+        className="container md:w-5/12 pr-10 pl-4 py-4 flex flex-col gap-4"
+      >
         <p className="text-lg font-medium w-fit">{exam.name}</p>
         <p className="text-base font-normal">{exam.description}</p>
         <div className="exam-detail flex flex-row justify-between gap-2 ">

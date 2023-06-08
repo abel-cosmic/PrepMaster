@@ -20,7 +20,7 @@ export default function QuestionCreator() {
       alert(JSON.stringify(values, null, 2));
       if (questionNumber > questionLength - 1) {
         setQuestions((prevQuestions) => [...prevQuestions, values]);
-        navigate("/TeacherDashboard/CreateExam");
+        navigate("/Scaling");
       } else {
         setQuestions((prevQuestions) => [...prevQuestions, values]);
         setQuestionNumber(questionNumber + 1);

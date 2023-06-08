@@ -9,7 +9,7 @@ export default function AdminDepartment() {
       <p className="text-2xl font-medium">Departments</p>
       <div className="flex flex-row justify-between">
         <p>Let's have a look at your departments </p>
-        <NavLink to="/addDepartment" element={<AddDepartment />}>
+        <NavLink to="/Scaling" element={<AddDepartment />}>
           <CustomButton text={"Add"} padding={"0.8rem 2.5rem"} />
         </NavLink>
       </div>

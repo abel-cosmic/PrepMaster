@@ -62,7 +62,7 @@ export default function Signup() {
           </div>
           <Outlet />
 
-          <p className="text-xs opacity-50 px-6 md:my-16 max-md:my-6">
+          <p className="text-xs opacity-50 px-6 md:my-12 max-md:my-6">
             © PrepMaster all rights reserved
           </p>
         </div>

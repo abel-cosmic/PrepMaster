@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import AdminUsers from "./AdminUsers";
 import CreateStudent from "../../Logic/CreateStudent";
@@ -8,6 +8,20 @@ import CreateTeacherHead from "../../Logic/CreateTeacherHead";
 import CreateTeacher from "../../Logic/CreateTeacher";
 
 export default function AddUser() {
+  const [departments, setDepartments] = useState([]);
+  useEffect(() => {
+    const fetchDepartments = async () => {
+      const departmentResponse = await fetch(
+        "http://localhost:8080/api/departments"
+      );
+      const deparmentData = await departmentResponse.json();
+      setDepartments(deparmentData);
+    };
+    fetchDepartments();
+  }, []);
+
+  console.log(departments);
+
   const inputs = [
     {
       value: "firstname",
@@ -39,7 +53,7 @@ export default function AddUser() {
       title: "Department",
       placeholder: "Enter department",
       type: "select",
-      options: ["CS", "IT", "SE", "CE", "EE", "ME"],
+      options: [departments.map((department) => department.name)],
     },
     {
       value: "role",

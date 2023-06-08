@@ -48,6 +48,7 @@ import AdminSecurity from "./UserDashboard/Admin/AdminSecurity";
 import EditExam from "./UserDashboard/Teacher/EditExam";
 import QuestionList from "./UserDashboard/Student/QuestionList";
 import Error404 from "./UserDashboard/Error404";
+import Scaling from "./UserDashboard/Scaling";
 
 function App() {
   const router = createBrowserRouter(
@@ -98,6 +99,7 @@ function App() {
         <Route element={<Logout />} path="Logout" />
         <Route element={<QuestionCreator />} path="QuestionCreator" />
         <Route element={<Error404 />} path="Error404" />
+        <Route element={<Scaling />} path="Scaling" />
       </Route>
     )
   );

@@ -11,6 +11,9 @@ import SupportIcon from "../../assets/SupportIcon.svg";
 import ExamIcon from "../../assets/ExamIcon.svg";
 import { NavLink, Outlet } from "react-router-dom";
 import Logout from "../Logout";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 export default function StudentHeader() {
   const [isActive, setIsActive] = useState(false);

@@ -1,4 +1,8 @@
-export default function CreateDepartment({ name, dean, descriptiom }) {
+export default function CreateDepartment({
+  name,
+  departmentHeadId,
+  description,
+}) {
   return new Promise((resolve, reject) => {
     fetch("http://localhost:8080/api/departments", {
       method: "POST",
@@ -7,15 +11,12 @@ export default function CreateDepartment({ name, dean, descriptiom }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        student: {
-          firstName,
-          lastName,
-          email,
-          phoneNumber,
-          gender,
-          password,
+        adminId: 2,
+        departmentHeadId,
+        department: {
+          name,
+          description,
         },
-        departmentId,
       }),
     })
       .then((response) => {

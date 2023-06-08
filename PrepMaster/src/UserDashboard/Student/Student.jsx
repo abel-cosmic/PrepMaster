@@ -13,6 +13,9 @@ import LandingPage from "../../LandingPage/LandingPage";
 import { useContext } from "react";
 import StudentHeader from "./StudentHeader";
 import { useEmail } from "../../Logic/TeacherContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 export default function Student() {
   const email = useEmail();
@@ -21,44 +24,106 @@ export default function Student() {
     <div className="flex flex-row gap-6 m-6 max-md:mx-0">
       <div className="flex  flex-col gap-6 w-fit max-md:hidden " id="SideBar">
         <NavLink to="/" element={<LandingPage />}>
-          <div className=" Logo flex justify-center self-center w-5/6 ">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+            data-aos-delay="100"
+            className=" Logo flex justify-center self-center w-5/6 "
+          >
             <img src={Logo} alt="Logo" />
           </div>
         </NavLink>
 
         <div className="Navigations place-items-center flex flex-col gap-6 mt-10 mb-32 ">
-          <NavLink to="" end className="w-72 flex justify-center">
+          <NavLink
+            to=""
+            end
+            className="w-72 flex justify-center"
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+            data-aos-delay="150"
+          >
             <div className="side-bar text-md w-max" id="Dashboard">
               <img src={DashBoardIcon} alt="Dashboard Icon" />
               <p>Dashboard</p>
             </div>
           </NavLink>
-          <NavLink to="StudentExam" className="w-72 flex justifullfy-center">
+          <NavLink
+            to="StudentExam"
+            className="w-72 flex justifullfy-center"
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+            data-aos-delay="200"
+          >
             <div className="side-bar  text-md w-max" id="Exam">
               <img src={ExamIcon} alt="Exam Icon" className="mr-10" />
               <p className="exam">Exam</p>
             </div>
           </NavLink>
-          <div className="side-bar text-md " id="Analytics">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+            data-aos-delay="250"
+            className="side-bar text-md "
+            id="Analytics"
+          >
             <img src={AnalyticsIcon} alt="Analytics Icon" />
             <p>Analytics</p>
           </div>
-          <div className="my-6" id="SpreadLine">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+            data-aos-delay="300"
+            className="my-6"
+            id="SpreadLine"
+          >
             <img src={SpreadLine} alt="Spread Line" />
           </div>
-          <div className="side-bar text-md" id="Support">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+            data-aos-delay="350"
+            className="side-bar text-md"
+            id="Support"
+          >
             <img src={SupportIcon} alt="Support Icon" />
             <p>Support</p>
           </div>
-          <NavLink to="StudentSetting" className="w-72 flex justify-center">
+          <NavLink
+            to="StudentSetting"
+            className="w-72 flex justify-center"
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+            data-aos-delay="400"
+          >
             <div className="side-bar text-md" id="Settings">
               <img src={SettingsIcon} alt="Settings Icon" />
               <p>Settings</p>
             </div>
           </NavLink>
-          <Logout />
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="800"
+            data-aos-delay="450"
+          >
+            <Logout />
+          </div>
         </div>
-        <div className=" copyright">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="800"
+          data-aos-delay="500"
+          className=" copyright"
+        >
           <p className="opacity-50 text-xs">© PrepMaster all rights reserved</p>
         </div>
       </div>
