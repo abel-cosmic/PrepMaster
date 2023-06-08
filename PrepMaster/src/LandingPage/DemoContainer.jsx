@@ -55,7 +55,7 @@ export default function DemosContainer() {
               index % 2 === 1
                 ? "md:flex-row max-md:flex-col"
                 : "md:flex-row-reverse max-md:flex-col"
-            } px-6 md:py-32 items-center `}
+            } px-6 md:py-32 items-center`}
             style={{ backgroundColor: containerBgColor }}
           >
             <div
@@ -68,6 +68,10 @@ export default function DemosContainer() {
               <img
                 src={demo.image}
                 alt={demo.title}
+                data-aos="fade-left"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="1000"
+                data-aos-delay="250"
                 className="h-auto max-w-full max-md:hidden"
               />
             </div>

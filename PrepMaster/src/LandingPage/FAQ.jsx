@@ -68,6 +68,7 @@ export function FAQ() {
       >
         {faqs.map((faq, index) => (
           <div
+              
             className={`flex flex-col border-b border-gray-400 pb-4 ${
               showAnswer ? "pb-0" : "pb-4"
             }`}

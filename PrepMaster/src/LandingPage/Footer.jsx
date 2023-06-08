@@ -110,7 +110,7 @@ export function Footer() {
           >
             <input
               type="text"
-              className="md:w-full max-md:w-2/3 bg-transparent last pl-4 placeholder-white focus::placeholder-white"
+              className="md:w-full max-md:w-2/3 bg-transparent last pl-4 placeholder-white focus::placeholder-white text-white"
               placeholder="Enter Email Address"
             />
             <input
@@ -145,7 +145,7 @@ export function Footer() {
             href="#prepmaster-instagram"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="800"
+            data-aos-duration="1000"
             data-aos-delay="2500"
           >
             <img src={instagram} alt="instagram" className="login" />
@@ -154,7 +154,7 @@ export function Footer() {
             href="#prepmaster-twitter"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="800"
+            data-aos-duration="1000"
             data-aos-delay="2600"
           >
             <img src={twitter} alt="twitter" className="login" />
@@ -163,7 +163,7 @@ export function Footer() {
             href="#prepmaster-linkedin"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="800"
+            data-aos-duration="1000"
             data-aos-delay="2700"
           >
             <img src={linkedin} alt="linkedin" className="login" />
@@ -172,7 +172,7 @@ export function Footer() {
             href="#prepmaster-facebook"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="800"
+            data-aos-duration="1000"
             data-aos-delay="2800"
           >
             <img src={facebook} alt="facebook" className="login" />
@@ -181,7 +181,7 @@ export function Footer() {
             href="#prepmaster-message"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="800"
+            data-aos-duration="1000"
             data-aos-delay="2900"
           >
             <img src={message} alt="message" className="login" />
@@ -190,7 +190,7 @@ export function Footer() {
             href="#prepmaster-whatsup"
             data-aos="fade-right"
             data-aos-easing="ease-in-out"
-            data-aos-duration="800"
+            data-aos-duration="1000"
             data-aos-delay="3000"
           >
             <img src={whatsup} alt="whatsup" className="login" />
