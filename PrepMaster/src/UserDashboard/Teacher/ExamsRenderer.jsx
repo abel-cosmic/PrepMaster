@@ -12,6 +12,8 @@ export default function ExamRenderer() {
   const [courses, setCourses] = useState([]);
   const { setCourse } = useCourse();
 
+  console.log(exams);
+
   useEffect(() => {
     const fetchCourses = async () => {
       try {

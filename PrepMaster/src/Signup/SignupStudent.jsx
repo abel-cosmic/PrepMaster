@@ -140,11 +140,11 @@ export default function SignupStudent() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             >
-              {departments.map((department) => {
+              {departments.map((department, index) => {
                 return (
                   <>
                     <option value="">Please Choose a Department</option>
-                    <option value={department.name}>{department.name}</option>
+                    <option value={index + 1}>{department.name}</option>
                   </>
                 );
               })}
