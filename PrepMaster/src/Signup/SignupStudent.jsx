@@ -9,6 +9,7 @@ export default function SignupStudent() {
   const { setEmail } = useEmail();
   const navigate = useNavigate();
   const [departments, setDepartments] = useState([]);
+  const [passwordValidation, setPasswordValidation] = useState(true);
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -20,12 +21,17 @@ export default function SignupStudent() {
       gender: "",
     },
     onSubmit: (values) => {
-      CreateStudent(values).then(() => {
-        setEmail(values.email);
-        console.log("Data Successfully sent" + JSON.stringify(values));
-        alert("Data Successfully sent" + JSON.stringify(values));
-        navigate("/StudentDashboard");
-      });
+      if (values.password.length < 8) {
+        setPasswordValidation(false);
+      } else {
+        setPasswordValidation(true);
+        CreateStudent(values).then(() => {
+          setEmail(values.email);
+          console.log("Data Successfully sent" + JSON.stringify(values));
+          alert("Data Successfully sent" + JSON.stringify(values));
+          navigate("/StudentDashboard");
+        });
+      }
     },
   });
 
@@ -156,6 +162,11 @@ export default function SignupStudent() {
         </div>
 
         <RenderInputs />
+        {passwordValidation ? null : (
+          <p className="text-red-500">
+            Password Must be Greater than 8 Characters
+          </p>
+        )}
       </div>
       <div className="flex flex-row gap-2 justify-start">
         <input type="checkbox" name="terms" id="terms" required />

@@ -7,6 +7,7 @@ import { useEmail } from "../Logic/TeacherContext";
 export default function SignupOrganization() {
   const navigate = useNavigate();
   const { setEmail } = useEmail();
+  const [passwordValidation, setPasswordValidation] = useState(true);
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -15,12 +16,17 @@ export default function SignupOrganization() {
     },
     onSubmit: (values) => {
       console.log(values);
-      CreateAdmin(values).then((valid) => {
-        console.log("Data sent");
-        console.log(values);
-        setEmail(values.email);
-        navigate("/AdminDashboard");
-      });
+      if (values.password.length < 8) {
+        setPasswordValidation(false);
+      } else {
+        setPasswordValidation(true);
+        CreateAdmin(values).then((valid) => {
+          console.log("Data sent");
+          console.log(values);
+          setEmail(values.email);
+          navigate("/AdminDashboard");
+        });
+      }
     },
   });
   const inputs = [
@@ -61,6 +67,11 @@ export default function SignupOrganization() {
     >
       <div className="flex flex-col gap-4 w-full">
         <RenderInputs />
+        {passwordValidation ? null : (
+          <p className="text-red-500">
+            Password Must be Greater than 8 Characters
+          </p>
+        )}
       </div>
       <div className="flex flex-row gap-2 justify-start">
         <input type="checkbox" name="terms" id="terms" required />

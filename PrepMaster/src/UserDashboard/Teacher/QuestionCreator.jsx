@@ -18,7 +18,7 @@ export default function QuestionCreator() {
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      if ((questionNumber = questionLength - 1)) {
+      if (questionNumber == questionLength - 1) {
         setQuestions((prevQuestions) => [...prevQuestions, values]);
         navigate("/Scaling");
       } else {

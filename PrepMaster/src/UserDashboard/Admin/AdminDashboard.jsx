@@ -31,7 +31,7 @@ export default function AdminDashboard() {
       <div className="flex flex-row gap-6 max-md:flex-col max-md:gap-4">
         <OverViewContainer />
       </div>
-      <ProgressReport />
+      {/* <ProgressReport /> */}
       <div className="flex flex-row gap-4 justify-between max-md:flex-col">
         <div className="flex flex-col gap-4 container px-6 py-4 ">
           <MostAchievingDepartment />
