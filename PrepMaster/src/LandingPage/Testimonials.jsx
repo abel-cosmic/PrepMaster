@@ -14,7 +14,7 @@ export function Testimonials() {
       name:"Hannah Nguyen",
       occupation: "Software Engineer Student in AAU",
       image: hana,
-      word:"As a business administration student preparing for my exit exam, Prepmaster has been an incredible asset to my study routine. The platform offers a wide range of multiple-choice questions covering various business topics, allowing me to reinforce my understanding of key concepts. The immediate answer feedback provided not only helped me gauge my performance but also provided detailed explanations for incorrect answers, enhancing my learning experience. Prepmaster's user-friendly interface and comprehensive question bank make it the ideal choice for anyone aiming to excel in their business exams!",
+      word:"Being a Software Engineering student, Prepmaster has been an invaluable resource for honing my programming skills and preparing for coding interviews. The platform's vast collection of multiple-choice questions on various programming languages and algorithms has helped me strengthen my problem-solving abilities. The detailed answer feedback provided by Prepmaster has been instrumental in identifying areas where I need improvement and enhancing my understanding of coding concepts. Thanks to Prepmaster, I feel well-equipped and confident in tackling any coding challenge that comes my way. I highly recommend this platform to all aspiring software engineers!",
     },
     {
       name: "Samuel Alemu",
