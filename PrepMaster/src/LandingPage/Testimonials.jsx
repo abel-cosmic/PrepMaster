@@ -1,5 +1,7 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import hana from "../assets/hana.svg";
+import David from "../assets/David.svg";
+import Samuel from "../assets/samuel 1.svg";
 import poster from "../assets/poster.webp";
 import rick from "../assets/rick.mp4";
 import AOS from "aos";
@@ -9,22 +11,22 @@ AOS.init();
 export function Testimonials() {
   const testimonials = [
     {
-      name: "Abebech Kebede",
+      name:"Hannah Nguyen",
       occupation: "Software Engineer Student in AAU",
       image: hana,
-      word: "Lorem ipsum dolor sit amet consectetur. Urna lorem non habitant feugiat dui. Pellentesque convallis venenatis diam lacus euismod purus faucibus ullamcorper. Leo egestas mi sed pellentesque lectus. Morbi sit venenatis malesuada aliquet sodales aliquam. Semper elementum et sit euismod risus augue consectetur tortor nulla. Convallis egestas egestas tortor fringilla quis auctor.",
+      word:"As a business administration student preparing for my exit exam, Prepmaster has been an incredible asset to my study routine. The platform offers a wide range of multiple-choice questions covering various business topics, allowing me to reinforce my understanding of key concepts. The immediate answer feedback provided not only helped me gauge my performance but also provided detailed explanations for incorrect answers, enhancing my learning experience. Prepmaster's user-friendly interface and comprehensive question bank make it the ideal choice for anyone aiming to excel in their business exams!",
     },
     {
-      name: "Abebech Kebede",
-      occupation: "Software Engineer Student in AAU",
-      image: hana,
-      word: "Lorem ipsum dolor sit amet consectetur. Urna lorem non habitant feugiat dui. Pellentesque convallis venenatis diam lacus euismod purus faucibus ullamcorper. Leo egestas mi sed pellentesque lectus. Morbi sit venenatis malesuada aliquet sodales aliquam. Semper elementum et sit euismod risus augue consectetur tortor nulla. Convallis egestas egestas tortor fringilla quis auctor.",
-    },
+      name: "Samuel Alemu",
+      occupation: "Medical Student in Harvard",
+      image: Samuel,
+      word: "Prepmaster has been an invaluable resource for my preparation for the medical licensing exam. The vast collection of multiple-choice questions provided by Prepmaster allowed me to practice extensively and become familiar with the exam format. The detailed answer feedback provided after each question helped me identify my strengths and weaknesses, enabling me to focus my studies efficiently. Thanks to Prepmaster, I felt confident and well-prepared on the day of my exam. I highly recommend this website to all aspiring medical professionals!"
+    },    
     {
-      name: "Abebech Kebede",
-      occupation: "Software Engineer Student in AAU",
-      image: hana,
-      word: "Lorem ipsum dolor sit amet consectetur. Urna lorem non habitant feugiat dui. Pellentesque convallis venenatis diam lacus euismod purus faucibus ullamcorper. Leo egestas mi sed pellentesque lectus. Morbi sit venenatis malesuada aliquet sodales aliquam. Semper elementum et sit euismod risus augue consectetur tortor nulla. Convallis egestas egestas tortor fringilla quis auctor.",
+      name: "David Kimani",
+      occupation: "Civil Engineering Student in South Korea",
+      image: David,
+      word: "Prepmaster has revolutionized my preparation for the civil engineering exit exam. The platform's extensive question database covers all major topics, allowing me to practice a diverse range of multiple-choice questions. The detailed answer feedback provided after each attempt has been instrumental in strengthening my problem-solving skills and understanding of complex engineering concepts. Prepmaster's intuitive interface and interactive question formats have made my exam preparation both engaging and effective. I can confidently say that Prepmaster played a significant role in my success on the exam day!"
     },
   ];
 
