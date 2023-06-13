@@ -26,12 +26,12 @@ const data = [
 export default function ProgressReport() {
   const isSmallScreen = window.innerWidth <= 767; // Check the screen width directly
 
-  const chartWidth = isSmallScreen ? 330 : 1200; // Set the width based on the screen size
-  const chartHeight = isSmallScreen ? 300 : 300; // Set the height based on the screen size
+  const chartWidth = isSmallScreen ? 365 : 1400; // Set the width based on the screen size
+  const chartHeight = isSmallScreen ? 250 : 300; // Set the height based on the screen size
 
   return (
-    <div className="container pr-16 pl-4 py-4 mt-4 max-md:h-[20rem]">
-      <p className="text-xl my-6 font-medium">Progress Report</p>
+    <div className="container pr-16 pl-4 py-4 mt-4 max-md:h-[20rem] max-md:pb-6 max-md:pr-4">
+      <p className="text-xl md:my-6 font-medium max-md:my-4">Progress Report</p>
       <LineChart
         width={chartWidth}
         height={chartHeight}

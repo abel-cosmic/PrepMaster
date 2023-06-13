@@ -12,7 +12,7 @@ export default function Navigation() {
     const element = document.getElementById(tag);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 300,
+        top: element.offsetTop - 250,
         behavior: "smooth",
       });
     }

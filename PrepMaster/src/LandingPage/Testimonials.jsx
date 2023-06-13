@@ -97,7 +97,7 @@ export function Testimonials() {
           })}
         </Splide>
       </div>
-      <video poster={poster} controls className="md:p-10 md:w-3/4 m-auto">
+      <video poster={poster} controls className="md:p-10 md:w-3/4 m-auto my-20">
         <source src={rick} type="video/mp4" />
       </video>
     </div>
