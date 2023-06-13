@@ -1,4 +1,4 @@
-import ProgressAnalytics from "../../assets/ProgressAnalytics.svg";
+import React from "react";
 import {
   LineChart,
   Line,
@@ -24,11 +24,17 @@ const data = [
 ];
 
 export default function ProgressReport() {
+  const isSmallScreen = window.innerWidth <= 767; // Check the screen width directly
+
+  const chartWidth = isSmallScreen ? 330 : 1200; // Set the width based on the screen size
+  const chartHeight = isSmallScreen ? 300 : 300; // Set the height based on the screen size
+
   return (
     <div className="container pr-16 pl-4 py-4 mt-4 max-md:h-[20rem]">
+      <p className="text-xl my-6 font-medium">Progress Report</p>
       <LineChart
-        width={1200}
-        height={300}
+        width={chartWidth}
+        height={chartHeight}
         data={data}
         margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
       >
