@@ -129,8 +129,8 @@ export default function SignupStudent() {
               onBlur={formik.handleBlur}
             >
               <option value="">Select Gender</option>
-              <option value="1">Male</option>
-              <option value="2">Female</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
             </select>
             {formik.touched.gender && formik.errors.gender && (
               <div className="error">{formik.errors.gender}</div>
